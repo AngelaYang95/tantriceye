@@ -1,0 +1,138 @@
+#tracklist {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin: -24px 0;
+}
+
+#tracklist.hide {
+	visibility: hidden;
+	opacity: 0.05;
+}
+
+#tracklist .back {
+  position: absolute;
+  top: -24px;
+  left: 6px;
+  fill: var(--grey-medium-color);
+}
+
+#tracklist .category {
+  padding: 12px 0;
+  padding-top: 12px;
+  text-transform: capitalize;
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: 2;
+  transition: 1s transform ease-out;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  padding: 24px 0 24px;
+}
+
+#tracklist.hide .category {
+  transition: none;
+  transform: translateY(4px) scale(0.95);
+}
+
+.scroller {
+  height: calc(100% - 72px);
+  overflow-y: auto;
+}
+
+.track {
+	display: flex;
+  padding: 12px 24px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  transition: 0.3s background-color;
+}
+
+.track:hover, .track.active {
+	background-color: var(--grey-light-color);
+}
+
+.track .text {
+  flex-grow: 1;
+  text-align: left;
+  padding: 0 12px;
+}
+
+.track .description {
+  font-weight: 300;
+}
+
+.track.disable {
+  color: var(--grey-medium-color);
+  cursor: default;
+}
+
+.track.disable:hover {
+  background: unset;
+}
+
+.track .text .title {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+#tracklist .category-icon {
+  /*position: absolute;*/
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+#tracklist .category-icon .icon {
+  display: none;
+  margin: 0 auto;
+  fill: var(--grey-dark-color);
+}
+
+/* Category Icon. */
+body[category="sight"] #tracklist .category-icon .icon.sight  {
+  display: block;
+}
+
+body[category="body"] #tracklist .category-icon .icon.body {
+  display: block;
+}
+
+body[category="imagination"] #tracklist .category-icon .icon.imagination {
+  display: block;
+}
+
+body[category="mind"] #tracklist .category-icon .icon.mind {
+  display: block;
+}
+
+body[category="performance"] #tracklist .category-icon .icon.performance {
+  display: block;
+}
+
+/* Active track highlight. */
+body[category="sight"] .track.active {
+  color: var(--blue-color);
+}
+
+body[category="body"] .track.active {
+  color: var(--indigo-color);
+}
+
+body[category="imagination"] .track.active {
+  color: var(--orange-color);
+}
+
+body[category="mind"] .track.active {
+  color: var(--yellow-color);
+}
+
+body[category="performance"] .track.active {
+  color: var(--green-color);
+}

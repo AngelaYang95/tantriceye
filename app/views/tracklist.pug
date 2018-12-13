@@ -1,0 +1,28 @@
+mixin tracklist(category, tracks)
+	ul
+		each track in tracks
+			li(data-url=track.url)
+				span= track.title
+				span= track.description
+
+#tracklist.hide
+	+icon('chevron-left')(onclick="app.goToHome()").xsmall.back
+	.category
+	.scroller
+		.tracks
+	.category-icon(onclick='app.goToHome()')
+		+icon('sight').sight
+		+icon('performance').performance
+		+icon('random').random
+		+icon('mind').mind
+		+icon('body').body
+		+icon('imagination').imagination
+
+template(id="template-tracklist-item")
+	.track(onclick="tracklist.handleClick(this)" data-id="")
+		.id 01
+		.text
+			.title hello
+			.description
+		.length 3
+

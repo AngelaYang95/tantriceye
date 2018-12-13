@@ -1,0 +1,94 @@
+#media button .play,
+#media.active button .pause,
+#media.ended button .replay {
+	display: inline-block;
+}
+
+#media button .pause,
+#media button .replay,
+#media.active button .play,
+#media.active button .replay,
+#media.ended button .pause,
+#media.ended button .play {
+	display: none;
+}
+
+#media {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  transition: 0.2s height ease;
+  background: linear-gradient(0deg, white, #ffffffeb);
+  align-items: center;
+  display: flex;
+	height: 0;
+	overflow: hidden;
+}
+
+#media.play.expand {
+	height: 100vh;
+}
+
+#media.expand .close .up,
+#media .close .down {
+	display: none;
+}
+
+#media.expand .close .down,
+#media .close .up {
+	display: block;
+}
+
+#media.play {
+	height: 64px;
+}
+
+#media .time {
+	display: flex;
+	justify-content: center;
+	margin-top: 6px;
+}
+
+#media.play .currentTime::after {
+	content: '/';
+	margin: 0 5px;
+}
+
+#media .audio-controls {
+	display: flex;
+	justify-content: space-evenly;
+}
+
+#media .description {
+	font-size: 14px;
+	color: var(--grey-dark-color);
+	opacity: 0.7;
+}
+
+#media .progress {
+	flex-grow: 1;
+	max-width: 300px;
+	margin: 0 auto;
+	height: 2px;
+	background-color: var(--grey-medium-color);
+	position: relative;
+}
+
+#media .progress .bar {
+	width: 0%;
+	content: '';
+	position: absolute;
+	background-color: var(--grey-dark-color);
+	height: 2px;
+	left: 0;
+}
+
+#media .title {
+	font-weight: 400;
+	min-height: 32px;
+	line-height: 32px;
+}
+
+#media .time {
+	font-size: 12px;
+}

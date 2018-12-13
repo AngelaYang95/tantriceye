@@ -1,0 +1,17 @@
+// render client side via template tag
+// requires endpoints for JSON data
+// same with using react
+
+// serve pug
+// fetch partial html
+// requires endpoints for partials
+
+// serve massive html
+
+
+
+/onboarding <main.min.js>
+
+/home				<additional general controllers & data stuff>
+
+/about			<simple page>

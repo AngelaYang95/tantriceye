@@ -1,0 +1,48 @@
+mixin icon(iconId, tooltip)
+	svg(role="img").icon&attributes(attributes)
+		use(xlink:href="#icon-" + iconId)
+
+head
+	meta(charset="UTF-8")
+	meta(name="Description" content="Tantric Eye, mindfulness app for the gallery space.")
+	meta(name="viewport" content="width=device-width, initial-scale=1")
+	title The Tantric Eye
+	<!--build:css css/styles.min.css-->
+	link(href="./css/main.css" rel="stylesheet")
+	link(href="./css/onboarding.css" rel="stylesheet")
+	link(href="./css/landing.css" rel="stylesheet")
+	link(href="./css/nav.css" rel="stylesheet")
+	link(href="./css/tracklist.css" rel="stylesheet")
+	link(href="./css/media.css" rel="stylesheet")
+	link(href="./css/carousel.css" rel="stylesheet")
+	<!-- endbuild -->
+	link(href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet")
+
+body
+	include images/svg-symbols.svg
+	include views/gradient.pug
+	.arcs
+	#content
+		#landing.active
+			.center
+				+icon('tantric-eye').large
+				.shadow
+		#onboarding
+			include views/onboarding.pug
+		#app
+			include views/nav.pug
+			include views/tracklist.pug
+	include views/media.pug
+
+	<!--build:js js/main.min.js -->
+	script(src="./js/app-controller.js")
+	script(src="./js/nav-controller.js")
+	script(src="./js/tracklist-controller.js")
+	script(src="./js/carousel-controller.js")
+	script(src="./js/media-controller.js")
+	script(src="./js/onboarding-controller.js")
+	script(src="./js/data.js")
+	<!-- endbuild -->
+
+
+

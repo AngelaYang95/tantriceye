@@ -1,0 +1,18 @@
+#media.close
+	.audio-controls
+		button(onclick="media.togglePlay()")
+			+icon("media-play-filled").play.xsmall
+			+icon("media-pause").pause.xsmall
+			+icon("media-replay").replay.xsmall
+	audio(id="media-player")
+		source(src="" type="audio/mp3")
+		source(src="" type="audio/ogg")
+	.title 
+	.progress
+		.bar
+		.time
+			.currentTime
+			.duration
+	button.close(onclick="media.toggle()")
+		+icon('chevron-up').xsmall.up
+		+icon('chevron-down').xsmall.down

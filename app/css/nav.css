@@ -1,0 +1,142 @@
+#nav {
+  align-items: center;
+	text-align: center;
+	text-transform: capitalize;
+	z-index: 2;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  bottom: 0;
+  position: absolute;
+}
+
+#nav.close {
+	animation: 1s CLOSE-NAV-ANIMATION forwards;
+	display: none;
+}
+
+@keyframes CLOSE-NAV-ANIMATION {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+		visibility: hidden;
+		z-index: -1;
+	}
+}
+
+
+#nav .categories {
+	display: flex;
+	flex-direction: column;
+  justify-content: space-evenly;
+  height: 100%;
+  padding-bottom: 24px;
+}
+
+#nav .category {
+	display: inline-block;
+	height: 8vh;
+	pointer-events: auto;
+  -webkit-transition: transform 800ms cubic-bezier(0.68, -0.35, 0.265, 1.35), 0.3s opacity 0.2s;
+  transition:         transform 800ms cubic-bezier(0.68, -0.35, 0.265, 1.35), 0.3s opacity 0.2s;
+	width: 16vh;
+  left: 50%;
+}
+
+#nav .category {
+	opacity: 1;
+}
+
+#nav .toggler {
+	padding: 36px 0;
+	position: absolute;
+	bottom: 8px;
+}
+
+#nav .category .container {
+  position: relative;
+  left: -50%;
+}
+
+#nav.close .category:not(.active) {
+	opacity: 0;
+	pointer-events: none;
+}
+
+#nav .category label {	
+	transition: 0.2s opacity 0.2s;
+}
+
+#nav.close .category label {
+	opacity: 0;
+}
+
+#nav .category .icon {
+	display: block;
+	margin: auto;
+	height: 8vh;
+}
+
+#nav .toggler .bar {
+	height: 4px;
+	width: 36px;
+	border-radius: 10px;
+	background-color: gray;
+}
+
+#nav:not(.close) .category:hover svg.icon {
+	transform: translateY(-4px);
+	border-radius: 5px;
+  /*background: var(--grey-light-color);*/
+  transition: 0.2s transform ease-in, 0.2s background;
+}
+
+/* 
+ * Close mechanism 
+ *
+ * Random
+ * Imagination
+ * Mind
+ * Body
+ * Performance
+ * Sight
+ */
+
+/* Colour Scheme */
+.category[data-category="body"],
+.category[data-category="performance"],
+.category[data-category="sight"],
+.category[data-category="imagination"],
+.category[data-category="random"],
+.category[data-category="mind"] {
+	fill: var(--grey-medium-color);
+}
+
+body[category="body"] .category[data-category="body"],
+body:not([category]) .category[data-category="body"] {
+	fill: var(--indigo-color);
+}
+
+body[category="performance"] .category[data-category="performance"],
+body:not([category]) .category[data-category="performance"] {
+	fill: var(--teal-color);
+}
+
+body[category="sight"] .category[data-category="sight"],
+body:not([category]) .category[data-category="sight"] {
+	fill: var(--blue-color);
+}
+
+body[category="imagination"] .category[data-category="imagination"],
+body:not([category]) .category[data-category="imagination"] {
+	fill: var(--orange-color);
+}
+
+body[category="mind"] .category[data-category="mind"],
+body:not([category]) .category[data-category="mind"] {
+	fill: var(--yellow-color);
+}

@@ -1,0 +1,15 @@
+mixin carousel(items)
+	#carousel(data-num-items=`${items}` data-index=0)
+		.window
+			.container
+				block
+		.dots
+			- for (var i = 0; i < items; i++)
+				.dot(onclick=`carousel.onDotClicked(${i})`)
+
+mixin carousel-item(icon, label)
+	.carousel-item
+		if(icon != "")
+			+icon(icon).xxlarge
+		p=label
+		block
