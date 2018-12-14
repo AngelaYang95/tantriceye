@@ -176,10 +176,12 @@ body .arcs {
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-size: 100% 80%;
   -webkit-mask-position-x: 50%;
-  height: 100vh;
-  margin: 40px auto;
+  -webkit-mask-position-y: 40%;
+  margin: 0 auto;
   max-width: 400px;
+  /*height: 100vh;*/
   width: 100%;
+  overflow: hidden;
 
   background-color: var(--grey-light-color);
   min-height: 100vh;
