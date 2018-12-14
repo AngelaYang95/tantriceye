@@ -5,7 +5,7 @@ var gulp = require('gulp');
 var gulpIf = require('gulp-if');
 var pug = require('gulp-pug');
 var svgSymbols = require('gulp-svg-symbols')
-var uglify = require('gulp-uglify');
+var uglify = require('gulp-uglify-es').default;
 var useref = require('gulp-useref');
 
 /* Production build tasks. */
@@ -21,7 +21,7 @@ gulp.task('useref', function() {
     .pipe(pug({ pretty: true }))
     .pipe(useref())
     .pipe(gulpIf('*.css', cssnano()))
-    // .pipe(gulpIf('*.js', uglify()))
+    .pipe(gulpIf('*.js', uglify()))
     .pipe(gulp.dest('dist'))
 });
 
