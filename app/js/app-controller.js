@@ -10,8 +10,6 @@ var app = {
 	track: "",
 	mode: CONSTANTS.MODES.SOLO,
 	init: function() {
-		// window.addEventListener("hashchange", app.handleHashChange, false);
-		// media.clear()
 		setTimeout(() => {
 			document.querySelector('#landing').classList.remove("active")
 			app.showOnboarding()

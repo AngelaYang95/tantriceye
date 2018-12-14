@@ -68,7 +68,7 @@ var media = {
 		media.dom.querySelector("audio").src = trackObj.url
 	},
 	handleTrackFinished(e) {
-		media.dom.classList.remove("active")
+		media.dom.classList.remove("active", "play")
 		media.dom.classList.add("ended")
 		document.querySelector('.arcs').classList.add('animate')
 	},
