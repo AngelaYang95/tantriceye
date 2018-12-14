@@ -8,11 +8,11 @@ var onboarding = {
 		onboarding.dom.firstElementChild.setAttribute('data-index', ++index)
 	},
 	handleSoloClick: function() {
-		app.setPartnerMode(false)
+		app.setMode(0)
 		onboarding.handleNextClick()
 	},
 	handleDuoClick: function() {
-		app.setPartnerMode(true)
+		app.setMode(1)
 		onboarding.handleNextClick()
 	},
 	handleFinishClick: function() {

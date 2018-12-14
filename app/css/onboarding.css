@@ -1,7 +1,7 @@
-body:not([data-duo-mode="true"]) #onboarding button.solo {
+body:not([data-duo-mode="1"]) #onboarding button.solo {
 	border: 2px solid var(--orange-color);
 }
 
-body[data-duo-mode="true"] #onboarding button.duo {
+body[data-duo-mode="1"] #onboarding button.duo {
 	border: 2px solid var(--orange-color);
 }

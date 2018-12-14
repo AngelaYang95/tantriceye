@@ -1,7 +1,14 @@
+const CONSTANTS = {
+	MODES: {
+		SOLO: 0,
+		DUO: 1,
+	}
+}
+
 var app = {
 	category: "",
 	track: "",
-	partnerMode: false,
+	mode: CONSTANTS.MODES.SOLO,
 	init: function() {
 		// window.addEventListener("hashchange", app.handleHashChange, false);
 		// media.clear()
@@ -10,13 +17,13 @@ var app = {
 			app.showOnboarding()
 		}, 4000)
 	},
-	handleHashChange: function() {a
+	handleHashChange: function() {
 		app.goToCategory(cat)
 		nav.selectCategory(cat)
 	},
-	setPartnerMode: function(isDuo) {
-		app.partnerMode = isDuo
-		document.body.setAttribute('data-duo-mode', isDuo)
+	setMode: function(mode) {
+		app.mode = mode
+		document.body.setAttribute('data-duo-mode', mode)
 		document.querySelector('.arcs').classList.add('duo')
 	},
 	showOnboarding: function() {

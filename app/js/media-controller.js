@@ -64,11 +64,8 @@ var media = {
 		}
 		media.dom.querySelector(".title").innerHTML = trackObj.title
 		media.dom.querySelector(".currentTime").innerHTML = "00:00"
-		if(app.partnerMode)
-			media.dom.querySelector("source").src = trackObj.urlDuo
-		else
-			media.dom.querySelector("source").src = trackObj.url
-			media.dom.querySelector("audio").src = trackObj.url
+		media.dom.querySelector("source").src = trackObj.url
+		media.dom.querySelector("audio").src = trackObj.url
 	},
 	handleTrackFinished(e) {
 		media.dom.classList.remove("active")

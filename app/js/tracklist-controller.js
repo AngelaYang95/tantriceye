@@ -18,10 +18,11 @@ var tracklist = {
 	render: function(category) {
 		var fragment = document.createDocumentFragment();
 		var number = 0;
+		console.log("dat is ///" + data)
 		data.categories[category].forEach((id, index) => {
 			let trackObj = data.tracks[id]
 
-			if(app.partnerMode != parseInt(trackObj.is_partner)) {
+			if(app.mode != parseInt(trackObj.type)) {
 				console.log(trackObj)
 				return
 			}
@@ -35,6 +36,8 @@ var tracklist = {
 			  date.setSeconds(trackObj.length)
 			  templ.querySelector(".length").innerHTML = date.toISOString().substr(14, 5)
       }
+
+      console.log("adding...")
       if(trackObj.url == "") {
       	templ.querySelector(".track").classList.add('disable')
       	templ.querySelector(".track").onclick = ""

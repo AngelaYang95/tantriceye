@@ -8,25 +8,32 @@ var svgSymbols = require('gulp-svg-symbols')
 var uglify = require('gulp-uglify');
 var useref = require('gulp-useref');
 
-// uglify HTML...
 /* Production build tasks. */
-gulp.task('build', [`useref`, `images`], function (){
-  console.log('Building files');
-})
+gulp.task('build', [`useref`, `images`, `audio`], function (){
+  console.log('BUILD Complete');
+});
 
 /* TODO: Clean up gulp stuff */
 
 /* Uglify js and concat css. */
-gulp.task('useref', ['views'], function() {
-  return gulp.src('app/*.html')
+gulp.task('useref', function() {
+  return gulp.src('app/*.pug')
+    .pipe(pug({ pretty: true }))
     .pipe(useref())
-    .pipe(gulpIf('*.js', uglify()))
     .pipe(gulpIf('*.css', cssnano()))
+    // .pipe(gulpIf('*.js', uglify()))
     .pipe(gulp.dest('dist'))
-})
+});
+
+/* Copy images. */
+gulp.task('images', [`compress-images`], function(){
+  console.log('copying images...')
+  return gulp.src('app/images/*.svg')
+    .pipe(gulp.dest('dist/images'))
+});
 
 /* Compress images. */
-gulp.task('images', function(){
+gulp.task('compress-images', function(){
   return gulp.src('app/images/ui/**/*.+(png|jpg|gif|svg)')
     .pipe(imagemin([
       imagemin.svgo({
@@ -45,7 +52,12 @@ gulp.task('images', function(){
       }
     })))
     .pipe(gulp.dest('app/images'))
-    .pipe(gulp.dest('dist/images'))
+});
+
+/* Copy audio files. */
+gulp.task('audio', function(){
+  return gulp.src('app/audio/**/*')
+    .pipe(gulp.dest('dist/audio'))
 });
 
 /* Preprocess pug files to static html */
@@ -63,13 +75,13 @@ gulp.task('browserSync', function() {
       baseDir: 'app'
     },
   })
-})
+});
 
 /* Process pug files and reload browser. */
 gulp.task('views-watch', ['views'], function(done) {
   browserSync.reload();
   done();
-})
+});
 
 /* Watch for changes in app files. */
 gulp.task('watch', ['views', 'browserSync'], function () {
@@ -77,4 +89,4 @@ gulp.task('watch', ['views', 'browserSync'], function () {
   gulp.watch('app/images/**/*.svg', browserSync.reload);
   gulp.watch('app/js/**/*.js', browserSync.reload);
   gulp.watch('app/css/**/*.css', browserSync.reload);
-})
+});
