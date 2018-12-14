@@ -20,14 +20,16 @@ html {
 	color: var(--grey-dark-color);
 	font-family: 'Helvetica', sans-serif;
 	font-weight: 400;
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch;
 }
 
 body {
-	margin: 0;
-	display: flex;
-	height: 100vh;
-	flex-direction: column;
-	overflow-y: hidden;
+  margin: 0;
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  overflow-y: hidden;
 }
 
 h1 {
