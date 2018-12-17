@@ -10,15 +10,11 @@ var media = {
 		media.player.addEventListener('ended', media.handleTrackFinished);
 	},
 	clear: function() {
-		media.dom.classList.remove("active", "ended", "play")
+		media.dom.classList.remove("active", "ended", "play", "expand")
 		media.isPlaying = false
 		media.player.pause()
 		media.player.currentTime = 0
 		media.dom.querySelector("source").src = ""
-	},
-	close: function() {
-		media.clear()
-		media.dom.classList.toggle('expand')
 	},
 	startTime: function() {
 		let timeDom = media.dom.querySelector(".currentTime")
@@ -54,6 +50,9 @@ var media = {
 		  }
   	}
 	},
+	expandPlayer: function() {
+    media.dom.classList.add("expand")
+	},
 	setTrack: function(trackObj) {
 		media.dom.classList.remove("active", "ended")
 		document.querySelector('.arcs').classList.remove('animate')
@@ -67,6 +66,9 @@ var media = {
 		media.dom.querySelector(".currentTime").innerHTML = "00:00"
 		media.dom.querySelector("source").src = trackObj.url
 		media.dom.querySelector("audio").src = trackObj.url
+	},
+	handleClose: function() {
+		app.clearTrack()
 	},
 	handleTrackFinished(e) {
 		media.dom.classList.remove("active", "play")

@@ -193,10 +193,13 @@ body .arcs {
   -webkit-mask-position-x: 50%;
   -webkit-mask-position-y: 50%;
   background-color: var(--grey-light-color);
-  height: 100vh;
+  height: 90vh;
   min-height: 500px;
   width: 100%;
   position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
 }
 
 body[data-duo-mode='1'] .arcs {

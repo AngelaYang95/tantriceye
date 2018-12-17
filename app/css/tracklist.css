@@ -16,7 +16,7 @@
   left: 12px;
   fill: var(--grey-medium-color);
   background: var(--grey-light-color);
-  box-shadow: 2px 2px 2px 0 var(--grey-light-color);;
+  box-shadow: 2px 2px 2px 0 var(--grey-medium-color);;
 }
 
 #tracklist .category {
@@ -30,11 +30,12 @@
   right: 0;
   margin: 0 auto;
   padding: 24px 0 6px;
-  font-family: "nunito";
+  font-family: "varela", "helvetica", "sans serif";
 }
 
 #tracklist .header {
   transition: 0.7s transform ease-out;
+  margin: 24px 0;
 }
 
 #tracklist.hide .header {

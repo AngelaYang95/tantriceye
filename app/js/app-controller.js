@@ -32,15 +32,10 @@ var app = {
 		document.querySelector('#onboarding').classList.remove("active")
 		document.querySelector('#app').classList.add("active")
 	},
-	playTrack: function(id) {
+	playTrack: function(id, expandPlayer) {
 		if(app.track != id) {
 			app.track = id
-
-			if(tracklist.activeTrack) {
-				tracklist.activeTrack.classList.remove('active')
-				tracklist.activeTrack = document.querySelector(`#tracklist .track[data-id="${id}"]`)
-				tracklist.activeTrack.classList.add('active')
-			}
+			tracklist.setActiveTrack(id)
 
 			let trackObj = data.tracks[id]
 			if(!trackObj) 
@@ -49,6 +44,14 @@ var app = {
 				media.setTrack(trackObj)
 		}
 		media.togglePlay()
+
+		if(expandPlayer) {
+			media.expandPlayer()
+		}
+	},
+	clearTrack: function() {
+		tracklist.clearActiveTrack()
+		media.clear()
 	},
 	goToCategory: function(category) {
 		if(app.category == category) return

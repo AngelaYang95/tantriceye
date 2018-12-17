@@ -1,26 +1,26 @@
 id,title,category,description,url,length,type
 0,Zoom In,Body,savouring a slow approach,ZoomIn_Solo,73,0
-1,Zoom In,Body,savouring a slow approach,PartnerZoomin,,1
+1,Zoom In,Body,savouring a slow approach,PartnerZoomin,75,1
 2,Breathing in Light ,Body,connecting breath and vision,BreathinginLight_Solo,99,0
 3,Breathing in Light ,Body,connecting breath and vision,PartnerBreathinginLight,,1
 4,Aerobic Gaze,Body,"pounding heart, rapid breath",AerobicGazeSolo,110,0
-5,Aerobic Gaze,Body,"pounding heart, rapid breath",PartnerAerobicGaze,,1
+5,Aerobic Gaze,Body,"pounding heart, rapid breath",PartnerAerobicGaze,111,1
 6,Gaze Filter,Mind,learning to love,GazeFilterSolo,,0
-7,Gaze Filter,Mind,learning to love,PartnerGazeFilter,,1
+7,Gaze Filter,Mind,learning to love,PartnerGazeFilter,67,1
 8,Target,Mind,observing being observed,Target_Solo,31,0
-9,Target,Mind,observing being observed,PartnerTarget,,1
+9,Target,Mind,observing being observed,PartnerTarget,26,1
 10,Mirror Mind,Mind,art and the inner world ,MirrorMind_Solo,55,0
-11,Mirror Mind,Mind,art and the inner world ,PartnerMirrorMind,,1
+11,Mirror Mind,Mind,art and the inner world ,PartnerMirrorMind,56,1
 12,What Lies Beyond,Sight,imaginary horizons,WhatLiesBeyond_Solo,83,0
-13,What Lies Beyond,Sight,imaginary horizons,PartnerWhatLiesBeyond,,1
+13,What Lies Beyond,Sight,imaginary horizons,PartnerWhatLiesBeyond,89,1
 14,What Lies In Front,Sight,focusing in front of the work,,,0
 15,What Lies In Front,Sight,focusing in front of the work,,,1
 16,Cave Vision,Sight,between fingers and palms,CaveVisionSolo,50,0
-17,Cave Vision,Sight,between fingers and palms,PartnerCaveVision,,1
+17,Cave Vision,Sight,between fingers and palms,PartnerCaveVision,51,1
 18,Flicker Vision,Sight,rapid blinking,FlickerVisionSolo,19,0
-19,Flicker Vision,Sight,rapid blinking,PartnerFlickerVision,,1
+19,Flicker Vision,Sight,rapid blinking,PartnerFlickerVision,19,1
 20,Sounds of Silence,Imagination,sounds and silences,SoundsofSilenceSolo,30,0
-21,Sounds of Silence,Imagination,sounds and silences,PartnerSoundsofSilence,,1
+21,Sounds of Silence,Imagination,sounds and silences,PartnerSoundsofSilence,34,1
 22,Confession,Mind, answering to art,,,0
 23,Confession,Mind, answering to art,,,1
 24,Wisdom of Art,Mind,let art resolve life's difficult questions,,,0
@@ -30,13 +30,13 @@ id,title,category,description,url,length,type
 28,Signs,Performance,conceptual art practice,,,0
 29,Signs,Performance,conceptual art practice,,,1
 30,Born Anew,Imagination,fresh-eyed gazing,BornAnewSolo,20,0
-31,Born Anew,Imagination,fresh-eyed gazing,PartnerBornAnew,,1
+31,Born Anew,Imagination,fresh-eyed gazing,PartnerBornAnew,24,1
 32,Be Art,Performance,becoming an artwork,BecomingArtSolo,34,0
-33,Be Art,Performance,becoming an artwork,PartnerBecomingArt,,1
+33,Be Art,Performance,becoming an artwork,PartnerBecomingArt,56,1
 34,Click Click,Performance,being a human camera,ClickClickSolo,45,0
-35,Click Click,Performance,being a human camera,ParnterClickClick,,1
+35,Click Click,Performance,being a human camera,PartnerClickClick,81,1
 36,Air Art,Performance,making art from thin air,AirArtSolo,41,0
-37,Air Art,Performance,making art from thin air,PartnerAirArt,,1
+37,Air Art,Performance,making art from thin air,PartnerAirArt,52,1
 38,Art Stretch,Body,a vertical gaze arc through 180°,,,0
 39,Art Stretch,Body,a vertical gaze arc through 180°,,,1
 40,Tidal Lock,Body,a horizontal gaze arc through 180°,,,0

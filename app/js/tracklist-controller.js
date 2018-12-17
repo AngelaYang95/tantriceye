@@ -13,7 +13,20 @@ var tracklist = {
 		if(tracklist.activeTrack) tracklist.activeTrack.classList.remove('active')
 		dom.classList.add('active')
 		tracklist.activeTrack = dom
-		app.playTrack(id)
+		app.playTrack(id, true)
+	},
+	setActiveTrack: function(id) {
+		if(tracklist.activeTrack) {
+			tracklist.activeTrack.classList.remove('active')
+			tracklist.activeTrack = document.querySelector(`#tracklist .track[data-id="${id}"]`)
+			tracklist.activeTrack.classList.add('active')
+		}
+	},
+	clearActiveTrack: function() {
+		if(!tracklist.activeTrack) return
+
+		tracklist.activeTrack.classList.remove('active')
+		tracklist.activeTrack = null
 	},
 	render: function(category) {
 		var fragment = document.createDocumentFragment();

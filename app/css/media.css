@@ -93,6 +93,8 @@
 	font-weight: 400;
 	min-height: 32px;
 	line-height: 32px;
+  font-size: 32px;
+  margin: 24px 0;
 }
 
 #media .time {
