@@ -27,16 +27,21 @@
 
 #media.play.expand {
 	height: 100vh;
+	flex-direction: column;
+	justify-content: center;
 }
 
-#media.expand .close .up,
-#media .close .down {
-	display: none;
+#media.play.expand .progress {
+	flex-grow: 0;
 }
 
-#media.expand .close .down,
-#media .close .up {
-	display: block;
+#media .close {
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin: 8px;
+	border: none;
+	color: var(--grey-medium-color);
 }
 
 #media.play {
@@ -66,8 +71,9 @@
 }
 
 #media .progress {
-	flex-grow: 1;
+	width: 50%;
 	max-width: 300px;
+	min-width: 100px;
 	margin: 0 auto;
 	height: 2px;
 	background-color: var(--grey-medium-color);

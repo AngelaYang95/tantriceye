@@ -69,6 +69,8 @@
 
 #nav .category label {	
 	transition: 0.2s opacity 0.2s;
+	font-family: 'nunito';
+	font-size: 16px;
 }
 
 #nav.close .category label {
@@ -79,6 +81,7 @@
 	display: block;
 	margin: auto;
 	height: 8vh;
+  /*min-width: 48px;*/
 }
 
 #nav .toggler .bar {

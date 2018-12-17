@@ -18,7 +18,6 @@ var tracklist = {
 	render: function(category) {
 		var fragment = document.createDocumentFragment();
 		var number = 0;
-		console.log("dat is ///" + data)
 		data.categories[category].forEach((id, index) => {
 			let trackObj = data.tracks[id]
 

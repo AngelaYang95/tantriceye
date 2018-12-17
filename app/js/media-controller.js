@@ -10,13 +10,14 @@ var media = {
 		media.player.addEventListener('ended', media.handleTrackFinished);
 	},
 	clear: function() {
-		media.dom.classList.remove("active", "ended")
+		media.dom.classList.remove("active", "ended", "play")
 		media.isPlaying = false
 		media.player.pause()
 		media.player.currentTime = 0
 		media.dom.querySelector("source").src = ""
 	},
-	toggle: function() {
+	close: function() {
+		media.clear()
 		media.dom.classList.toggle('expand')
 	},
 	startTime: function() {

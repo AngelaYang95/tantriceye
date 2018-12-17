@@ -5,3 +5,15 @@ body:not([data-duo-mode="1"]) #onboarding button.solo {
 body[data-duo-mode="1"] #onboarding button.duo {
 	border: 2px solid var(--orange-color);
 }
+
+#onboarding p {
+	margin: 10% 0;
+	font-size: 32px;
+	font-weight: 200;
+	padding: 0 12px;
+}
+
+#onboarding .icon {
+	height: 30%;
+	width: 40%;
+}

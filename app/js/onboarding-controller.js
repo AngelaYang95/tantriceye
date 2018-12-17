@@ -6,6 +6,7 @@ var onboarding = {
 	handleNextClick: function() {
 		let index = parseInt(onboarding.dom.firstElementChild.getAttribute('data-index'))
 		onboarding.dom.firstElementChild.setAttribute('data-index', ++index)
+		media.clear()
 	},
 	handleSoloClick: function() {
 		app.setMode(0)

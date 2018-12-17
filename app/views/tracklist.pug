@@ -6,17 +6,18 @@ mixin tracklist(category, tracks)
 				span= track.description
 
 #tracklist.hide
-	+icon('chevron-left')(onclick="app.goToHome()").xsmall.back
-	.category
+	.header(onclick='app.goToHome()')
+		+icon('chevron-left')(onclick="app.goToHome()").xsmall.back
+		.category
+		.category-icon
+			+icon('sight').sight
+			+icon('performance').performance
+			+icon('random').random
+			+icon('mind').mind
+			+icon('body').body
+			+icon('imagination').imagination
 	.scroller
 		.tracks
-	.category-icon(onclick='app.goToHome()')
-		+icon('sight').sight
-		+icon('performance').performance
-		+icon('random').random
-		+icon('mind').mind
-		+icon('body').body
-		+icon('imagination').imagination
 
 template(id="template-tracklist-item")
 	.track(onclick="tracklist.handleClick(this)" data-id="")

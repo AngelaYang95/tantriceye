@@ -35,11 +35,6 @@
 	padding: 24px 0;
 	margin: auto;
 }
-.carousel-item p {
-	margin: 24px 0;
-	font-size: 24px;
-	font-weight: 200;
-}
 
 #carousel .dots {
 	justify-content: center;

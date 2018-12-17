@@ -12,14 +12,14 @@
 
 #tracklist .back {
   position: absolute;
-  top: -24px;
-  left: 6px;
+  top: 24px;
+  left: 12px;
   fill: var(--grey-medium-color);
+  background: var(--grey-light-color);
+  box-shadow: 2px 2px 2px 0 var(--grey-light-color);;
 }
 
 #tracklist .category {
-  padding: 12px 0;
-  padding-top: 12px;
   text-transform: capitalize;
   font-size: 24px;
   font-weight: 500;
@@ -29,10 +29,15 @@
   left: 0;
   right: 0;
   margin: 0 auto;
-  padding: 24px 0 24px;
+  padding: 24px 0 6px;
+  font-family: "nunito";
 }
 
-#tracklist.hide .category {
+#tracklist .header {
+  transition: 0.7s transform ease-out;
+}
+
+#tracklist.hide .header {
   transition: none;
   transform: translateY(4px) scale(0.95);
 }
@@ -82,7 +87,6 @@
 }
 
 #tracklist .category-icon {
-  /*position: absolute;*/
   bottom: 0;
   left: 0;
   right: 0;

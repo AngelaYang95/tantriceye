@@ -23,19 +23,19 @@ head
 
 body
 	include images/svg-symbols.svg
-	.arcs
-	#content
-		#landing.active
-			.center
-				+icon('tantric-eye').large
-				.shadow
-		#onboarding
-			include views/onboarding.pug
-		#app
-			include views/nav.pug
-			include views/tracklist.pug
+	#barba-wrapper
+		.arcs
+		#content.barba-container
+			#landing.active
+				.center
+					+icon('tantric-eye').large
+					.shadow
+			#onboarding
+				include views/onboarding.pug
+			#app
+				include views/nav.pug
+				include views/tracklist.pug
 	include views/media.pug
-
 
 	<!-- build:js js/main.min.js -->
 	script(src="./js/app-controller.js" type="text/javascript")
