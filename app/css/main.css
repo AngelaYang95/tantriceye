@@ -280,7 +280,6 @@ button:hover {
 #app .mid-nav {
   position: absolute;
   top: 50%;
-  width: 100%;
   display: flex;
   justify-content: space-between;
   z-index: 10;

@@ -10,6 +10,7 @@
   justify-content: space-evenly;
   bottom: 0;
   position: absolute;
+  animation: 0.2s NAV-ANIM forwards;
 }
 
 #nav.close {
@@ -62,14 +63,9 @@
   left: -50%;
 }
 
-#nav.close .category:not(.active) {
-	opacity: 0;
-	pointer-events: none;
-}
-
 #nav .category label {	
 	transition: 0.2s opacity 0.2s;
-	font-family: 'nunito';
+	font-family: 'Varela Round', 'Helvetica', 'Sans Serif';
 	font-size: 16px;
 }
 
@@ -167,4 +163,15 @@ body:not([category]) .category[data-category="mind"] {
 
 .category[data-category="mind"] {
 	fill: var(--yellow-color);
+}
+
+@keyframes NAV-ANIM {
+	0% {
+		opacity: 0;
+		transform: translateX(-12px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
 }
