@@ -9,8 +9,9 @@ var app = {
 	category: "",
 	track: "",
 	mode: CONSTANTS.MODES.SOLO,
+	landingTimeout: null,
 	init: function() {
-		setTimeout(() => {
+		app.landingTimeout = setTimeout(() => {
 			app.showOnboarding()
 		}, 4000)
 	},
@@ -24,6 +25,8 @@ var app = {
 		document.querySelector('.arcs').classList.add('duo')
 	},
 	showOnboarding: function() {
+		if(app.landingTimeout) clearTimeout(app.landingTimeout)
+			
 		document.querySelector('#landing').classList.remove("active")
 		document.querySelector('#onboarding').classList.add("active")
 		app.playTrack(179)

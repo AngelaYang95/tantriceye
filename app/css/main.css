@@ -178,7 +178,6 @@ body .arcs {
   margin: 0 auto;
   max-width: 400px;
   width: 100%;
-  overflow: hidden;
   position: fixed;
   left: 0;
   right: 0;
@@ -291,6 +290,15 @@ button:hover {
   position: relative;
   top: -24px;
   fill: var(--grey-medium-color);
+  padding: 4px;
+  border-radius: 50%;
+  background: var(--grey-light-color);
+  transition: 0.2s background-color ease;
+}
+
+#app .mid-nav .back:hover {
+  background: var(--grey-dark-color);
+  fill: var(--grey-light-color);
 }
 
 body[category=""] #app .mid-nav .back,
@@ -300,15 +308,19 @@ body:not([category]) #app .mid-nav .back {
 
 #app .mid-nav .back {
   display: block;
-  animation: 0.5s BACK-BUTTON-ANIM 0.2s ease forwards;
+  opacity: 0;
+  animation: 0.2s BACK-BUTTON-ANIM 0.2s ease forwards;
+  transform: translateY(8px);
 }
 
 @keyframes BACK-BUTTON-ANIM {
   0% {
-    transform: translateX(0px)
+    transform: translateY(8px);
+    opacity: 0;
   }
   100% {
-    transform: translateX(-4px)
+    opacity: 4;
+    transform: translateY(0px);
   }
 }
 

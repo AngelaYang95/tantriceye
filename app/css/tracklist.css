@@ -4,11 +4,24 @@
   flex-direction: column;
   margin: -24px 0;
   height: 100%;
+  animation: 0.5s TRACKLIST-ANIM ease forwards;
+}
+
+@keyframes TRACKLIST-ANIM {
+  0% {
+    transform: translateX(12px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 #tracklist.hide {
-	visibility: hidden;
-	opacity: 0.05;
+/*	visibility: hidden;
+	opacity: 0.05;*/
+  display: none;
 }
 
 #tracklist .category {
@@ -44,7 +57,7 @@
 	display: flex;
   padding: 12px 24px;
   cursor: pointer;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 500;
   transition: 0.3s background-color;
 }
@@ -90,6 +103,7 @@
   display: none;
   margin: 0 auto;
   fill: var(--grey-dark-color);
+  opacity: 0.9;
 }
 
 /* Category Icon. */
