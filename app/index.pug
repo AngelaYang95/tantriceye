@@ -26,13 +26,15 @@ body
 	#barba-wrapper
 		.arcs
 		#content.barba-container
-			#landing.active
+			#landing(onclick="app.showOnboarding()").active
 				.center
 					+icon('tantric-eye').large
 					.shadow
 			#onboarding
 				include views/onboarding.pug
 			#app
+				.mid-nav
+					+icon('chevron-left')(onclick="app.goToHome()").xsmall.back
 				include views/nav.pug
 				include views/tracklist.pug
 	include views/media.pug

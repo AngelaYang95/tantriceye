@@ -93,8 +93,12 @@
 	font-weight: 400;
 	min-height: 32px;
 	line-height: 32px;
-  font-size: 32px;
+  font-size: 16px;
   margin: 24px 0;
+}
+
+#media.expand .title {
+  font-size: 32px;
 }
 
 #media .time {

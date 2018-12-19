@@ -92,7 +92,7 @@
 }
 
 #nav:not(.close) .category:hover svg.icon {
-	transform: translateY(-4px);
+	transform: scale(1.05);
 	border-radius: 5px;
   /*background: var(--grey-light-color);*/
   transition: 0.2s transform ease-in, 0.2s background;
@@ -110,7 +110,7 @@
  */
 
 /* Colour Scheme */
-.category[data-category="body"],
+/*.category[data-category="body"],
 .category[data-category="performance"],
 .category[data-category="sight"],
 .category[data-category="imagination"],
@@ -141,5 +141,30 @@ body:not([category]) .category[data-category="imagination"] {
 
 body[category="mind"] .category[data-category="mind"],
 body:not([category]) .category[data-category="mind"] {
+	fill: var(--yellow-color);
+}*/
+
+/* Test */
+.category[data-category="random"] {
+	fill: var(--grey-medium-color);
+}
+
+.category[data-category="body"] {
+	fill: var(--indigo-color);
+}
+
+.category[data-category="performance"] {
+	fill: var(--teal-color);
+}
+
+.category[data-category="sight"] {
+	fill: var(--blue-color);
+}
+
+.category[data-category="imagination"] {
+	fill: var(--orange-color);
+}
+
+.category[data-category="mind"] {
 	fill: var(--yellow-color);
 }

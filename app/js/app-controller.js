@@ -11,7 +11,6 @@ var app = {
 	mode: CONSTANTS.MODES.SOLO,
 	init: function() {
 		setTimeout(() => {
-			document.querySelector('#landing').classList.remove("active")
 			app.showOnboarding()
 		}, 4000)
 	},
@@ -25,6 +24,7 @@ var app = {
 		document.querySelector('.arcs').classList.add('duo')
 	},
 	showOnboarding: function() {
+		document.querySelector('#landing').classList.remove("active")
 		document.querySelector('#onboarding').classList.add("active")
 		app.playTrack(179)
 	},
@@ -54,13 +54,15 @@ var app = {
 		media.clear()
 	},
 	goToCategory: function(category) {
-		if(app.category == category) return
+		if(!category || app.category == category) return
 
 		app.category = category;
 		document.body.setAttribute("category", category);
 		tracklist.render(category)
 	},
 	goToHome: function() {
+		document.body.setAttribute("category", "");
+		app.category = ""
 		nav.open()
 	},
 	hideContent: function() {

@@ -200,6 +200,7 @@ body .arcs {
   margin: auto;
   top: 0;
   bottom: 0;
+  transition: 0.2s background ease;
 }
 
 body[data-duo-mode='1'] .arcs {
@@ -266,6 +267,7 @@ button:hover {
 #app {
   opacity: 0;
   transition: 0.5s opacity 1s ease;
+  height: 100%;
 }
 
 #app.active {  
@@ -275,3 +277,38 @@ button:hover {
 .hidden {
 	display: none;
 }
+
+#app .mid-nav {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  z-index: 10;
+}
+
+#app .mid-nav .back {
+  position: relative;
+  top: -24px;
+  fill: var(--grey-medium-color);
+}
+
+body[category=""] #app .mid-nav .back,
+body:not([category]) #app .mid-nav .back {
+  display: none;
+}
+
+#app .mid-nav .back {
+  display: block;
+  animation: 0.5s BACK-BUTTON-ANIM 0.2s ease forwards;
+}
+
+@keyframes BACK-BUTTON-ANIM {
+  0% {
+    transform: translateX(0px)
+  }
+  100% {
+    transform: translateX(-4px)
+  }
+}
+

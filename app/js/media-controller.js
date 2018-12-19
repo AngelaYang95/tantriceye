@@ -8,6 +8,7 @@ var media = {
 		media.dom = document.getElementById("media")
 		media.player = document.getElementById('media-player')
 		media.player.addEventListener('ended', media.handleTrackFinished);
+		media.dom.querySelector('.progress').addEventListener('mousedown', media.handleTrackMouseDown);
 	},
 	clear: function() {
 		media.dom.classList.remove("active", "ended", "play", "expand")
@@ -21,8 +22,9 @@ var media = {
 		let progressDom = media.dom.querySelector('.progress .bar')
 		media.timeInterval = setInterval(() => {
 			progressDom.style.width = `${media.player.currentTime / media.player.duration * 100}%`
-			let min = Math.floor(media.player.currentTime / 60).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})
+			let min = Math.floor(media.player.currentTime / 60)
 			let sec = Math.floor(media.player.currentTime - min).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})
+			min.toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})
 			timeDom.innerHTML = `${min}:${sec}`
 		}, 1000)
 	},
@@ -74,6 +76,13 @@ var media = {
 		media.dom.classList.remove("active", "play")
 		media.dom.classList.add("ended")
 		document.querySelector('.arcs').classList.add('animate')
+	},
+	handleTrackMouseDown(e) {
+		document.addEventListener('mouseup', media.handleTrackMouseDown);
+		console.log(e)
+	},
+	handleTrackMouseUp(e) {
+		document.removeEventListener('mouseup', media.handleTrackMouseUp)
 	},
 }
 
