@@ -192,7 +192,7 @@ body .arcs {
   -webkit-mask-position-y: 50%;
   -webkit-mask-position-y: 50%;
   background-color: var(--grey-light-color);
-  height: 90vh;
+  height: 90%;
   /*min-height: 500px;*/
   width: 100%;
   position: absolute;
@@ -283,7 +283,7 @@ button:hover {
   top: 50%;
   display: flex;
   justify-content: space-between;
-  z-index: 10;
+  z-index: 1;
 }
 
 #app .mid-nav .back {
