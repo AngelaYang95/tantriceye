@@ -181,7 +181,6 @@ body .arcs {
   width: 100%;
   left: 0;
   right: 0;
-  /*min-height: 100vh;*/
   transition: 1s background ease;
 }
 

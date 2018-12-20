@@ -26,7 +26,7 @@
 }
 
 #media.play.expand {
-	height: 100vh;
+	height: 100%;
 	flex-direction: column;
 	justify-content: center;
 }
@@ -99,6 +99,8 @@
   content: '';
   top: -12px;
 }
+
+#media .progress:hover .progress
 
 #media .title {
 	font-weight: 400;
