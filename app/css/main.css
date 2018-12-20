@@ -181,7 +181,7 @@ body .arcs {
   width: 100%;
   left: 0;
   right: 0;
-  min-height: 100vh;
+  /*min-height: 100vh;*/
   transition: 1s background ease;
 }
 
@@ -191,9 +191,10 @@ body .arcs {
   -webkit-mask-size: 400px 100%;
   -webkit-mask-position-x: 50%;
   -webkit-mask-position-y: 50%;
+  -webkit-mask-position-y: 50%;
   background-color: var(--grey-light-color);
   height: 90vh;
-  min-height: 500px;
+  /*min-height: 500px;*/
   width: 100%;
   position: absolute;
   margin: auto;
