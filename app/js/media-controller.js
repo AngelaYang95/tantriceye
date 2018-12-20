@@ -4,6 +4,7 @@ var media = {
 	playPromise: null,
 	isPlaying: false,
 	timeInterval: null,
+	progressBar: null,
 	init: function() {
 		media.dom = document.getElementById("media")
 		media.player = document.getElementById('media-player')
@@ -52,6 +53,9 @@ var media = {
 		  }
   	}
 	},
+	seekTo: function(seconds) {
+		media.player.currentTime = seconds
+	},
 	expandPlayer: function() {
     media.dom.classList.add("expand")
 	},
@@ -69,20 +73,42 @@ var media = {
 		media.dom.querySelector("source").src = trackObj.url
 		media.dom.querySelector("audio").src = trackObj.url
 	},
+
 	handleClose: function() {
 		app.clearTrack()
 	},
-	handleTrackFinished(e) {
+	handleTrackFinished: function(e) {
 		media.dom.classList.remove("active", "play")
 		media.dom.classList.add("ended")
 		document.querySelector('.arcs').classList.add('animate')
 	},
-	handleTrackMouseDown(e) {
-		document.addEventListener('mouseup', media.handleTrackMouseDown);
-		console.log(e)
+	handleTrackMouseDown: function(e) {
+		document.addEventListener('mousemove', media.handleTrackMouseMove);
+		document.addEventListener('mouseup', media.handleTrackMouseUp);
+		// media.dom.classList.add("active")
+		console.log('move DOWN')
+		media.progressBar = media.dom.querySelector('.progress').getBoundingClientRect()
+		media.progressBar.dom = media.dom.querySelector('.progress .bar')
+		media._updateProgressBar(e.clientX)
 	},
-	handleTrackMouseUp(e) {
+	handleTrackMouseMove: function(e) {
+		console.log('move movee')
+		console.log(e)
+		media._updateProgressBar(e.clientX)
+	},
+	handleTrackMouseUp: function(e) {
+		console.log('move up')
+		media._updateProgressBar(e.clientX)
+		// media.dom.classList.remove("active")
 		document.removeEventListener('mouseup', media.handleTrackMouseUp)
+		document.removeEventListener('mousemove', media.handleTrackMouseMove)
+	},
+	_updateProgressBar(mouseX) {
+		let distance = mouseX - media.progressBar.x
+		console.log(distance + ' curr gime')
+		let percent = distance / media.progressBar.width
+		media.progressBar.dom.style.width = `${Math.floor(percent * 100)}%`
+		media.player.currentTime = Math.floor(media.player.duration * percent)
 	},
 }
 

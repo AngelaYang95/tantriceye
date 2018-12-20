@@ -32,8 +32,8 @@ body {
   margin: 0;
   display: flex;
   height: 100vh;
-  flex-direction: column;
   overflow: hidden;
+  flex-direction: column;
   -webkit-overflow-scrolling: touch;
 }
 
@@ -179,7 +179,6 @@ body .arcs {
   margin: 0 auto;
   max-width: 400px;
   width: 100%;
-  position: fixed;
   left: 0;
   right: 0;
   min-height: 100vh;
@@ -200,6 +199,7 @@ body .arcs {
   margin: auto;
   top: 0;
   bottom: 0;
+  left: 0;
   transition: 0.2s background ease;
 }
 
@@ -297,9 +297,11 @@ button:hover {
   box-shadow: 2px 2px 2px 0 var(--grey-medium-color);
 }
 
-#app .mid-nav .back:hover {
+#app .mid-nav .back:hover,
+#app .mid-nav .back:active {
   background: var(--grey-dark-color);
   fill: var(--grey-light-color);
+  transform: scale(1.1);
 }
 
 body[category=""] #app .mid-nav .back,

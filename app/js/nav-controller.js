@@ -9,6 +9,8 @@ var nav = {
 	handleClick: function(category, catDom) {
 		if(nav.dom.classList.contains("close")) {
 			nav.open()
+		} else if(category == "random") {
+			app.playRandom()
 		} else {
 			app.goToCategory(category)
 			nav.selectCategory(category, catDom)

@@ -26,14 +26,20 @@ var app = {
 	},
 	showOnboarding: function() {
 		if(app.landingTimeout) clearTimeout(app.landingTimeout)
-			
+
 		document.querySelector('#landing').classList.remove("active")
-		document.querySelector('#onboarding').classList.add("active")
-		app.playTrack(179)
+		onboarding.start()
 	},
 	showApp: function() {
 		document.querySelector('#onboarding').classList.remove("active")
 		document.querySelector('#app').classList.add("active")
+	},
+	playRandom: function() {
+		let tracks = data.tracks.filter((track)=> {
+			return track.url
+		})
+		let id = tracks[Math.floor(Math.random() * tracks.length)].id
+		app.playTrack(id)
 	},
 	playTrack: function(id, expandPlayer) {
 		if(app.track != id) {
