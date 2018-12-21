@@ -1,6 +1,6 @@
 :root {
   --bg-color: #F6F5F2;
-  --blue-color: #5A78FD;
+  --blue-color: #4e7db7;
   --orange-color: #DF6008;
   --indigo-color: #7C87B6;
   --grey-dark-color: #4A4A4A;
@@ -8,11 +8,6 @@
   --grey-light-color: #F0F0F0;
   --teal-color: #517E7B;
   --yellow-color: #DF8F07;
-  --blue-light-color: #93B0FF;
-  --orange-light-color: #FFA466;
-  --yellow-light-color: #FDCF81;
-  --indigo-light-color: #BFC6E7;
-  --teal-light-color: #92B7B4;
   --bg-dark-color: #ecebe7;
 }
 
@@ -32,6 +27,7 @@ html {
 body {
   margin: 0;
   display: flex;
+  width: 100%;
   height: 100%;
   overflow: hidden;
   flex-direction: column;
