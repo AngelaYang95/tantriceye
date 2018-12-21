@@ -206,24 +206,6 @@ body[data-duo-mode='1'] .arcs {
   -webkit-mask-image: url(../images/duo_arcs.svg);
 }
 
-.arcs::after {
-  height: 100%;
-  width: 1000%;
-  width: 50px;
-  content: ''; 
-  opacity: 0.4;
-  display: block;
-  z-index: 1;
-  position: relative;
-  left: 100%;
-  background: linear-gradient(90deg, white, #f6f5f200);
-}
-
-.arcs.animate::after {
-  left: 0;
-  transition: 5s left;
-}
-
 button {
 	outline: none;
   padding: 12px;

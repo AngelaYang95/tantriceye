@@ -63,7 +63,8 @@
 }
 
 .track:hover, .track.active {
-	background-color: var(--grey-light-color);
+	background-color: var(--bg-dark-color);
+  font-weight: 600;
 }
 
 .track .text {
@@ -128,7 +129,7 @@ body[category="performance"] #tracklist .category-icon .icon.performance {
 }
 
 /* Active track highlight. */
-body[category="sight"] .track.active {
+/*body[category="sight"] .track.active {
   color: var(--blue-color);
 }
 
@@ -146,4 +147,4 @@ body[category="mind"] .track.active {
 
 body[category="performance"] .track.active {
   color: var(--green-color);
-}
+}*/

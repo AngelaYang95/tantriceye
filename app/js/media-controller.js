@@ -35,11 +35,10 @@ var media = {
 		clearInterval(media.timeInterval)
 	},
 	togglePlay: function() {
-  	media.dom.classList.toggle("active")
-
   	if(media.player.currentTime > 0 && 
   		!media.player.paused && 
   		!media.player.ended) {
+  		media.dom.classList.remove("active")
   		media.player.pause()
   		media.stopTime()
   	} else {
@@ -47,6 +46,7 @@ var media = {
 		  if (media.playPromise !== undefined) {
 		    media.playPromise.then(_ => {
   				media.startTime()
+  				media.dom.classList.add("active")
 		      media.dom.classList.add("play")
 		    })
 		    .catch(error => {
