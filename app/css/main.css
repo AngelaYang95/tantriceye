@@ -295,13 +295,12 @@ button:hover {
   fill: var(--grey-medium-color);
   padding: 6px;
   border-radius: 50%;
-  background: var(--bg-dark-color);
   transition: 0.2s background-color ease;
+  background: var(--bg-dark-color);
   box-shadow: 0px 2px 8px 0 var(--grey-medium-color);
 }
 
-#app .mid-nav .back:hover,
-#app .mid-nav .back:active {
+#app .mid-nav .back {
   background: var(--grey-dark-color);
   fill: var(--grey-light-color);
   transform: scale(1.1);
