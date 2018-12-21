@@ -13,6 +13,7 @@
   --yellow-light-color: #FDCF81;
   --indigo-light-color: #BFC6E7;
   --teal-light-color: #92B7B4;
+  --bg-dark-color: #ecebe7;
 }
 
 html {
@@ -38,7 +39,7 @@ body {
 }
 
 h1 {
-	font-family: 'Varela Round', sans-serif;
+	font-family: 'Nunito', sans-serif;
 	font-size: 16px;
 	font-weight: 700;
 	text-transform: uppercase;
@@ -46,7 +47,7 @@ h1 {
 }
 
 h2 {
-	font-family: 'Varela Round', sans-serif;
+	font-family: 'Nunito', sans-serif;
 	font-weight: 700;
 	text-transform: uppercase;
 }
@@ -294,9 +295,9 @@ button:hover {
   fill: var(--grey-medium-color);
   padding: 6px;
   border-radius: 50%;
-  background: var(--grey-light-color);
+  background: var(--bg-dark-color);
   transition: 0.2s background-color ease;
-  box-shadow: 2px 2px 2px 0 var(--grey-medium-color);
+  box-shadow: 0px 2px 8px 0 var(--grey-medium-color);
 }
 
 #app .mid-nav .back:hover,
