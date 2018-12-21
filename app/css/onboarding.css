@@ -17,3 +17,7 @@ body[data-duo-mode="1"] #onboarding button.duo {
 	height: 30%;
 	width: 40%;
 }
+
+#onboarding button {
+	font-size: 14px
+}

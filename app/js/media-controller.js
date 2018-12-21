@@ -17,6 +17,8 @@ var media = {
 		media.player.pause()
 		media.player.currentTime = 0
 		media.dom.querySelector("source").src = ""
+		media.progressBar.dom.style.width = "0"
+		clearInterval(media.timeInterval)
 	},
 	startTime: function() {
 		let timeDom = media.dom.querySelector(".currentTime")
@@ -73,7 +75,6 @@ var media = {
 		media.dom.querySelector("source").src = trackObj.url
 		media.dom.querySelector("audio").src = trackObj.url
 	},
-
 	handleClose: function() {
 		app.clearTrack()
 	},
@@ -105,7 +106,6 @@ var media = {
 	},
 	_updateProgressBar(mouseX) {
 		let distance = mouseX - media.progressBar.x
-		console.log(distance + ' curr gime')
 		let percent = distance / media.progressBar.width
 		media.progressBar.dom.style.width = `${Math.floor(percent * 100)}%`
 		media.player.currentTime = Math.floor(media.player.duration * percent)

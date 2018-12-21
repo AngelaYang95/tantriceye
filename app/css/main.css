@@ -187,12 +187,12 @@ body .arcs {
 .arcs {
   -webkit-mask-image: url(../images/arcs.svg);
   -webkit-mask-repeat: no-repeat;
-  -webkit-mask-size: 400px 100%;
+  -webkit-mask-size: 100% 100%;
   -webkit-mask-position-x: 50%;
   -webkit-mask-position-y: 50%;
   -webkit-mask-position-y: 50%;
   background-color: var(--grey-light-color);
-  height: 90%;
+  height: 95%;
   /*min-height: 500px;*/
   width: 100%;
   position: absolute;
@@ -200,6 +200,8 @@ body .arcs {
   top: 0;
   bottom: 0;
   left: 0;
+  right: 0;
+  max-width: 400px;
   transition: 0.2s background ease;
 }
 
@@ -228,7 +230,7 @@ body[data-duo-mode='1'] .arcs {
 button {
 	outline: none;
   padding: 12px;
-  font-size: 14px;
+  font-size: 0;
   border-radius: 50px;
   border: 1px solid var(--grey-medium-color);
   margin: 0 8px;
