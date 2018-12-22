@@ -110,10 +110,9 @@
 }
 
 #media .title {
-	font-weight: 400;
-	min-height: 32px;
-  font-size: 16px;
   margin: 24px 0;
+	font-weight: 400;
+  font-size: 16px;
   max-width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;

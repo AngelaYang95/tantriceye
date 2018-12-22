@@ -1,181 +1,183 @@
 id,title,category,description,url,length,type
-0,Zoom In,Body,savouring a slow approach,ZoomIn_Solo,73,0
-1,Zoom In,Body,savouring a slow approach,PartnerZoomin,75,1
-2,Breathing in Light ,Body,connecting breath and vision,BreathinginLight_Solo,99,0
-3,Breathing in Light ,Body,connecting breath and vision,PartnerBreathinginLight,,1
-4,Aerobic Gaze,Body,"pounding heart, rapid breath",AerobicGazeSolo,110,0
-5,Aerobic Gaze,Body,"pounding heart, rapid breath",PartnerAerobicGaze,111,1
-6,Gaze Filter,Mind,learning to love,GazeFilterSolo,,0
-7,Gaze Filter,Mind,learning to love,PartnerGazeFilter,67,1
-8,Target,Mind,observing being observed,Target_Solo,31,0
-9,Target,Mind,observing being observed,PartnerTarget,26,1
-10,Mirror Mind,Mind,art and the inner world ,MirrorMind_Solo,55,0
-11,Mirror Mind,Mind,art and the inner world ,PartnerMirrorMind,56,1
-12,What Lies Beyond,Sight,imaginary horizons,WhatLiesBeyond_Solo,83,0
-13,What Lies Beyond,Sight,imaginary horizons,PartnerWhatLiesBeyond,89,1
-14,What Lies In Front,Sight,focusing in front of the work,,,0
-15,What Lies In Front,Sight,focusing in front of the work,,,1
-16,Cave Vision,Sight,between fingers and palms,CaveVisionSolo,50,0
-17,Cave Vision,Sight,between fingers and palms,PartnerCaveVision,51,1
-18,Flicker Vision,Sight,rapid blinking,FlickerVisionSolo,19,0
-19,Flicker Vision,Sight,rapid blinking,PartnerFlickerVision,19,1
-20,Sounds of Silence,Imagination,sounds and silences,SoundsofSilenceSolo,30,0
-21,Sounds of Silence,Imagination,sounds and silences,PartnerSoundsofSilence,34,1
-22,Confession,Mind, answering to art,,,0
-23,Confession,Mind, answering to art,,,1
-24,Wisdom of Art,Mind,let art resolve life's difficult questions,,,0
-25,Wisdom of Art,Mind,let art resolve life's difficult questions,,,1
-26,Reframe,Imagination,finding art everywhere,ReframingSolo,55,0
-27,Reframe,Imagination,finding art everywhere,PartnerReframing,,1
-28,Signs,Performance,conceptual art practice,,,0
-29,Signs,Performance,conceptual art practice,,,1
-30,Born Anew,Imagination,fresh-eyed gazing,BornAnewSolo,20,0
-31,Born Anew,Imagination,fresh-eyed gazing,PartnerBornAnew,24,1
-32,Be Art,Performance,becoming an artwork,BecomingArtSolo,34,0
-33,Be Art,Performance,becoming an artwork,PartnerBecomingArt,56,1
-34,Click Click,Performance,being a human camera,ClickClickSolo,45,0
-35,Click Click,Performance,being a human camera,PartnerClickClick,81,1
-36,Air Art,Performance,making art from thin air,AirArtSolo,41,0
-37,Air Art,Performance,making art from thin air,PartnerAirArt,52,1
-38,Art Stretch,Body,a vertical gaze arc through 180°,,,0
-39,Art Stretch,Body,a vertical gaze arc through 180°,,,1
-40,Tidal Lock,Body,a horizontal gaze arc through 180°,,,0
-41,Tidal Lock,Body,a horizontal gaze arc through 180°,,,1
-42,Slow Spin,Body,turning through 360°,,,0
-43,Slow Spin,Body,turning through 360°,,,1
-44,No Straight Lines,Body,curving and zigzagging routes,,,0
-45,No Straight Lines,Body,curving and zigzagging routes,,,1
-46,Just Sitting,Body,art from a seated position,,,0
-47,Just Sitting,Body,art from a seated position,,,1
-48,Memento Mori,Mind,contemplating death,,,0
-49,Memento Mori,Mind,contemplating death,,,0
-50,Hyperventilate,Body,"rapid, deep breathing",,,0
-51,Hyperventilate,Body,"rapid, deep breathing",,,0
-52,Breath-Held Views,Body,one-breath vision,,,0
-53,Breath-Held Views,Body,one-breath vision,,,0
-54,Breathing Art,Body,linking breath and vision,,,0
-55,Breathing Art,Body,linking breath and vision,,,0
-56,Slow Dating,Mind,spending time with art,,,0
-57,Slow Dating,Mind,spending time with art,,,0
-58,Tension,Body,finding lines of tension ,,,0
-59,Tension,Body,finding lines of tension ,,,0
-60,Backbreath,Body,breathing into the back,,,0
-61,Backbreath,Body,breathing into the back,,,0
-62,Art in Me,Mind,uniting divided subjects and objects ,,,0
-63,Art in Me,Mind,uniting divided subjects and objects ,,,0
-64,Pure Perception,Mind,"making no judgments, thinking no thoughts",,,0
-65,Pure Perception,Mind,"making no judgments, thinking no thoughts",,,0
-66,Shhhhh!!,Mind,sinking into silence,,,0
-67,Shhhhh!!,Mind,sinking into silence,,,0
-68,Heraclitean Motion,Mind,gazing at gentle motion,,,0
-69,Heraclitean Motion,Mind,gazing at gentle motion,,,0
-70,The Sweet Spot,Mind,"finding perfection, however small",,,0
-71,The Sweet Spot,Mind,"finding perfection, however small",,,0
-72,Self-Awareness,Mind,reflecting on reflection,,,0
-73,Self-Awareness,Mind,reflecting on reflection,,,0
-74,This is Me,Mind,finding the artwork most like you,,,0
-75,This is Me,Mind,finding the artwork most like you,,,0
-76,My Story,Mind,inventing stories about yourself,,,0
-77,My Story,Mind,inventing stories about yourself,,,0
-78,Their Story,Mind,inventing stories about art,,,0
-79,Their Story,Mind,inventing stories about art,,,0
-80,Pain,Mind,relieving pain,,,0
-81,Pain,Mind,relieving pain,,,0
-82,Beholding,Sight,"slow, quiet gazing",,,0
-83,Beholding,Sight,"slow, quiet gazing",,,0
-84,Fixed Head,Sight,"moving eyes, fixed head",,,0
-85,Fixed Head,Sight,"moving eyes, fixed head",,,0
-86,Fixed Eyes,Sight ,"fixed eyes, moving head",,,0
-87,Fixed Eyes,Sight ,"fixed eyes, moving head",,,0
-88,Fixed Attention,Sight,"fixed attention, moving head",,,0
-89,Fixed Attention,Sight,"fixed attention, moving head",,,0
-90,Staring,Sight,fixating on a single spot,,,0
-91,Staring,Sight,fixating on a single spot,,,0
-92,Shake it Up,Sight,shaking the head,,,0
-93,Shake it Up,Sight,shaking the head,,,0
-94,The Road Less Travelled ,Sight,discovering neglected parts,,,0
-95,The Road Less Travelled ,Sight,discovering neglected parts,,,0
-96,Eye Contact,Sight,making eye contact with a portrait,,,0
-97,Eye Contact,Sight,making eye contact with a portrait,,,0
-98,Receiving the Gaze ,Mind,allowing objects to return your gaze,,,0
-99,Receiving the Gaze ,Mind,allowing objects to return your gaze,,,0
-100,Thesaurus Art,Sight,using a dictionary to expand your visual repertoire,,,0
-101,Thesaurus Art,Sight,using a dictionary to expand your visual repertoire,,,0
-102,Phosphene Expressionism,Sight,seeing the light from the inside of your eyes,,,0
-103,Phosphene Expressionism,Sight,seeing the light from the inside of your eyes,,,0
-104,After-Image,Sight,experiencing after-images of art,,,0
-105,After-Image,Sight,experiencing after-images of art,,,0
-106,Binoculars,Sight,seeing art through binoculars,,,0
-107,Binoculars,Sight,seeing art through binoculars,,,0
-108,High Speed/Low Speed Art,Sight,fast looking then slow looking,,,0
-109,High Speed/Low Speed Art,Sight,fast looking then slow looking,,,0
-110,Cyclops,Sight,looking with one eye,,,0
-111,Cyclops,Sight,looking with one eye,,,0
-112,Blind Spot,Sight,finding your blind spot,,,0
-113,Blind Spot,Sight,finding your blind spot,,,0
-114,Dark Art,Sight,experiencing art with eyes closed,,,0
-115,Dark Art,Sight,experiencing art with eyes closed,,,0
-116,Topsy Turvy Art,Sight,looking at art upside down (sideways),,,0
-117,Topsy Turvy Art,Sight,looking at art upside down (sideways),,,0
-118,Landscape Art,Sight,exploring landscape art,,,0
-119,Landscape Art,Sight,exploring landscape art,,,0
-120,Squint,Sight,blurry-visioned art,,,0
-121,Squint,Sight,blurry-visioned art,,,0
-122,"Top-Down, Bottom-Up",Sight,reflecting on purpose and stimulus,,,0
-123,"Top-Down, Bottom-Up",Sight,reflecting on purpose and stimulus,,,0
-124,Parallax Pointing,Sight,shifting between left and right eyes,,,0
-125,Parallax Pointing,Sight,shifting between left and right eyes,,,0
-126,Remote Sensing,Imagination,seeing through the eyes of another,,,0
-127,Remote Sensing,Imagination,seeing through the eyes of another,,,0
-128,Mind's Eye Art,Imagination,imagining without seeing,,,0
-129,Mind's Eye Art,Imagination,imagining without seeing,,,0
-130,Art Life,Imagination,artworks living life,,,0
-131,Art Life,Imagination,artworks living life,,,0
-132,Thousand Eyes,Imagination,seeing the world with a myriad eyes,,,0
-133,Thousand Eyes,Imagination,seeing the world with a myriad eyes,,,0
-134,Honey Art,Imagination,moving through a honey-filled gallery,,,0
-135,Honey Art,Imagination,moving through a honey-filled gallery,,,0
-136,Power of Flight,Imagination,gaining the power of flight,,,0
-137,Power of Flight,Imagination,gaining the power of flight,,,0
-138,Alternative Title,Imagination,developing an alternative title and interpretation,,,0
-139,Alternative Title,Imagination,developing an alternative title and interpretation,,,0
-140,The Event Horizon,Imagination,discovering unseen dimensions,,,0
-141,The Event Horizon,Imagination,discovering unseen dimensions,,,0
-142,Watchful Eye,Sight,seeing the museum as a guard,,,0
-143,Watchful Eye,Sight,seeing the museum as a guard,,,0
-144,Last Chance,Mind,seeing art for the very last time,,,0
-145,Last Chance,Mind,seeing art for the very last time,,,0
-146,Miracle,Imagination,waiting for a miracle to arrive,,,0
-147,Miracle,Imagination,waiting for a miracle to arrive,,,0
-148,Eye Sport,Imagination,watching sport,,,0
-149,Eye Sport,Imagination,watching sport,,,0
-150,Autogenic Art,Imagination,capturing fantasies,,,0
-151,Autogenic Art,Imagination,capturing fantasies,,,0
-152,Lux and Lumen,Imagination,distinguishing between the sacred and profane,,,0
-153,Lux and Lumen,Imagination,distinguishing between the sacred and profane,,,0
-154,Dance Partner,Performance,dancing with art,,,0
-155,Dance Partner,Performance,dancing with art,,,0
-156,Drawing on the Body,Performance,making body art,,,0
-157,Drawing on the Body,Performance,making body art,,,0
-158,Naming Parts,Performance,conceptual art practice,,,0
-159,Naming Parts,Performance,conceptual art practice,,,0
-160,Estimating Size,Performance,conceptual art practice,,,0
-161,Estimating Size,Performance,conceptual art practice,,,0
-162,Mark Making,Performance,process-oriented art,,,0
-163,Mark Making,Performance,process-oriented art,,,0
-164,I-Spy,Performance,conceptual art practice,,,0
-165,I-Spy,Performance,conceptual art practice,,,0
-166,Eye Drawing,Imagination,imaginary mark making,,,0
-167,Eye Drawing,Imagination,imaginary mark making,,,0
-168,Nose Drawing,Performance,conceptual art practice,,,0
-169,Nose Drawing,Performance,conceptual art practice,,,0
-170,Song Art,Performance,singing in response to art,,,0
-171,Song Art,Performance,singing in response to art,,,0
-172,Clap Art,Performance,clapping in response to art,,,0
-173,Clap Art,Performance,clapping in response to art,,,0
-174,Wrapped in Art,Performance,becoming Rene Magritte,,,0
-175,Wrapped in Art,Performance,becoming Rene Magritte,,,0
-176,Memory Art,Mind,recalling what you've seen,,,0
-177,Memory Art,Mind,recalling what you've seen,,,0
-178,Leaving the Art Museum,,final practice,,,0
+0,Zoom In,Body,Savouring a slow approach,ZoomIn_Solo,73,0
+1,Zoom In,Body,Savouring a slow approach,PartnerZoomin,75,1
+2,Breathing in Light ,Body,Connecting breath and vision,BreathinginLight_Solo,99,0
+3,Breathing in Light ,Body,Connecting breath and vision,PartnerBreathinginLight,,1
+4,Aerobic Gaze,Body,"Pounding heart, rapid breath",AerobicGazeSolo,110,0
+5,Aerobic Gaze,Body,"Pounding heart, rapid breath",PartnerAerobicGaze,111,1
+6,Gaze Filter,Mind,Learning to love,GazeFilterSolo,,0
+7,Gaze Filter,Mind,Learning to love,PartnerGazeFilter,67,1
+8,Target,Mind,Observing being observed,Target_Solo,31,0
+9,Target,Mind,Observing being observed,PartnerTarget,26,1
+10,Mirror Mind,Mind,Art and the inner world ,MirrorMind_Solo,55,0
+11,Mirror Mind,Mind,Art and the inner world ,PartnerMirrorMind,56,1
+12,What Lies Beyond,Sight,Imaginary horizons,WhatLiesBeyond_Solo,83,0
+13,What Lies Beyond,Sight,Imaginary horizons,PartnerWhatLiesBeyond,89,1
+14,What Lies In Front,Sight,Focusing in front of the work,,,0
+15,What Lies In Front,Sight,Focusing in front of the work,,,1
+16,Cave Vision,Sight,Between fingers and palms,CaveVisionSolo,50,0
+17,Cave Vision,Sight,Between fingers and palms,PartnerCaveVision,51,1
+18,Flicker Vision,Sight,Rapid blinking,FlickerVisionSolo,19,0
+19,Flicker Vision,Sight,Rapid blinking,PartnerFlickerVision,19,1
+20,Sounds of Silence,Imagination,Sounds and silences,SoundsofSilenceSolo,30,0
+21,Sounds of Silence,Imagination,Sounds and silences,PartnerSoundsofSilence,34,1
+22,Confession,Mind,Answering to art,,,0
+23,Confession,Mind,Answering to art,,,1
+24,Wisdom of Art,Mind,Let art resolve life's difficult questions,,,0
+25,Wisdom of Art,Mind,Let art resolve life's difficult questions,,,1
+26,Reframe,Imagination,Finding art everywhere,ReframingSolo,55,0
+27,Reframe,Imagination,Finding art everywhere,PartnerReframing,,1
+28,Signs,Performance,Conceptual art practice,,,0
+29,Signs,Performance,Conceptual art practice,,,1
+30,Born Anew,Imagination,Fresh-eyed gazing,BornAnewSolo,20,0
+31,Born Anew,Imagination,Fresh-eyed gazing,PartnerBornAnew,24,1
+32,Be Art,Performance,Becoming an artwork,BecomingArtSolo,34,0
+33,Be Art,Performance,Becoming an artwork,PartnerBecomingArt,56,1
+34,Click Click,Performance,Being a human camera,ClickClickSolo,45,0
+35,Click Click,Performance,Being a human camera,PartnerClickClick,81,1
+36,Air Art,Performance,Making art from thin air,AirArtSolo,41,0
+37,Air Art,Performance,Making art from thin air,PartnerAirArt,52,1
+38,Art Stretch,Body,A vertical gaze arc through 180°,,,0
+39,Art Stretch,Body,A vertical gaze arc through 180°,,,1
+40,Tidal Lock,Body,A horizontal gaze arc through 180°,,,0
+41,Tidal Lock,Body,A horizontal gaze arc through 180°,,,1
+42,Slow Spin,Body,Turning through 360°,,,0
+43,Slow Spin,Body,Turning through 360°,,,1
+44,No Straight Lines,Body,Curving and zigzagging routes,,,0
+45,No Straight Lines,Body,Curving and zigzagging routes,,,1
+46,Just Sitting,Body,Art from a seated position,,,0
+47,Just Sitting,Body,Art from a seated position,,,1
+48,Memento Mori,Mind,Contemplating death,,,0
+49,Memento Mori,Mind,Contemplating death,,,1
+50,Hyperventilate,Body,"Rapid, deep breathing",,,0
+51,Hyperventilate,Body,"Rapid, deep breathing",,,1
+52,Breath-Held Views,Body,One-breath vision,,,0
+53,Breath-Held Views,Body,One-breath vision,,,1
+54,Breathing Art,Body,Linking breath and vision,,,0
+55,Breathing Art,Body,Linking breath and vision,,,1
+56,Slow Dating,Mind,Spending time with art,,,0
+57,Slow Dating,Mind,Spending time with art,,,1
+58,Tension,Body,Finding lines of tension ,,,0
+59,Tension,Body,Finding lines of tension ,,,1
+60,Backbreath,Body,Breathing into the back,,,0
+61,Backbreath,Body,Breathing into the back,,,1
+62,Art in Me,Mind,Uniting divided subjects and objects ,,,0
+63,Art in Me,Mind,Uniting divided subjects and objects ,,,1
+64,Pure Perception,Mind,"Making no judgments, thinking no thoughts",,,0
+65,Pure Perception,Mind,"Making no judgments, thinking no thoughts",,,1
+66,Shhhhh!!,Mind,Sinking into silence,,,0
+67,Shhhhh!!,Mind,Sinking into silence,,,1
+68,Heraclitean Motion,Mind,Gazing at gentle motion,,,0
+69,Heraclitean Motion,Mind,Gazing at gentle motion,,,1
+70,The Sweet Spot,Mind,"Finding perfection, however small",,,0
+71,The Sweet Spot,Mind,"Finding perfection, however small",,,1
+72,Self-Awareness,Mind,Reflecting on reflection,,,0
+73,Self-Awareness,Mind,Reflecting on reflection,,,1
+74,This is Me,Mind,Finding the artwork most like you,,,0
+75,This is Me,Mind,Finding the artwork most like you,,,1
+76,My Story,Mind,Inventing stories about yourself,,,0
+77,My Story,Mind,Inventing stories about yourself,,,1
+78,Their Story,Mind,Inventing stories about art,,,0
+79,Their Story,Mind,Inventing stories about art,,,1
+80,Pain,Mind,Relieving pain,,,0
+81,Pain,Mind,Relieving pain,,,1
+82,Beholding,Sight,"Slow, quiet gazing",,,0
+83,Beholding,Sight,"Slow, quiet gazing",,,1
+84,Fixed Head,Sight,"Moving eyes, fixed head",,,0
+85,Fixed Head,Sight,"Moving eyes, fixed head",,,1
+86,Fixed Eyes,Sight ,"Fixed eyes, moving head",,,0
+87,Fixed Eyes,Sight ,"Fixed eyes, moving head",,,1
+88,Fixed Attention,Sight,"Fixed attention, moving head",,,0
+89,Fixed Attention,Sight,"Fixed attention, moving head",,,1
+90,Staring,Sight,Fixating on a single spot,,,0
+91,Staring,Sight,Fixating on a single spot,,,1
+92,Shake it Up,Sight,Shaking the head,,,0
+93,Shake it Up,Sight,Shaking the head,,,1
+94,The Road Less Travelled ,Sight,Discovering neglected parts,,,0
+95,The Road Less Travelled ,Sight,Discovering neglected parts,,,1
+96,Eye Contact,Sight,Making eye contact with a portrait,,,0
+97,Eye Contact,Sight,Making eye contact with a portrait,,,1
+98,Receiving the Gaze ,Mind,Allowing objects to return your gaze,,,0
+99,Receiving the Gaze ,Mind,Allowing objects to return your gaze,,,1
+100,Thesaurus Art,Sight,Using a dictionary to expand your visual repertoire,,,0
+101,Thesaurus Art,Sight,Using a dictionary to expand your visual repertoire,,,1
+102,Phosphene Expressionism,Sight,Seeing the light from the inside of your eyes,,,0
+103,Phosphene Expressionism,Sight,Seeing the light from the inside of your eyes,,,1
+104,After-Image,Sight,Experiencing after-images of art,,,0
+105,After-Image,Sight,Experiencing after-images of art,,,1
+106,Binoculars,Sight,Seeing art through binoculars,,,0
+107,Binoculars,Sight,Seeing art through binoculars,,,1
+108,High Speed/Low Speed Art,Sight,Fast looking then slow looking,,,0
+109,High Speed/Low Speed Art,Sight,Fast looking then slow looking,,,1
+110,Cyclops,Sight,Looking with one eye,,,0
+111,Cyclops,Sight,Looking with one eye,,,1
+112,Blind Spot,Sight,Finding your blind spot,,,0
+113,Blind Spot,Sight,Finding your blind spot,,,1
+114,Dark Art,Sight,Experiencing art with eyes closed,,,0
+115,Dark Art,Sight,Experiencing art with eyes closed,,,1
+116,Topsy Turvy Art,Sight,Looking at art upside down (sideways),,,0
+117,Topsy Turvy Art,Sight,Looking at art upside down (sideways),,,1
+118,Landscape Art,Sight,Exploring landscape art,,,0
+119,Landscape Art,Sight,Exploring landscape art,,,1
+120,Squint,Sight,Blurry-visioned art,,,0
+121,Squint,Sight,Blurry-visioned art,,,1
+122,"Top-Down, Bottom-Up",Sight,Reflecting on purpose and stimulus,,,0
+123,"Top-Down, Bottom-Up",Sight,Reflecting on purpose and stimulus,,,1
+124,Parallax Pointing,Sight,Shifting between left and right eyes,,,0
+125,Parallax Pointing,Sight,Shifting between left and right eyes,,,1
+126,Remote Sensing,Imagination,Seeing through the eyes of another,,,0
+127,Remote Sensing,Imagination,Seeing through the eyes of another,,,1
+128,Mind's Eye Art,Imagination,Imagining without seeing,,,0
+129,Mind's Eye Art,Imagination,Imagining without seeing,,,1
+130,Art Life,Imagination,Artworks living life,,,0
+131,Art Life,Imagination,Artworks living life,,,1
+132,Thousand Eyes,Imagination,Seeing the world with a myriad eyes,,,0
+133,Thousand Eyes,Imagination,Seeing the world with a myriad eyes,,,1
+134,Honey Art,Imagination,Moving through a honey-filled gallery,,,0
+135,Honey Art,Imagination,Moving through a honey-filled gallery,,,1
+136,Power of Flight,Imagination,Gaining the power of flight,,,0
+137,Power of Flight,Imagination,Gaining the power of flight,,,1
+138,Alternative Title,Imagination,Developing an alternative title and interpretation,,,0
+139,Alternative Title,Imagination,Developing an alternative title and interpretation,,,1
+140,The Event Horizon,Imagination,Discovering unseen dimensions,,,0
+141,The Event Horizon,Imagination,Discovering unseen dimensions,,,1
+142,Watchful Eye,Sight,Seeing the museum as a guard,,,0
+143,Watchful Eye,Sight,Seeing the museum as a guard,,,1
+144,Last Chance,Mind,Seeing art for the very last time,,,0
+145,Last Chance,Mind,Seeing art for the very last time,,,1
+146,Miracle,Imagination,Waiting for a miracle to arrive,,,0
+147,Miracle,Imagination,Waiting for a miracle to arrive,,,1
+148,Eye Sport,Imagination,Watching sport,,,0
+149,Eye Sport,Imagination,Watching sport,,,1
+150,Autogenic Art,Imagination,Capturing fantasies,,,0
+151,Autogenic Art,Imagination,Capturing fantasies,,,1
+152,Lux and Lumen,Imagination,Distinguishing between the sacred and profane,,,0
+153,Lux and Lumen,Imagination,Distinguishing between the sacred and profane,,,1
+154,Dance Partner,Performance,Dancing with art,,,0
+155,Dance Partner,Performance,Dancing with art,,,1
+156,Drawing on the Body,Performance,Making body art,,,0
+157,Drawing on the Body,Performance,Making body art,,,1
+158,Naming Parts,Performance,Conceptual art practice,,,0
+159,Naming Parts,Performance,Conceptual art practice,,,1
+160,Estimating Size,Performance,Conceptual art practice,,,0
+161,Estimating Size,Performance,Conceptual art practice,,,1
+162,Mark Making,Performance,Process-oriented art,,,0
+163,Mark Making,Performance,Process-oriented art,,,1
+164,I-Spy,Performance,Conceptual art practice,,,0
+165,I-Spy,Performance,Conceptual art practice,,,1
+166,Eye Drawing,Imagination,Imaginary mark making,,,0
+167,Eye Drawing,Imagination,Imaginary mark making,,,1
+168,Nose Drawing,Performance,Conceptual art practice,,,0
+169,Nose Drawing,Performance,Conceptual art practice,,,1
+170,Song Art,Performance,Singing in response to art,,,0
+171,Song Art,Performance,Singing in response to art,,,1
+172,Clap Art,Performance,Clapping in response to art,,,0
+173,Clap Art,Performance,Clapping in response to art,,,1
+174,Wrapped in Art,Performance,Becoming Rene Magritte,,,0
+175,Wrapped in Art,Performance,Becoming Rene Magritte,,,1
+176,Memory Art,Mind,Recalling what you've seen,,,0
+177,Memory Art,Mind,Recalling what you've seen,,,1
+178,Leaving the Art Museum,,Final practice,,,0
 179,Introduction,,Welcome,Welcome,118,2
+180,Arrival,,Warm up,ArrivingSolo,134,0
+181,Arrival,,Warm up,PartnerArriving,134,1

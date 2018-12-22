@@ -17,6 +17,7 @@ mixin icon(iconId, tooltip)
 		link(href="./css/tracklist.css" rel="stylesheet")
 		link(href="./css/media.css" rel="stylesheet")
 		link(href="./css/carousel.css" rel="stylesheet")
+		link(href="./css/menu.css" rel="stylesheet")
 		link()
 		<!-- endbuild -->
 
@@ -28,6 +29,13 @@ mixin icon(iconId, tooltip)
 		include images/svg-symbols.svg
 		#barba-wrapper
 			.arcs
+				.arc.top
+				.arc.bottom
+			#menu
+				button.burger
+					.bar.top
+					.bar.mid
+					.bar.bottom
 			#content.barba-container
 				#landing(onclick="app.showOnboarding()").active
 					.center

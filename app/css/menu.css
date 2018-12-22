@@ -1,0 +1,31 @@
+
+#menu .burger .bar {
+	height: 4px;
+	width: 36px;
+	margin-bottom: 4px;
+	border-radius: 4px;
+	background-color: var(--grey-dark-color);
+	transition: 0.3s transform;
+}
+
+@keyframes TOP-BURGER-ANIM {
+	0% {
+
+	}
+	100% {
+
+	}
+}
+
+@keyframes BOTTOM-BURGER-ANIM {
+	0% {
+
+	}
+	100% {
+
+	}
+}
+
+@keyframes MID-BURGER-ANIM {
+
+}

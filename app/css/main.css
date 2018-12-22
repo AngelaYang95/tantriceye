@@ -148,28 +148,29 @@ button {
   width: 1px !important;
 }
 
-body[category="sight"] .arcs {
+body[category="sight"] .arc {
   background-color: var(--blue-color);
 }
 
-body[category="performance"] .arcs {
+body[category="performance"] .arc {
   background-color: var(--teal-color);
 }
 
-body[category="body"] .arcs {
+body[category="body"] .arc {
   background-color: var(--indigo-color);
 }
 
-body[category="mind"] .arcs {
+body[category="mind"] .arc {
   background-color: var(--yellow-color);
 }
 
-body[category="imagination"] .arcs {
+body[category="imagination"] .arc {
   background-color: var(--orange-color);
 }
 
-body .arcs {
+body .arc {
   background-position: 100%;
+  background-color: var(--bg-dark-color);
 }
 
 #barba-wrapper {
@@ -181,19 +182,16 @@ body .arcs {
   transition: 1s background ease;
 }
 
-.arcs {
-  -webkit-mask-image: url(../images/arcs.svg);
+.arc {
+  -webkit-mask-image: url(../images/arc.svg);
   -webkit-mask-repeat: no-repeat;
-  -webkit-mask-size: 100% 100%;
+  -webkit-mask-size: 100%;
   -webkit-mask-position-x: 50%;
   -webkit-mask-position-y: 50%;
-  -webkit-mask-position-y: 50%;
-  background-color: var(--grey-light-color);
-  height: 95%;
-  /*min-height: 500px;*/
+  height: 180px;
   width: 100%;
   position: absolute;
-  margin: auto;
+  margin: 0 auto auto;
   top: 0;
   bottom: 0;
   left: 0;
@@ -202,8 +200,9 @@ body .arcs {
   transition: 0.2s background ease;
 }
 
-body[data-duo-mode='1'] .arcs {
-  -webkit-mask-image: url(../images/duo_arcs.svg);
+.arc.bottom {
+  transform: rotate(180deg);
+  margin: auto auto 0;
 }
 
 button {

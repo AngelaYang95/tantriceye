@@ -2,7 +2,6 @@ var media = {
 	dom: null,
 	player: null,
 	playPromise: null,
-	isPlaying: false,
 	timeInterval: null,
 	progressBar: null,
 	init: function() {
@@ -13,11 +12,11 @@ var media = {
 	},
 	clear: function() {
 		media.dom.classList.remove("active", "ended", "play", "expand")
-		media.isPlaying = false
 		media.player.pause()
 		media.player.currentTime = 0
 		media.dom.querySelector("source").src = ""
-		media.progressBar.dom.style.width = "0"
+
+		if(media.progressBar) media.progressBar.dom.style.width = "0"
 		clearInterval(media.timeInterval)
 	},
 	startTime: function() {
@@ -87,7 +86,6 @@ var media = {
 		document.addEventListener('mousemove', media.handleTrackMouseMove);
 		document.addEventListener('mouseup', media.handleTrackMouseUp);
 		// media.dom.classList.add("active")
-		console.log('move DOWN')
 		media.progressBar = media.dom.querySelector('.progress').getBoundingClientRect()
 		media.progressBar.dom = media.dom.querySelector('.progress .bar')
 		media._updateProgressBar(e.clientX)

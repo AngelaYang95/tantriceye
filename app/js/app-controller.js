@@ -2,6 +2,11 @@ const CONSTANTS = {
 	MODES: {
 		SOLO: 0,
 		DUO: 1,
+	},
+	TRACKS: {
+		INTRO: 179,
+		ARRIVAL_SOLO: 180,
+		ARRIVAL_DUO: 181,
 	}
 }
 
@@ -24,18 +29,36 @@ var app = {
 		document.body.setAttribute('data-duo-mode', mode)
 		document.querySelector('.arcs').classList.add('duo')
 	},
+
+	//-------------------------------------------------------------
+	//                     Onboarding Functions
+	//-------------------------------------------------------------
 	showOnboarding: function() {
 		if(app.landingTimeout) clearTimeout(app.landingTimeout)
 
 		document.querySelector('#landing').classList.remove("active")
 		onboarding.start()
 	},
+	playIntroTrack: function() {
+		app.playTrack(CONSTANTS.TRACKS.INTRO)
+	},
+	playArrivalTrack: function() {
+		console.log('play pro')
+		if(app.mode == CONSTANTS.MODES.SOLO) {
+			app.playTrack(CONSTANTS.TRACKS.ARRIVAL_SOLO)
+		} else {
+			app.playTrack(CONSTANTS.TRACKS.ARRIVAL_DUO)
+		}
+	},
+
+	//-------------------------------------------------------------
+	//                     App Functions
+	//-------------------------------------------------------------
 	showApp: function() {
-		document.querySelector('#onboarding').classList.remove("active")
 		document.querySelector('#app').classList.add("active")
 	},
 	playRandom: function() {
-		let tracks = data.tracks.filter((track)=> {
+		let tracks = data.tracks.filter((track) => {
 			return track.url
 		})
 		let id = tracks[Math.floor(Math.random() * tracks.length)].id
@@ -59,8 +82,19 @@ var app = {
 		}
 	},
 	clearTrack: function() {
-		tracklist.clearActiveTrack()
-		media.clear()
+		if(app.track) {
+			tracklist.clearActiveTrack()
+			media.clear()
+		}
+	},
+
+	//-------------------------------------------------------------
+	//                     Nav Functions
+	//-------------------------------------------------------------
+	goToHome: function() {
+		document.body.setAttribute("category", "");
+		app.category = ""
+		nav.open()
 	},
 	goToCategory: function(category) {
 		if(!category || app.category == category) return
@@ -69,10 +103,8 @@ var app = {
 		document.body.setAttribute("category", category);
 		tracklist.render(category)
 	},
-	goToHome: function() {
-		document.body.setAttribute("category", "");
-		app.category = ""
-		nav.open()
+	goToMedia: function() {
+
 	},
 	hideContent: function() {
 		document.getElementById('tracklist').classList.add("hide")

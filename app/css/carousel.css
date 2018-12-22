@@ -4,6 +4,15 @@
   height: 100%;
 }
 
+#carousel .carousel-item {
+	overflow: hidden;
+}
+
+#carousel p {
+	white-space: pre-line;
+	padding: 0 24px;
+}
+
 #carousel .window {
 	position: relative;
 	height: 100%;

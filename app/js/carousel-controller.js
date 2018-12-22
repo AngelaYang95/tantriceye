@@ -2,7 +2,7 @@ var carousel = {
 	dom: null,
 	init: function() {
 		carousel.dom = document.getElementById('carousel')
-		console.log('initing')
+
 		var observer = new MutationObserver(function(mutationsList, observer) {
     	for(var mutation of mutationsList) {
 				if(mutation.type == 'attributes') {
