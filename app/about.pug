@@ -25,7 +25,6 @@ mixin icon(iconId, tooltip)
 		link(rel="manifest" href="/manifest.json")
 		link(href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet")
 		script(src="https://cdnjs.cloudflare.com/ajax/libs/barba.js/1.0.0/barba.min.js" type="text/javascript")
-
 	body
 		include images/svg-symbols.svg
 		include views/menu.pug
@@ -35,17 +34,9 @@ mixin icon(iconId, tooltip)
 				.arc.bottom
 			#barba-wrapper
 				#content.barba-container
-					#landing(onclick="app.showOnboarding()").active
-						.center
-							+icon('tantric-eye').large
-							.shadow
-					#onboarding
-						include views/onboarding.pug
-					#app
-						.mid-nav
-							+icon('chevron-left')(onclick="app.goToHome()").xsmall.back
-						include views/nav.pug
-						include views/tracklist.pug
+					#about
+						p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi est est, vehicula a est at, condimentum luctus diam. Nulla et tortor eu elit iaculis aliquet. Mauris eget blandit erat. Nullam id dictum turpis, a mollis nunc. Sed non felis turpis metus.
+					
 		include views/media.pug
 
 		<!-- build:js js/main.min.js -->

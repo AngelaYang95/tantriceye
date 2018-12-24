@@ -19,8 +19,6 @@
 }
 
 #tracklist.hide {
-/*	visibility: hidden;
-	opacity: 0.05;*/
   display: none;
 }
 
@@ -80,6 +78,7 @@
 .track.disable {
   color: var(--grey-medium-color);
   cursor: default;
+  font-weight: 500;
 }
 
 .track.disable:hover {
@@ -127,24 +126,3 @@ body[category="mind"] #tracklist .category-icon .icon.mind {
 body[category="performance"] #tracklist .category-icon .icon.performance {
   display: block;
 }
-
-/* Active track highlight. */
-/*body[category="sight"] .track.active {
-  color: var(--blue-color);
-}
-
-body[category="body"] .track.active {
-  color: var(--indigo-color);
-}
-
-body[category="imagination"] .track.active {
-  color: var(--orange-color);
-}
-
-body[category="mind"] .track.active {
-  color: var(--yellow-color);
-}
-
-body[category="performance"] .track.active {
-  color: var(--green-color);
-}*/

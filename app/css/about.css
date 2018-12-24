@@ -1,0 +1,8 @@
+#about p {
+	margin: auto;
+}
+
+#about {
+	display: flex;
+	height: 100%;
+}

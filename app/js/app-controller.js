@@ -15,19 +15,29 @@ var app = {
 	track: "",
 	mode: CONSTANTS.MODES.SOLO,
 	landingTimeout: null,
+
+	//-------------------------------------------------------------
+	//                     Settings Functions
+	//-------------------------------------------------------------
 	init: function() {
+		Barba.Pjax.start();
 		app.landingTimeout = setTimeout(() => {
 			app.showOnboarding()
 		}, 4000)
-	},
-	handleHashChange: function() {
-		app.goToCategory(cat)
-		nav.selectCategory(cat)
+		window.addEventListener('hashchange', app.handleHashChange)
+		window.addEventListener('load', app.handleHashChange)
 	},
 	setMode: function(mode) {
 		app.mode = mode
-		document.body.setAttribute('data-duo-mode', mode)
-		document.querySelector('.arcs').classList.add('duo')
+		// window.location.search = `?mode=${mode}`
+		// window.history.pushState(null, '', `${window.location.pathname}?mode=${mode}`)
+		document.body.setAttribute('data-mode', mode)
+		document.querySelector('.arcs').classList.add(CONSTANTS.MODES.DUO)
+	},
+	handleHashChange: function() {
+		console.log('HASH CHANGE')
+		let path = window.location.pathname
+		menu.setActivePath(path)
 	},
 
 	//-------------------------------------------------------------

@@ -1,0 +1,15 @@
+#menu
+	.burger(onclick="menu.toggleMenu()")
+		.bar.top
+		.bar.mid
+		.bar.bottom
+	ul.list
+		li 
+			a(href="/").active The Tantric Eye
+		li 
+			a(href="/about") About
+		//- li.divider
+		li.mode
+			ul
+				li.option.solo(onclick="menu.handleSoloClick()") Individual
+				li.option.duo(onclick="menu.handleDuoClick()") Partner

@@ -41,11 +41,11 @@ var onboarding = {
 		onboarding.dom.firstElementChild.setAttribute('data-index', ++index)
 	},
 	handleSoloClick: function() {
-		app.setMode(0)
+		app.setMode(CONSTANTS.MODES.SOLO)
 		onboarding.handleNextClick()
 	},
 	handleDuoClick: function() {
-		app.setMode(1)
+		app.setMode(CONSTANTS.MODES.DUO)
 		onboarding.handleNextClick()
 	},
 	handleFinishClick: function() {

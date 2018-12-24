@@ -1,9 +1,13 @@
-body:not([data-duo-mode="1"]) #onboarding button.solo {
+body:not([data-mode="1"]) #onboarding button.solo {
 	border: 2px solid var(--orange-color);
 }
 
-body[data-duo-mode="1"] #onboarding button.duo {
+body[data-mode="1"] #onboarding button.duo {
 	border: 2px solid var(--orange-color);
+}
+
+#onboarding {
+	height: 100%;
 }
 
 #onboarding p {
