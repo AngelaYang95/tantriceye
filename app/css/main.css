@@ -236,7 +236,6 @@ button:hover {
   opacity: 1;
   position: absolute;
   text-align: center;
-  transition: 0s opacity 0.5s;
   top: 0;
   bottom: 0;
   left: 0;
@@ -244,27 +243,18 @@ button:hover {
   margin: auto;
   padding: 72px 0;
   max-height: 500px;
-}
-
-#content > div {
-  display: none;
-}
-
-#content > div.active {
-  display: block;
+  transition: 0.5s opacity 1s ease;
 }
 
 #app {
-  opacity: 0;
-  transition: 0.5s opacity 1s ease;
   height: 100%;
 }
 
-#app.active {  
-  opacity: 1;
+#content.hidden {  
+  opacity: 0;
 }
 
-.hidden {
+.hide {
 	display: none;
 }
 
@@ -279,23 +269,12 @@ button:hover {
 #app .mid-nav .back {
   position: relative;
   top: -24px;
-  fill: var(--grey-medium-color);
   padding: 6px;
   border-radius: 50%;
   transition: 0.2s background-color ease;
-  background: var(--bg-dark-color);
-  box-shadow: 0px 2px 8px 0 var(--grey-medium-color);
-}
-
-#app .mid-nav .back {
   background: var(--grey-dark-color);
   fill: var(--grey-light-color);
   transform: scale(1.1);
-}
-
-body[category=""] #app .mid-nav .back,
-body:not([category]) #app .mid-nav .back {
-  display: none;
 }
 
 #app .mid-nav .back {

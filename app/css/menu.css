@@ -1,7 +1,7 @@
 #menu {
 	z-index: 10;
 	height: 100vh;
-	transition: 0.4s transform 0.5s ease-out;
+	transition: 0.3s transform 0.5s ease-out;
 	width: 100%;
 	transform: translateX(-100%);
 	background: var(--bg-dark-color);
@@ -69,9 +69,10 @@ body[data-mode="1"] #menu .duo {
 	border: unset;
   position: fixed;
   transform: translateX(72px);
-  top: 42px;
-  right: 0;
+  top: 20px;
+  right: -24px;
   transition: 0.2s transform 0.5s;
+  padding: 24px;
 }
 
 #menu.active .burger {
@@ -95,10 +96,10 @@ body[data-mode="1"] #menu .duo {
 }
 
 #menu.active .top {
-	animation: 1s TOP-BURGER-ANIM forwards;
+	animation: 0.5s TOP-BURGER-ANIM forwards;
 }
 #menu .top {
-	animation: 1s TOP-BURGER-REV-ANIM forwards;
+	animation: 0.5s TOP-BURGER-REV-ANIM forwards;
 }
 
 #menu.active .mid {
@@ -109,10 +110,10 @@ body[data-mode="1"] #menu .duo {
 }
 
 #menu.active .bottom {
-	animation: 1s BOTTOM-BURGER-ANIM forwards;
+	animation: 0.5s BOTTOM-BURGER-ANIM forwards;
 }
 #menu .bottom {
-	animation: 1s BOTTOM-BURGER-REV-ANIM forwards;
+	animation: 0.5s BOTTOM-BURGER-REV-ANIM forwards;
 }
 
 @keyframes TOP-BURGER-ANIM {

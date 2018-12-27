@@ -8,9 +8,11 @@ var menu = {
 		})
 	}, 
 	setActivePath: function(path) {
-		console.log('active path is ', path)
-		menu.dom.querySelector('a.active').classList.remove('active')
-		menu.dom.querySelector(`a[href="${path}"]`).classList.add('active')
+		let pathLink = menu.dom.querySelector(`a[href="${path}"]`)
+		if(pathLink) {
+			pathLink.classList.add('active')
+			menu.dom.querySelector('a.active').classList.remove('active')
+		}
 	},
 	toggleMenu: function() {
 		console.log('toggle')
@@ -21,7 +23,7 @@ var menu = {
 
 		menu.timer = setTimeout(() => {
 			menu.toggleMenu()
-		}, 500)
+		}, 100)
 	},
 	handleSoloClick: function() {
 		app.setMode(CONSTANTS.MODES.SOLO)
@@ -31,4 +33,4 @@ var menu = {
 	}
 }
 
-document.addEventListener('DOMContentLoaded', menu.init)
+document.addEventListener("DOMContentLoaded", app.registerController('menu', menu));

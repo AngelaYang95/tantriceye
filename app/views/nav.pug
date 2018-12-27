@@ -1,13 +1,13 @@
-mixin category(name)
-	a.category(href=`#${name}` onclick=`nav.handleClick("${name}", this)` data-category=name)
+mixin category(name, path)
+	a.category(href=`${path}` onclick=`nav.handleClick("${name}", this)` data-category=name)
 		+icon(name).medium
 		label= name
 
-#nav
+#nav(data-controller="nav")
 	.categories
-		+category("mind")
-		+category("imagination")
-		+category("performance")
-		+category("body")
-		+category("sight")
-		+category("random")
+		+category('mind', '/playlist?category=mind')
+		+category('imagination', '/playlist?category=imagination')
+		+category('performance', '/playlist?category=performance')
+		+category('body', '/playlist?category=body')
+		+category('sight', '/playlist?category=sight')
+		+category('random', '#')

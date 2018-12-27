@@ -1,5 +1,6 @@
 var onboarding = {
 	dom: null,
+	loadTimeout: null,
 	init: function() {
 		onboarding.dom = document.getElementById('onboarding')
 		let carouselDOM = onboarding.dom.firstElementChild
@@ -11,15 +12,21 @@ var onboarding = {
 			}
 		});
 		observer.observe(carouselDOM, { attributes: true });
+		console.log('BOARDING CONTROLLER ')
+		loadTimeout = setTimeout(() => {
+			onboarding.load()
+		}, 3000)
 	},
-	start: function() {
-		document.querySelector('#onboarding').classList.add("active")
+	load: function() {
+		if(onboarding.loadTimeout) clearTimeout(onboarding.loadTimeout)
+
+		document.querySelector('#landing').classList.add("hide")
+		document.querySelector('#onboarding').classList.remove("hide")
     document.addEventListener('touchstart', onboarding.handleTouchStart, false);        
 		document.addEventListener('touchmove', onboarding.handleTouchMove, false);
 		onboarding._runOnboardingItem(0)
 	},
 	finish: function() {
-		document.querySelector('#onboarding').classList.remove("active")
     document.removeEventListener('touchstart', onboarding.handleTouchStart, false);        
 		document.removeEventListener('touchmove', onboarding.handleTouchMove, false);
 		app.clearTrack()
@@ -59,4 +66,5 @@ var onboarding = {
 	},
 }
 
-document.addEventListener("DOMContentLoaded", onboarding.init)
+document.addEventListener("DOMContentLoaded", app.registerController('onboarding', onboarding));
+// document.addEventListener("DOMContentLoaded", onboarding.init)

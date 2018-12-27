@@ -5,7 +5,7 @@ mixin tracklist(category, tracks)
 				span= track.title
 				span= track.description
 
-#tracklist.hide
+#tracklist(data-controller="tracklist")
 	.header
 		.category-icon
 			+icon('sight').large.sight

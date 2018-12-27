@@ -20,8 +20,8 @@ gulp.task('useref', function() {
   return gulp.src('app/*.pug')
     .pipe(pug({ pretty: true }))
     .pipe(useref())
-    .pipe(gulpIf('*.css', cssnano()))
-    .pipe(gulpIf('*.js', uglify()))
+    // .pipe(gulpIf('*.css', cssnano()))
+    // .pipe(gulpIf('*.js', uglify()))
     .pipe(gulp.dest('dist'))
 });
 

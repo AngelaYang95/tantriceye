@@ -2,7 +2,6 @@ var carousel = {
 	dom: null,
 	init: function() {
 		carousel.dom = document.getElementById('carousel')
-
 		var observer = new MutationObserver(function(mutationsList, observer) {
     	for(var mutation of mutationsList) {
 				if(mutation.type == 'attributes') {
@@ -30,4 +29,4 @@ var carousel = {
 	},
 }
 
-document.addEventListener("DOMContentLoaded", carousel.init);
+document.addEventListener("DOMContentLoaded", app.registerController('carousel', carousel));

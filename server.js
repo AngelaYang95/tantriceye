@@ -16,6 +16,14 @@ app.get('/about', function(req, res) {
   res.sendFile(path.join(__dirname + '/dist/about.html'));
 });
 
+app.get('/onboarding', function(req, res) {  
+  res.sendFile(path.join(__dirname + '/dist/onboarding.html'));
+});
+
+app.get('/playlist', function(req, res) {  
+  res.sendFile(path.join(__dirname + '/dist/playlist.html'));
+});
+
 app.listen(port, function() {  
     console.log('Express server listening on port ' + port);
 });

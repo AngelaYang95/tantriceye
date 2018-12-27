@@ -110,4 +110,4 @@ var media = {
 	},
 }
 
-document.addEventListener("DOMContentLoaded", media.init)
+document.addEventListener("DOMContentLoaded", media.init);

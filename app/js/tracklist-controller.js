@@ -11,6 +11,7 @@ var tracklist = {
 		// if(tracklist.activeTrack && tracklist.activeTrack.getAttribute("data-id") == id) return
 
 		if(tracklist.activeTrack) tracklist.activeTrack.classList.remove('active')
+		
 		dom.classList.add('active')
 		tracklist.activeTrack = dom
 		app.playTrack(id, true)
@@ -49,18 +50,16 @@ var tracklist = {
 			  templ.querySelector(".length").innerHTML = date.toISOString().substr(14, 5)
       }
 
-      console.log("adding...")
       if(trackObj.url == "") {
       	templ.querySelector(".track").classList.add('disable')
       	templ.querySelector(".track").onclick = ""
       }
 			fragment.appendChild(templ)
 		})
-
 		tracklist.dom.querySelector('.category').innerHTML = category
 		tracklist.dom.querySelector('.tracks').innerHTML = ""
 		tracklist.dom.querySelector('.tracks').appendChild(fragment)
 	},
 }
 
-document.addEventListener("DOMContentLoaded", tracklist.init);
+document.addEventListener("DOMContentLoaded", app.registerController('tracklist', tracklist));

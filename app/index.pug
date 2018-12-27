@@ -1,64 +1,6 @@
-mixin icon(iconId, tooltip)
-	svg(role="img").icon&attributes(attributes)
-		use(xlink:href="#icon-" + iconId)
+extends layout.pug
 
-<!DOCTYPE html>
-	head
-		meta(charset="UTF-8")
-		meta(name="Description" content="Tantric Eye, mindfulness app for the gallery space.")
-		meta(name="viewport" content="width=device-width, initial-scale=1")
-		title The Tantric Eye
-
-		<!-- build:css css/styles.min.css-->
-		link(href="./css/main.css" rel="stylesheet")
-		link(href="./css/onboarding.css" rel="stylesheet")
-		link(href="./css/landing.css" rel="stylesheet")
-		link(href="./css/nav.css" rel="stylesheet")
-		link(href="./css/tracklist.css" rel="stylesheet")
-		link(href="./css/media.css" rel="stylesheet")
-		link(href="./css/carousel.css" rel="stylesheet")
-		link(href="./css/menu.css" rel="stylesheet")
-		link(href="./css/about.css" rel="stylesheet")
-		link()
-		<!-- endbuild -->
-
-		link(rel="manifest" href="/manifest.json")
-		link(href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet")
-		script(src="https://cdnjs.cloudflare.com/ajax/libs/barba.js/1.0.0/barba.min.js" type="text/javascript")
-
-	body
-		include images/svg-symbols.svg
-		include views/menu.pug
-		#wrapper
-			.arcs
-				.arc.top
-				.arc.bottom
-			#barba-wrapper
-				#content.barba-container
-					#landing(onclick="app.showOnboarding()").active
-						.center
-							+icon('tantric-eye').large
-							.shadow
-					#onboarding
-						include views/onboarding.pug
-					#app
-						.mid-nav
-							+icon('chevron-left')(onclick="app.goToHome()").xsmall.back
-						include views/nav.pug
-						include views/tracklist.pug
-		include views/media.pug
-
-		<!-- build:js js/main.min.js -->
-		script(src="./js/app-controller.js" type="text/javascript")
-		script(src="./js/nav-controller.js" type="text/javascript")
-		script(src="./js/tracklist-controller.js" type="text/javascript")
-		script(src="./js/carousel-controller.js" type="text/javascript")
-		script(src="./js/media-controller.js" type="text/javascript")
-		script(src="./js/onboarding-controller.js" type="text/javascript")
-		script(src="./js/menu-controller.js" type="text/javascript")
-		script(src="./js/data.js" type="text/javascript")
-		script()
-		<!-- endbuild -->
-
-
-
+block content
+	#app
+		include views/nav.pug
+		//- include views/tracklist.pug

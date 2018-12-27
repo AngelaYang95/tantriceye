@@ -15,45 +15,68 @@ var app = {
 	track: "",
 	mode: CONSTANTS.MODES.SOLO,
 	landingTimeout: null,
+	controllers: {},
 
 	//-------------------------------------------------------------
 	//                     Settings Functions
 	//-------------------------------------------------------------
 	init: function() {
-		Barba.Pjax.start();
-		app.landingTimeout = setTimeout(() => {
-			app.showOnboarding()
-		}, 4000)
-		window.addEventListener('hashchange', app.handleHashChange)
-		window.addEventListener('load', app.handleHashChange)
+		Barba.Pjax.start();	
+		// window.addEventListener('hashchange', app.handleHashChange)
+		// window.addEventListener('load', app.handleHashChange)
+
+	  app.handleViewChange()
+		Barba.Dispatcher.on('newPageReady', function() {
+			console.log('new page ready')
+		  // app.initScripts()
+		  app.handleViewChange()
+		});
+	},
+	registerController: function(name, controller) {
+		app.controllers[name] = controller
+	},
+	initScripts: function() {
+		document.querySelectorAll('[data-controller]').forEach((dom) => {
+			let controller = app.controllers[dom.getAttribute('data-controller')]
+			if(controller) {
+				controller.init()
+			}
+		})
 	},
 	setMode: function(mode) {
 		app.mode = mode
-		// window.location.search = `?mode=${mode}`
-		// window.history.pushState(null, '', `${window.location.pathname}?mode=${mode}`)
 		document.body.setAttribute('data-mode', mode)
 		document.querySelector('.arcs').classList.add(CONSTANTS.MODES.DUO)
 	},
-	handleHashChange: function() {
-		console.log('HASH CHANGE')
+	handleViewChange: function() {
 		let path = window.location.pathname
+		let params = app.getQueryParam()
+		app.initScripts()
 		menu.setActivePath(path)
+
+		if(path.includes('playlist')) {
+			console.log(params['category'])
+			app.goToCategory(params['category'])
+		} else {
+			app.clearArcs()
+		}
+	},
+	getQueryParam: function() {
+		let params = {}
+		window.location.search.replace('?', '').split('&').forEach((param) => {
+			let entry = param.split("=")
+			params[entry[0]] = entry[1]
+		})
+		return params
 	},
 
 	//-------------------------------------------------------------
 	//                     Onboarding Functions
 	//-------------------------------------------------------------
-	showOnboarding: function() {
-		if(app.landingTimeout) clearTimeout(app.landingTimeout)
-
-		document.querySelector('#landing').classList.remove("active")
-		onboarding.start()
-	},
 	playIntroTrack: function() {
 		app.playTrack(CONSTANTS.TRACKS.INTRO)
 	},
 	playArrivalTrack: function() {
-		console.log('play pro')
 		if(app.mode == CONSTANTS.MODES.SOLO) {
 			app.playTrack(CONSTANTS.TRACKS.ARRIVAL_SOLO)
 		} else {
@@ -65,7 +88,7 @@ var app = {
 	//                     App Functions
 	//-------------------------------------------------------------
 	showApp: function() {
-		document.querySelector('#app').classList.add("active")
+		window.location.replace('/');
 	},
 	playRandom: function() {
 		let tracks = data.tracks.filter((track) => {
@@ -77,7 +100,7 @@ var app = {
 	playTrack: function(id, expandPlayer) {
 		if(app.track != id) {
 			app.track = id
-			tracklist.setActiveTrack(id)
+			// if(tracklist != undefined) tracklist.setActiveTrack(id)
 
 			let trackObj = data.tracks[id]
 			if(!trackObj) 
@@ -93,7 +116,7 @@ var app = {
 	},
 	clearTrack: function() {
 		if(app.track) {
-			tracklist.clearActiveTrack()
+			// if(tracklist) tracklist.clearActiveTrack()
 			media.clear()
 		}
 	},
@@ -102,26 +125,39 @@ var app = {
 	//                     Nav Functions
 	//-------------------------------------------------------------
 	goToHome: function() {
-		document.body.setAttribute("category", "");
+		app.hideContent()
+		app.clearArcs()
 		app.category = ""
-		nav.open()
+		app.showContent()
+	},
+	goToAbout: function() {
+
 	},
 	goToCategory: function(category) {
 		if(!category || app.category == category) return
 
+		app.hideContent()
 		app.category = category;
-		document.body.setAttribute("category", category);
 		tracklist.render(category)
+		app.setArcs(category)
+		app.showContent()
 	},
 	goToMedia: function() {
 
 	},
+	setArcs: function(category) {
+		document.body.setAttribute("category", category)
+	},
+	clearArcs: function() {
+		document.body.setAttribute("category", "")
+	},
 	hideContent: function() {
-		document.getElementById('tracklist').classList.add("hide")
+		document.getElementById('content').classList.add('hide')
 	},
 	showContent: function() {
-		document.getElementById('tracklist').classList.remove("hide")
+		document.getElementById('content').classList.remove('hide')
 	},
 }
 
 document.addEventListener("DOMContentLoaded", app.init);
+document.addEventListener("DOMContentLoaded", app.initScripts);
