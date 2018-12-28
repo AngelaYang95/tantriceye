@@ -19,7 +19,7 @@ mixin tracklist(category, tracks)
 		.tracks
 
 template(id="template-tracklist-item")
-	.track(onclick="tracklist.handleClick(this)" data-id="")
+	a(onclick="tracklist.handleClick(this)" data-id="").track
 		.id 01
 		.text
 			.title hello

@@ -14,7 +14,6 @@ var app = {
 	category: "",
 	track: "",
 	mode: CONSTANTS.MODES.SOLO,
-	landingTimeout: null,
 	controllers: {},
 
 	//-------------------------------------------------------------
@@ -26,6 +25,8 @@ var app = {
 		// window.addEventListener('load', app.handleHashChange)
 
 	  app.handleViewChange()
+	  app.getMode() && document.body.setAttribute('data-mode', app.getMode())
+	  
 		Barba.Dispatcher.on('newPageReady', function() {
 			console.log('new page ready')
 		  // app.initScripts()
@@ -45,17 +46,19 @@ var app = {
 	},
 	setMode: function(mode) {
 		app.mode = mode
+		window.localStorage.setItem('mode', mode)
 		document.body.setAttribute('data-mode', mode)
-		document.querySelector('.arcs').classList.add(CONSTANTS.MODES.DUO)
+	},
+	getMode: function() {
+		return window.localStorage.getItem('mode')
 	},
 	handleViewChange: function() {
 		let path = window.location.pathname
 		let params = app.getQueryParam()
 		app.initScripts()
-		menu.setActivePath(path)
+		// menu.setActivePath(path)
 
 		if(path.includes('playlist')) {
-			console.log(params['category'])
 			app.goToCategory(params['category'])
 		} else {
 			app.clearArcs()
@@ -69,7 +72,7 @@ var app = {
 		})
 		return params
 	},
-
+	
 	//-------------------------------------------------------------
 	//                     Onboarding Functions
 	//-------------------------------------------------------------
@@ -116,7 +119,6 @@ var app = {
 	},
 	clearTrack: function() {
 		if(app.track) {
-			// if(tracklist) tracklist.clearActiveTrack()
 			media.clear()
 		}
 	},
@@ -128,10 +130,11 @@ var app = {
 		app.hideContent()
 		app.clearArcs()
 		app.category = ""
+		app.clearTrack()
 		app.showContent()
 	},
 	goToAbout: function() {
-
+		app.clearTrack()
 	},
 	goToCategory: function(category) {
 		if(!category || app.category == category) return

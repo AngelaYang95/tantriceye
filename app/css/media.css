@@ -111,6 +111,7 @@
 
 #media .title {
   margin: 24px 0;
+  width: 150px;
 	font-weight: 400;
   font-size: 16px;
   max-width: 100%;

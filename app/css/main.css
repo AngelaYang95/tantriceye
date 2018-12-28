@@ -9,6 +9,7 @@
   --teal-color: #517E7B;
   --yellow-color: #DF8F07;
   --bg-dark-color: #ecebe7;
+  --menu-color: #151515;
 }
 
 html {
@@ -55,7 +56,8 @@ h4 {
 }
 
 label {
-	color: var(--grey-medium-color);
+	/*color: var(--grey-medium-color);*/
+  color: #808080;
 	font-size: 12px;
 	letter-spacing: 1px;
 }
@@ -68,22 +70,6 @@ a:link {
 
 a:visited {
 	color: inherit;
-}
-
-/*a:hover {
-  opacity: 0.8;
-}
-
-a:active {
-   color: inherit;
-}*/
-
-button {
-	border: none;
-  background: none;
-  border-radius: 50%;
-  fill: var(--grey-dark-color);
-  color: var(--grey-dark-color);
 }
 
 ul {
@@ -177,7 +163,7 @@ body[category="imagination"] .arc {
   background-color: var(--orange-color);
 }
 
-body .arc {
+/*body .arc {
   background-position: 100%;
   background-color: var(--bg-dark-color);
   -webkit-mask-image: url(../images/arc.svg);
@@ -193,26 +179,47 @@ body .arc {
   bottom: 0;
   left: 0;
   right: 0;
-  max-width: 400px;
+  max-width: 500px;
   transition: 0.2s background ease;
-}
+}*/
 
-#wrapper {
-  margin: 0 auto;
-  max-width: 400px;
+.arc {
+  position: absolute;
+  background-position: 100%;
+  background-color: var(--bg-dark-color);
+  -webkit-mask-image: url(../images/arc.svg);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: 100%;
+  -webkit-mask-position-x: 50%;
+  -webkit-mask-position-y: 50%;
   width: 100%;
-  left: 0;
-  right: 0;
-  transition: 1s background ease;
+  height: 120px;
+  bottom: 0;
+  background-color: var(--bg-dark-color);
+  transition: 0.2s background ease;
 }
 
 .arcs {
   z-index: 1;
 }
 
+.arc.top {
+  top: 0;
+}
+
 .arc.bottom {
   transform: rotate(180deg);
   margin: auto auto 0;
+  bottom: 0;
+}
+
+#wrapper {
+  margin: 0 auto;
+  max-width: 500px;
+  width: 100%;
+  left: 0;
+  right: 0;
+  transition: 1s background ease;
 }
 
 button {
@@ -221,13 +228,13 @@ button {
   font-size: 0;
   border-radius: 24px;
   background-color: var(--bg-dark-color);
+  border: none;
   margin: 0 8px;
   transition: 0.2s background-color ease, 0.2s transform ease;
 }
 
 button:hover {
 	opacity: 0.8;
-  background-color: var(--grey-light-color);
   transform: scale(1.1)
 }
 
@@ -241,7 +248,7 @@ button:hover {
   left: 0;
   right: 0;
   margin: auto;
-  padding: 72px 0;
+  padding: 90px 0;
   max-height: 500px;
   transition: 0.5s opacity 1s ease;
 }

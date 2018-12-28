@@ -3,7 +3,7 @@ var menu = {
 	timer: null,
 	init: function() {
 		menu.dom = document.getElementById('menu')
-		document.querySelectorAll('li a[href]').forEach((dom) => {
+		document.querySelectorAll('#menu a[href]').forEach((dom) => {
 			dom.addEventListener('click', menu.handleLocationClick)
 		})
 	}, 
@@ -15,8 +15,10 @@ var menu = {
 		}
 	},
 	toggleMenu: function() {
-		console.log('toggle')
 		menu.dom.classList.toggle('active')
+		if(!menu.dom.classList.contains('ready')) {
+			menu.dom.classList.add('ready')
+		}
 	},
 	handleLocationClick: function() {
 		if(menu.timer) clearTimeout(menu.timer)

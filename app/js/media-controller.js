@@ -58,7 +58,7 @@ var media = {
 		media.player.currentTime = seconds
 	},
 	expandPlayer: function() {
-    media.dom.classList.add("expand")
+    // media.dom.classList.add("expand")
 	},
 	setTrack: function(trackObj) {
 		media.dom.classList.remove("active", "ended")

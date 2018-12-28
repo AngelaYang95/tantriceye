@@ -4,15 +4,16 @@
 	transition: 0.3s transform 0.5s ease-out;
 	width: 100%;
 	transform: translateX(-100%);
-	background: var(--bg-dark-color);
+	background: var(--menu-color);
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+  justify-content: space-evenly;
+  color: white;
 }
 
 #menu.active {
 	transform: translateX(0px);
-}
-
-#menu .list {
-	max-width: 200px;
 }
 
 #menu .divider {
@@ -24,36 +25,38 @@
 	padding: 0;
 }
 
-#menu li {
-	font-size: 20px;
-	display: inline-block;
-  margin-right: 100%;
-  white-space: nowrap;
-  cursor: default;
-}
-
 #menu .option {
 	display: inline-block;
-	font-size: 16px;
+	font-size: 24px;
   margin-right: 24px;
   font-weight: 400;
   opacity: 0.5;
 }
 
-#menu li a:after {
+#menu .list-item {
+	font-size: 24px;
+  white-space: nowrap;
+  cursor: default;
+}
+
+#menu .list-item a {
+	display: inline-block;
+}
+
+#menu .list-item a:after {
   width: 0%;
-  height: 2px;
+  height: 3px;
   top: 2px;
   content: '';
-  background: #4a4a4a;
+  /*background: #4a4a4a;*/
+  background: white;
   position: relative;
   display: block;
   transition: 0.2s width;
 }
 
-#menu li:hover a:after,
-#menu li a:active:after,
-#menu li a.active:after {
+#menu .list-item:hover a:after,
+#menu .list-item a.active:after {
  width: 100%;
 }
 
@@ -91,28 +94,32 @@ body[data-mode="1"] #menu .duo {
 	margin-bottom: 3px;
 	border-radius: 4px;
 	background-color: var(--grey-dark-color);
-	transition: 0.3s transform;
+	transition: 0.3s transform, 0.4s background 0.5s;
 	transform-origin: center center;
 }
+#menu.active .burger .bar {
+	background-color: white;
+}
 
-#menu.active .top {
+
+#menu.ready.active .top {
 	animation: 0.5s TOP-BURGER-ANIM forwards;
 }
-#menu .top {
+#menu.ready .top {
 	animation: 0.5s TOP-BURGER-REV-ANIM forwards;
 }
 
-#menu.active .mid {
+#menu.ready.active .mid {
 	animation: 0.2s MID-BURGER-ANIM ease-in forwards;
 }
-#menu .mid {
+#menu.ready .mid {
 	animation: 0.2s MID-BURGER-REV-ANIM ease-in forwards;
 }
 
-#menu.active .bottom {
+#menu.ready.active .bottom {
 	animation: 0.5s BOTTOM-BURGER-ANIM forwards;
 }
-#menu .bottom {
+#menu.ready .bottom {
 	animation: 0.5s BOTTOM-BURGER-REV-ANIM forwards;
 }
 

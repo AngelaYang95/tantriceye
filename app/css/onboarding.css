@@ -21,8 +21,9 @@ body[data-mode="1"] #onboarding button.duo {
 
 #onboarding .icon {
 	height: 30%;
-	width: 40%;
+	width: 60%;
   margin-bottom: -16px;
+  fill: var(--grey-dark-color);
 }
 
 #onboarding button {
