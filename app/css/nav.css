@@ -3,12 +3,13 @@
 	text-align: center;
 	text-transform: capitalize;
   width: 100%;
-  height: 100%;
+  /*height: 100%;*/
+  margin: -48px 0;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   bottom: 0;
-  position: absolute;
+  /*position: absolute;*/
   animation: 0.2s NAV-ANIM forwards;
 }
 
@@ -33,18 +34,18 @@
 	display: flex;
 	flex-direction: column;
   justify-content: space-evenly;
-  height: 100%;
-  padding-bottom: 24px;
+  /*height: 100%;*/
 }
 
 #nav .category {
 	display: inline-block;
-	height: 8vh;
+	/*height: 8vh;*/
 	pointer-events: auto;
   -webkit-transition: transform 800ms cubic-bezier(0.68, -0.35, 0.265, 1.35), 0.3s opacity 0.2s;
   transition:         transform 800ms cubic-bezier(0.68, -0.35, 0.265, 1.35), 0.3s opacity 0.2s;
-	width: 16vh;
+	width: 96px;
   left: 50%;
+  margin-bottom: 16px;
 }
 
 #nav .category {
@@ -75,7 +76,6 @@
 #nav .category .icon {
 	display: block;
 	margin: auto;
-	height: 8vh;
 }
 
 #nav .toggler .bar {

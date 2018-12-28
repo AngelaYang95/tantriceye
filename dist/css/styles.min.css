@@ -215,11 +215,17 @@ body[category="imagination"] .arc {
 
 #wrapper {
   margin: 0 auto;
-  max-width: 500px;
   width: 100%;
   left: 0;
   right: 0;
   transition: 1s background ease;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  overflow-y: auto;
+  left: 0;
+  right: 0;
+  overflow-y: scroll;
 }
 
 button {
@@ -243,19 +249,21 @@ button:hover {
   opacity: 1;
   position: absolute;
   text-align: center;
-  top: 0;
-  bottom: 0;
+  align-items: center;
+/*  bottom: 0;*/
   left: 0;
   right: 0;
   margin: auto;
   padding: 90px 0;
-  max-height: 500px;
   transition: 0.5s opacity 1s ease;
+  min-height: calc(100% - 180px);
 }
 
+
+/*
 #app {
   height: 100%;
-}
+}*/
 
 #content.hidden {  
   opacity: 0;
@@ -266,11 +274,12 @@ button:hover {
 }
 
 #app .mid-nav {
-  position: absolute;
   top: 50%;
   display: flex;
   justify-content: space-between;
   z-index: 1;
+  position: sticky;
+  margin-bottom: -36px;
 }
 
 #app .mid-nav .back {
@@ -305,7 +314,7 @@ button:hover {
 
 #menu {
 	z-index: 10;
-	height: 100vh;
+	height: 100%;
 	transition: 0.3s transform 0.5s ease-out;
 	width: 100%;
 	transform: translateX(-100%);
@@ -315,6 +324,7 @@ button:hover {
 	flex-direction: column;
   justify-content: space-evenly;
   color: white;
+  position: fixed;
 }
 
 #menu.active {
@@ -332,7 +342,7 @@ button:hover {
 
 #menu .option {
 	display: inline-block;
-	font-size: 24px;
+	font-size: 16px;
   margin-right: 24px;
   font-weight: 400;
   opacity: 0.5;
@@ -346,6 +356,7 @@ button:hover {
 
 #menu .list-item a {
 	display: inline-block;
+	transition: 0.8s letter-spacing;
 }
 
 #menu .list-item a:after {
@@ -359,10 +370,13 @@ button:hover {
   display: block;
   transition: 0.2s width;
 }
+#menu .list-item:hover {
+	letter-spacing: 6px;
+}
 
 #menu .list-item:hover a:after,
 #menu .list-item a.active:after {
- width: 100%;
+ /*width: 100%;*/
 }
 
 body:not([data-mode="1"]) #menu .solo {
@@ -394,10 +408,11 @@ body[data-mode="1"] #menu .duo {
 }
 
 #menu .burger .bar {
-	height: 3px;
+	height: 4px;
 	width: 28px;
-	margin-bottom: 3px;
+	margin-bottom: 5px;
 	border-radius: 4px;
+  box-shadow: 2px 2px 20px 0 #00000033;
 	background-color: var(--grey-dark-color);
 	transition: 0.3s transform, 0.4s background 0.5s;
 	transform-origin: center center;
@@ -433,19 +448,19 @@ body[data-mode="1"] #menu .duo {
 		transform: translateY(0%);
 	}
 	30% {
-		transform: translateY(6px);
+		transform: translateY(9px);
 	}
 	100% {
-		transform: translateY(6px) rotate(45deg);
+		transform: translateY(9px) rotate(45deg);
 	}
 }
 
 @keyframes TOP-BURGER-REV-ANIM {
 	0% {
-		transform: translateY(6px) rotate(45deg);
+		transform: translateY(9px) rotate(45deg);
 	}
 	30% {
-		transform: translateY(6px);
+		transform: translateY(9px);
 	}
 	100% {
 		transform: translateY(0%);
@@ -457,19 +472,19 @@ body[data-mode="1"] #menu .duo {
 		transform: translateY(0%);
 	}
 	30% {
-		transform: translateY(-6px);
+		transform: translateY(-9px);
 	}
 	100% {
-		transform: translateY(-6px) rotate(-45deg);
+		transform: translateY(-9px) rotate(-45deg);
 	}
 }
 
 @keyframes BOTTOM-BURGER-REV-ANIM {
 	0% {
-		transform: translateY(-6px) rotate(-45deg);
+		transform: translateY(-9px) rotate(-45deg);
 	}
 	30% {
-		transform: translateY(-6px);
+		transform: translateY(-9px);
 	}
 	100% {
 		transform: translateY(0%);
@@ -735,12 +750,13 @@ body[data-mode="1"] #onboarding button.duo {
 	text-align: center;
 	text-transform: capitalize;
   width: 100%;
-  height: 100%;
+  /*height: 100%;*/
+  margin: -48px 0;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   bottom: 0;
-  position: absolute;
+  /*position: absolute;*/
   animation: 0.2s NAV-ANIM forwards;
 }
 
@@ -765,18 +781,18 @@ body[data-mode="1"] #onboarding button.duo {
 	display: flex;
 	flex-direction: column;
   justify-content: space-evenly;
-  height: 100%;
-  padding-bottom: 24px;
+  /*height: 100%;*/
 }
 
 #nav .category {
 	display: inline-block;
-	height: 8vh;
+	/*height: 8vh;*/
 	pointer-events: auto;
   -webkit-transition: transform 800ms cubic-bezier(0.68, -0.35, 0.265, 1.35), 0.3s opacity 0.2s;
   transition:         transform 800ms cubic-bezier(0.68, -0.35, 0.265, 1.35), 0.3s opacity 0.2s;
-	width: 16vh;
+	width: 96px;
   left: 50%;
+  margin-bottom: 16px;
 }
 
 #nav .category {
@@ -807,7 +823,6 @@ body[data-mode="1"] #onboarding button.duo {
 #nav .category .icon {
 	display: block;
 	margin: auto;
-	height: 8vh;
 }
 
 #nav .toggler .bar {
@@ -1083,4 +1098,15 @@ body[category="performance"] #tracklist .category-icon .icon.performance {
 #about {
 	display: flex;
 	height: 100%;
+	animation: 0.8s ABOUT-ANIM forwards 0.2s;
+	opacity: 0;
+}
+
+@keyframes ABOUT-ANIM {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
 }
