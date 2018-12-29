@@ -215,17 +215,11 @@ body[category="imagination"] .arc {
 
 #wrapper {
   margin: 0 auto;
+  max-width: 500px;
   width: 100%;
   left: 0;
   right: 0;
   transition: 1s background ease;
-  position: fixed;
-  height: 100%;
-  width: 100%;
-  overflow-y: auto;
-  left: 0;
-  right: 0;
-  overflow-y: scroll;
 }
 
 button {
@@ -249,21 +243,19 @@ button:hover {
   opacity: 1;
   position: absolute;
   text-align: center;
-  align-items: center;
-/*  bottom: 0;*/
+  top: 0;
+  bottom: 0;
   left: 0;
   right: 0;
   margin: auto;
   padding: 90px 0;
+  max-height: 500px;
   transition: 0.5s opacity 1s ease;
-  min-height: calc(100% - 180px);
 }
 
-
-/*
 #app {
   height: 100%;
-}*/
+}
 
 #content.hidden {  
   opacity: 0;
@@ -274,12 +266,11 @@ button:hover {
 }
 
 #app .mid-nav {
+  position: absolute;
   top: 50%;
   display: flex;
   justify-content: space-between;
   z-index: 1;
-  position: sticky;
-  margin-bottom: -36px;
 }
 
 #app .mid-nav .back {

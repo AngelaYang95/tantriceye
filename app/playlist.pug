@@ -2,4 +2,6 @@ extends layout.pug
 
 block content
 	#app
+		a(href="/" onclick="app.goToHome()").mid-nav
+			+icon('chevron-left').xsmall.back
 		include views/tracklist.pug
