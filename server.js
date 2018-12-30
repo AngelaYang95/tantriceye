@@ -24,6 +24,10 @@ app.get('/playlist', function(req, res) {
   res.sendFile(path.join(__dirname + '/dist/playlist.html'));
 });
 
+app.get('/media', function(req, res) {  
+  res.sendFile(path.join(__dirname + '/dist/media.html'));
+});
+
 app.listen(port, function() {  
     console.log('Express server listening on port ' + port);
 });

@@ -163,26 +163,6 @@ body[category="imagination"] .arc {
   background-color: var(--orange-color);
 }
 
-/*body .arc {
-  background-position: 100%;
-  background-color: var(--bg-dark-color);
-  -webkit-mask-image: url(../images/arc.svg);
-  -webkit-mask-repeat: no-repeat;
-  -webkit-mask-size: 100%;
-  -webkit-mask-position-x: 50%;
-  -webkit-mask-position-y: 50%;
-  height: 180px;
-  width: 100%;
-  position: absolute;
-  margin: 0 auto auto;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  max-width: 500px;
-  transition: 0.2s background ease;
-}*/
-
 .arc {
   position: absolute;
   background-position: 100%;
@@ -197,10 +177,7 @@ body[category="imagination"] .arc {
   bottom: 0;
   background-color: var(--bg-dark-color);
   transition: 0.2s background ease;
-}
-
-.arcs {
-  z-index: 1;
+  opacity: 0.9;
 }
 
 .arc.top {
@@ -265,15 +242,30 @@ button:hover {
 	display: none;
 }
 
-#app .mid-nav {
-  position: absolute;
-  top: 50%;
+.screen-controls {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+}
+
+#app .back,
+#app .forward {
+  margin-left: 24px;
+  margin-bottom: 6px;
   z-index: 1;
 }
 
-#app .mid-nav .back {
+#app .forward {
+  right: 0;
+}
+
+#app .forward[disabled],
+#app .back[disabled] {
+  opacity: 0.5;
+}
+
+#app .back svg,
+#app .forward svg {
+  box-shadow: 2px 2px 4px #00000030;
   position: relative;
   top: -24px;
   padding: 6px;
@@ -282,9 +274,6 @@ button:hover {
   background: var(--grey-dark-color);
   fill: var(--grey-light-color);
   transform: scale(1.1);
-}
-
-#app .mid-nav .back {
   display: block;
   opacity: 0;
   animation: 0.2s BACK-BUTTON-ANIM 0.2s ease forwards;
@@ -339,6 +328,11 @@ button:hover {
   opacity: 0.5;
 }
 
+#menu .option:after {
+  content: '•';
+  display: block;
+}
+
 #menu .list-item {
 	font-size: 24px;
   white-space: nowrap;
@@ -355,14 +349,13 @@ button:hover {
   height: 3px;
   top: 2px;
   content: '';
-  /*background: #4a4a4a;*/
   background: white;
   position: relative;
   display: block;
   transition: 0.2s width;
 }
 #menu .list-item:hover {
-	letter-spacing: 6px;
+	letter-spacing: 4px;
 }
 
 #menu .list-item:hover a:after,
@@ -382,14 +375,14 @@ body[data-mode="1"] #menu .duo {
 	border: unset;
   position: fixed;
   transform: translateX(72px);
-  top: 20px;
-  right: -24px;
+  top: 0;
+  right: 0;
   transition: 0.2s transform 0.5s;
   padding: 24px;
 }
 
 #menu.active .burger {
-	transform: translateX(-24px);
+	transform: translateX(0);
 }
 
 #menu .burger::hover {
@@ -574,38 +567,32 @@ body[data-mode="1"] #menu .duo {
     transform: translateY(5px)
   }
 }
-#media button .play,
-#media.active button .pause,
+#media.playing button .pause,
+#media:not(.playing) button .play,
 #media.ended button .replay {
 	display: inline-block;
 }
 
-#media button .pause,
-#media button .replay,
-#media.active button .play,
-#media.active button .replay,
-#media.ended button .pause,
-#media.ended button .play {
+#media:not(.playing) button .pause,
+#media button .play,
+#media:not(.ended) button .replay {
 	display: none;
 }
 
 #media .audio-controls button {
 	border: none;
+	border-radius: 50%;
+	background-color: unset;
 }
 
 #media {
-  position: fixed;
-  bottom: 0;
-  padding-right: 56px;
-  width: calc(100% - 56px);
-  transition: 0.2s height ease;
-  background: linear-gradient(0deg, white, #ffffffeb);
-  background: var(--bg-dark-color);
-  align-items: center;
+  position: relative;
+  justify-content: center;
   display: flex;
-	height: 0;
-	overflow: hidden;
-	z-index: 2;
+  flex-direction: column;
+  margin: -24px 0;
+  height: calc(100% - 24px);
+  animation: 0.5s TRACKLIST-ANIM ease forwards;
 }
 
 #media.play.expand {
@@ -616,30 +603,14 @@ body[data-mode="1"] #menu .duo {
 	width: 100%;
 }
 
-#media.play.expand .progress {
-	flex-grow: 0;
-}
-
-#media .close {
-	position: absolute;
-	top: 0;
-	right: 0;
-	margin: 8px;
-	border: none;
-	color: var(--grey-medium-color);
-}
-
-#media.play {
-	height: 64px;
-}
-
 #media .time {
 	display: flex;
 	justify-content: center;
 	margin-top: 12px;
+	font-size: 16px;
 }
 
-#media.play .currentTime::after {
+#media .currentTime::after {
 	content: '/';
 	margin: 0 5px;
 }
@@ -661,7 +632,7 @@ body[data-mode="1"] #menu .duo {
 	min-width: 100px;
 	margin: 0 auto;
 	height: 4px;
-	background-color: var(--grey-medium-color);
+	/*background-color: var(--grey-medium-color);*/
 	position: relative;
 	border-radius: 4px;
 }
@@ -686,23 +657,9 @@ body[data-mode="1"] #menu .duo {
 }
 
 #media .title {
-  margin: 24px 0;
-  width: 150px;
-	font-weight: 400;
-  font-size: 16px;
-  max-width: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  font-family: 'Nunito', 'Helvetica', 'Sans Serif';
-}
-
-#media.expand .title {
-  font-size: 32px;
-}
-
-#media .time {
-	font-size: 12px;
+  font-size: 24px;
+  margin: 42px 0;
+  letter-spacing: 4px;
 }
 
 body:not([data-mode="1"]) #onboarding button.solo {
@@ -718,7 +675,7 @@ body[data-mode="1"] #onboarding button.duo {
 }
 
 #onboarding p {
-	margin: 10% 0;
+	margin: 16px 0;
 	font-size: 36px;
 	font-weight: 400;
 	padding: 0 12px;
@@ -876,6 +833,119 @@ body[data-mode="1"] #onboarding button.duo {
 	}
 }
 
+#audiobar.active.playing button .pause,
+#audiobar.active button .play,
+#audiobar.ended button .replay {
+	display: inline-block;
+}
+
+#audiobar:not(.playing) button .pause,
+#audiobar.active.playing button .play,
+#audiobar.active.ended button .play,
+#audiobar:not(.ended) button .replay {
+	display: none;
+}
+
+#audiobar .audio-controls button {
+	border: none;
+}
+
+#audiobar {
+  position: fixed;
+  bottom: 0;
+  padding-right: 56px;
+  width: calc(100% - 56px);
+  transition: 0.2s height ease;
+  background: linear-gradient(0deg, white, #ffffffeb);
+  background: var(--bg-dark-color);
+  align-items: center;
+  display: flex;
+	height: 0;
+	overflow: hidden;
+	z-index: 2;
+}
+
+#audiobar .close {
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin: 8px;
+	border: none;
+	color: var(--grey-medium-color);
+}
+
+#audiobar.active {
+	height: 64px;
+}
+
+#audiobar .time {
+	display: flex;
+	justify-content: center;
+	margin-top: 12px;
+}
+
+#audiobar.active .currentTime::after {
+	content: '/';
+	margin: 0 5px;
+}
+
+#audiobar .audio-controls {
+	display: flex;
+	justify-content: space-evenly;
+}
+
+#audiobar .description {
+	font-size: 14px;
+	color: var(--grey-dark-color);
+	opacity: 0.7;
+}
+
+#audiobar .progress {
+	width: 50%;
+	max-width: 300px;
+	min-width: 100px;
+	margin: 0 auto;
+	height: 4px;
+	background-color: var(--grey-medium-color);
+	position: relative;
+	border-radius: 4px;
+}
+
+#audiobar .progress .bar {
+	width: 0%;
+	content: '';
+	position: absolute;
+	background-color: var(--grey-dark-color);
+	height: 4px;
+	left: 0;
+	border-radius: 4px;
+}
+
+#audiobar .progress:after {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 24px;
+  content: '';
+  top: -12px;
+}
+
+#audiobar .title {
+  margin: 24px 0;
+  width: 150px;
+	font-weight: 400;
+  font-size: 16px;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-family: 'Nunito', 'Helvetica', 'Sans Serif';
+}
+
+#audiobar .time {
+	font-size: 12px;
+}
+
 #tracklist {
   position: relative;
   display: flex;
@@ -953,13 +1023,13 @@ body[data-mode="1"] #onboarding button.duo {
   font-weight: 300;
 }
 
-.track.disable {
+.track[disabled] {
   color: var(--grey-medium-color);
   cursor: default;
   font-weight: 500;
 }
 
-.track.disable:hover {
+.track[disabled]:hover {
   background: unset;
 }
 
@@ -1084,7 +1154,7 @@ body[category="performance"] #tracklist .category-icon .icon.performance {
 #about p {
 	margin: auto;
 	line-height: 32px;
-	padding: 0 16px;
+	padding: 0 24px;
 }
 
 #about {

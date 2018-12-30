@@ -34,6 +34,11 @@
   opacity: 0.5;
 }
 
+#menu .option:after {
+  content: '•';
+  display: block;
+}
+
 #menu .list-item {
 	font-size: 24px;
   white-space: nowrap;
@@ -50,14 +55,13 @@
   height: 3px;
   top: 2px;
   content: '';
-  /*background: #4a4a4a;*/
   background: white;
   position: relative;
   display: block;
   transition: 0.2s width;
 }
 #menu .list-item:hover {
-	letter-spacing: 6px;
+	letter-spacing: 4px;
 }
 
 #menu .list-item:hover a:after,
@@ -77,14 +81,14 @@ body[data-mode="1"] #menu .duo {
 	border: unset;
   position: fixed;
   transform: translateX(72px);
-  top: 20px;
-  right: -24px;
+  top: 0;
+  right: 0;
   transition: 0.2s transform 0.5s;
   padding: 24px;
 }
 
 #menu.active .burger {
-	transform: translateX(-24px);
+	transform: translateX(0);
 }
 
 #menu .burger::hover {

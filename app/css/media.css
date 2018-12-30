@@ -1,35 +1,29 @@
-#media button .play,
-#media.active button .pause,
+#media.playing button .pause,
+#media:not(.playing) button .play,
 #media.ended button .replay {
 	display: inline-block;
 }
 
-#media button .pause,
-#media button .replay,
-#media.active button .play,
-#media.active button .replay,
-#media.ended button .pause,
-#media.ended button .play {
+#media:not(.playing) button .pause,
+#media button .play,
+#media:not(.ended) button .replay {
 	display: none;
 }
 
 #media .audio-controls button {
 	border: none;
+	border-radius: 50%;
+	background-color: unset;
 }
 
 #media {
-  position: fixed;
-  bottom: 0;
-  padding-right: 56px;
-  width: calc(100% - 56px);
-  transition: 0.2s height ease;
-  background: linear-gradient(0deg, white, #ffffffeb);
-  background: var(--bg-dark-color);
-  align-items: center;
+  position: relative;
+  justify-content: center;
   display: flex;
-	height: 0;
-	overflow: hidden;
-	z-index: 2;
+  flex-direction: column;
+  margin: -24px 0;
+  height: calc(100% - 24px);
+  animation: 0.5s TRACKLIST-ANIM ease forwards;
 }
 
 #media.play.expand {
@@ -40,30 +34,14 @@
 	width: 100%;
 }
 
-#media.play.expand .progress {
-	flex-grow: 0;
-}
-
-#media .close {
-	position: absolute;
-	top: 0;
-	right: 0;
-	margin: 8px;
-	border: none;
-	color: var(--grey-medium-color);
-}
-
-#media.play {
-	height: 64px;
-}
-
 #media .time {
 	display: flex;
 	justify-content: center;
 	margin-top: 12px;
+	font-size: 16px;
 }
 
-#media.play .currentTime::after {
+#media .currentTime::after {
 	content: '/';
 	margin: 0 5px;
 }
@@ -85,7 +63,7 @@
 	min-width: 100px;
 	margin: 0 auto;
 	height: 4px;
-	background-color: var(--grey-medium-color);
+	/*background-color: var(--grey-medium-color);*/
 	position: relative;
 	border-radius: 4px;
 }
@@ -110,21 +88,7 @@
 }
 
 #media .title {
-  margin: 24px 0;
-  width: 150px;
-	font-weight: 400;
-  font-size: 16px;
-  max-width: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  font-family: 'Nunito', 'Helvetica', 'Sans Serif';
-}
-
-#media.expand .title {
-  font-size: 32px;
-}
-
-#media .time {
-	font-size: 12px;
+  font-size: 24px;
+  margin: 42px 0;
+  letter-spacing: 4px;
 }

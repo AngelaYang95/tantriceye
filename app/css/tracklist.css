@@ -75,13 +75,13 @@
   font-weight: 300;
 }
 
-.track.disable {
+.track[disabled] {
   color: var(--grey-medium-color);
   cursor: default;
   font-weight: 500;
 }
 
-.track.disable:hover {
+.track[disabled]:hover {
   background: unset;
 }
 

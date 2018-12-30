@@ -15,21 +15,19 @@ var app = {
 	track: "",
 	mode: CONSTANTS.MODES.SOLO,
 	controllers: {},
+	audio: null,
 
 	//-------------------------------------------------------------
-	//                     Settings Functions
+	//                     Setup Functions
 	//-------------------------------------------------------------
 	init: function() {
 		Barba.Pjax.start();	
-		// window.addEventListener('hashchange', app.handleHashChange)
-		// window.addEventListener('load', app.handleHashChange)
-
-	  app.handleViewChange()
 	  app.getMode() && document.body.setAttribute('data-mode', app.getMode())
-	  
+	  app.audio = document.getElementById('audio')
+	  app.audio.addEventListener('ended', app.onTrackFinished);
+	  app.handleViewChange()
+
 		Barba.Dispatcher.on('newPageReady', function() {
-			console.log('new page ready')
-		  // app.initScripts()
 		  app.handleViewChange()
 		});
 	},
@@ -37,6 +35,10 @@ var app = {
 		app.controllers[name] = controller
 	},
 	initScripts: function() {
+		for(let key in app.controllers) {
+			app.controllers[key].dom = null
+		}
+
 		document.querySelectorAll('[data-controller]').forEach((dom) => {
 			let controller = app.controllers[dom.getAttribute('data-controller')]
 			if(controller) {
@@ -59,9 +61,16 @@ var app = {
 		// menu.setActivePath(path)
 
 		if(path.includes('playlist')) {
-			app.goToCategory(params['category'])
-		} else {
-			app.clearArcs()
+			app.goToCategory(params.category || app.getCategory())
+		} 
+		if(path.includes('media')) {
+			app.goToMedia(params.track || app.getTrack())
+		} 
+		if(path.includes('about')) {
+			app.goToAbout()
+		}
+		if(path == '/') {
+			app.goToHome()
 		}
 	},
 	getQueryParam: function() {
@@ -70,9 +79,9 @@ var app = {
 			let entry = param.split("=")
 			params[entry[0]] = entry[1]
 		})
+		if(params.track) params.track = parseInt(params.track)
 		return params
 	},
-	
 	//-------------------------------------------------------------
 	//                     Onboarding Functions
 	//-------------------------------------------------------------
@@ -80,7 +89,7 @@ var app = {
 		app.playTrack(CONSTANTS.TRACKS.INTRO)
 	},
 	playArrivalTrack: function() {
-		if(app.mode == CONSTANTS.MODES.SOLO) {
+		if(app.getMode() == CONSTANTS.MODES.SOLO) {
 			app.playTrack(CONSTANTS.TRACKS.ARRIVAL_SOLO)
 		} else {
 			app.playTrack(CONSTANTS.TRACKS.ARRIVAL_DUO)
@@ -88,11 +97,8 @@ var app = {
 	},
 
 	//-------------------------------------------------------------
-	//                     App Functions
+	//                     Audio Functions
 	//-------------------------------------------------------------
-	showApp: function() {
-		window.location.replace('/');
-	},
 	playRandom: function() {
 		let tracks = data.tracks.filter((track) => {
 			return track.url
@@ -100,59 +106,107 @@ var app = {
 		let id = tracks[Math.floor(Math.random() * tracks.length)].id
 		app.playTrack(id)
 	},
-	playTrack: function(id, expandPlayer) {
-		if(app.track != id) {
-			app.track = id
-			// if(tracklist != undefined) tracklist.setActiveTrack(id)
-
-			let trackObj = data.tracks[id]
-			if(!trackObj) 
-				console.log("error playing track")
-			else
-				media.setTrack(trackObj)
-		}
-		media.togglePlay()
-
-		if(expandPlayer) {
-			media.expandPlayer()
+	seekTo: function(percent) {
+		app.audio.currentTime = Math.floor(app.audio.duration * percent)
+		audiobar.setTime(app.audio.currentTime, app.audio.duration)
+		media.dom && media.setTime(app.audio.currentTime, app.audio.duration)
+	},
+	toggleTrack: function() {
+		if(app.audio.currentTime > 0 && 
+  		!app.audio.paused && 
+  		!app.audio.ended) {
+			app.pauseTrack()
+		} else {
+			app.playTrack()
 		}
 	},
-	clearTrack: function() {
-		if(app.track) {
-			media.clear()
+	pauseTrack: function() {
+		app.audio.pause()
+		audiobar.pause()
+		media.dom && media.pause()
+		clearInterval(app.audioInterval)
+	},
+	playTrack: function(id) {
+		if(id && app.getTrack() != id) {
+			app.setTrack(id)
 		}
+		audiobar.play()
+		console.log("media dom is ", media.dom)
+		media.dom && media.play()
+
+		app.playPromise = app.audio.play()
+	  if (app.playPromise !== undefined) {
+	    app.playPromise.then(_ => {
+	    	app.audioInterval = setInterval(() => {
+					audiobar.setTime(app.audio.currentTime, app.audio.duration)
+					media.dom && media.setTime(app.audio.currentTime, app.audio.duration)
+	    	})
+    		if(onboarding.dom) audiobar.show()		
+	    })
+	    .catch(error => {
+	    	console.log("Error with audio")
+	    });
+	  }
+	},
+	clearTrack: function() {
+		app.pauseTrack()
+		app.audio.currentTime = 0
+		app.track = ''
+		audiobar.clearTrack()
+		audiobar.hide()
+	},
+	onTrackFinished: function() {
+		audiobar.endTrack()
+		media.dom && media.endTrack()
 	},
 
 	//-------------------------------------------------------------
 	//                     Nav Functions
 	//-------------------------------------------------------------
+	showApp: function() {
+		window.location.replace('/');
+	},
+	getTrack: function() {
+		return app.track
+	},
+	setTrack: function(id) {
+		if(!id) return
+
+		app.track = id
+		if(tracklist.dom) {
+			tracklist.setActiveTrack(id)
+		}
+		let trackObj = data.tracks[id]
+		if(!trackObj) 
+			console.log("Error playing track")
+		else
+			audiobar.setTrack(trackObj)
+			media.dom && media.setTrack(trackObj)
+	},
+	getCategory: function() {
+		return app.category
+	},
+	setCategory: function(category) {
+		app.category = category
+		document.body.setAttribute('category', category)
+	},
 	goToHome: function() {
-		app.hideContent()
-		app.clearArcs()
-		app.category = ""
+		app.setCategory('')
 		app.clearTrack()
-		app.showContent()
 	},
 	goToAbout: function() {
+		app.setCategory('')
 		app.clearTrack()
 	},
 	goToCategory: function(category) {
-		if(!category || app.category == category) return
+		if(!category) return
 
-		app.hideContent()
-		app.category = category;
+		app.clearTrack()
+		app.setCategory(category)
 		tracklist.render(category)
-		app.setArcs(category)
-		app.showContent()
 	},
-	goToMedia: function() {
-
-	},
-	setArcs: function(category) {
-		document.body.setAttribute("category", category)
-	},
-	clearArcs: function() {
-		document.body.setAttribute("category", "")
+	goToMedia: function(trackId) {
+		app.playTrack(trackId)
 	},
 	hideContent: function() {
 		document.getElementById('content').classList.add('hide')
@@ -163,4 +217,4 @@ var app = {
 }
 
 document.addEventListener("DOMContentLoaded", app.init);
-document.addEventListener("DOMContentLoaded", app.initScripts);
+// document.addEventListener("DOMContentLoaded", app.initScripts);

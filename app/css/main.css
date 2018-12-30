@@ -163,26 +163,6 @@ body[category="imagination"] .arc {
   background-color: var(--orange-color);
 }
 
-/*body .arc {
-  background-position: 100%;
-  background-color: var(--bg-dark-color);
-  -webkit-mask-image: url(../images/arc.svg);
-  -webkit-mask-repeat: no-repeat;
-  -webkit-mask-size: 100%;
-  -webkit-mask-position-x: 50%;
-  -webkit-mask-position-y: 50%;
-  height: 180px;
-  width: 100%;
-  position: absolute;
-  margin: 0 auto auto;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  max-width: 500px;
-  transition: 0.2s background ease;
-}*/
-
 .arc {
   position: absolute;
   background-position: 100%;
@@ -197,10 +177,7 @@ body[category="imagination"] .arc {
   bottom: 0;
   background-color: var(--bg-dark-color);
   transition: 0.2s background ease;
-}
-
-.arcs {
-  z-index: 1;
+  opacity: 0.9;
 }
 
 .arc.top {
@@ -265,15 +242,30 @@ button:hover {
 	display: none;
 }
 
-#app .mid-nav {
-  position: absolute;
-  top: 50%;
+.screen-controls {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+}
+
+#app .back,
+#app .forward {
+  margin-left: 24px;
+  margin-bottom: 6px;
   z-index: 1;
 }
 
-#app .mid-nav .back {
+#app .forward {
+  right: 0;
+}
+
+#app .forward[disabled],
+#app .back[disabled] {
+  opacity: 0.5;
+}
+
+#app .back svg,
+#app .forward svg {
+  box-shadow: 2px 2px 4px #00000030;
   position: relative;
   top: -24px;
   padding: 6px;
@@ -282,9 +274,6 @@ button:hover {
   background: var(--grey-dark-color);
   fill: var(--grey-light-color);
   transform: scale(1.1);
-}
-
-#app .mid-nav .back {
   display: block;
   opacity: 0;
   animation: 0.2s BACK-BUTTON-ANIM 0.2s ease forwards;

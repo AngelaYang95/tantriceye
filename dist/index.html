@@ -57,9 +57,9 @@
       </ul>
     </div>
   </div>
-  <div class="hide close" id="media" data-controller="media">
+  <div id="audiobar" data-controller="audiobar">
     <div class="audio-controls">
-      <button onclick="media.togglePlay()">
+      <button onclick="audiobar.handlePlayClick()">
         <svg class="icon play xsmall" role="img">
           <use xlink:href="#icon-media-play-filled"></use>
         </svg>
@@ -71,7 +71,7 @@
         </svg>
       </button>
     </div>
-    <audio id="media-player">
+    <audio id="audio">
       <source src="" type="audio/mp3"/>
       <source src="" type="audio/ogg"/>
     </audio>
@@ -83,7 +83,7 @@
         <div class="duration"></div>
       </div>
     </div>
-    <button class="close" onclick="media.handleClose()">
+    <button class="close" onclick="audiobar.handleClose()">
       <svg class="icon xsmall" role="img">
         <use xlink:href="#icon-close"></use>
       </svg>

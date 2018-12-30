@@ -5,10 +5,10 @@ include carousel.pug
 		+carousel-item("", "Welcome to \n The Tantric Eye")
 			.buttons
 				button(onclick='onboarding.handleNextClick()') Skip Intro
-		+carousel-item("tantric-eye-duo", "How will you be practising?")
+		+carousel-item("", "How will you be practising?")
 			.buttons
 				button(onclick='onboarding.handleSoloClick()').solo I'm by myself
 				button(onclick='onboarding.handleDuoClick()').duo I'm with a partner
-		+carousel-item("arrival-duo", "Let's take a minute to arrive.")
+		+carousel-item("tantric-eye-duo", "Let's take a minute to arrive.")
 			.buttons
 				button(onclick='onboarding.handleFinishClick()') Finish

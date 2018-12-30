@@ -8,13 +8,11 @@ var tracklist = {
 	},
 	handleClick: function(dom) {
 		let id = dom.getAttribute("data-id")
-		// if(tracklist.activeTrack && tracklist.activeTrack.getAttribute("data-id") == id) return
-
-		if(tracklist.activeTrack) tracklist.activeTrack.classList.remove('active')
+		if(tracklist.activeTrack) 
+			tracklist.activeTrack.classList.remove('active')
 		
 		dom.classList.add('active')
 		tracklist.activeTrack = dom
-		app.playTrack(id, true)
 	},
 	setActiveTrack: function(id) {
 		if(tracklist.activeTrack) {
@@ -41,17 +39,19 @@ var tracklist = {
 			}
 			let templ = document.importNode(tracklist.template, true)
 			templ.querySelector(".track").setAttribute("data-id", id)
+			templ.querySelector(".track").href = `/media?track=${id}`
 			templ.querySelector(".id").innerHTML = ++number
 			templ.querySelector(".title").innerHTML = trackObj.title
 			templ.querySelector(".description").innerHTML = trackObj.description
       if(trackObj.length) {
         let date = new Date(null)
-			  date.setSeconds(trackObj.length)
+			  date.setSeconds(parseInt(trackObj.length))
 			  templ.querySelector(".length").innerHTML = date.toISOString().substr(14, 5)
       }
 
       if(trackObj.url == "") {
-      	templ.querySelector(".track").classList.add('disable')
+      	templ.querySelector(".track").setAttribute('disabled', true)
+				templ.querySelector(".track").href = '#'
       	templ.querySelector(".track").onclick = ""
       }
 			fragment.appendChild(templ)

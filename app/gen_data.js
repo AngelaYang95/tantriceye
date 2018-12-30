@@ -32,6 +32,8 @@ res.data.forEach((track)=> {
     }
   }
   
+  if(track.length) track.length = parseInt(track.length)
+    
   if(track.url != "") {
     if(track.type == '0') {
       track.url = `../audio/solo/${track.url}.mp3`

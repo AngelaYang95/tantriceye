@@ -12,7 +12,6 @@ var onboarding = {
 			}
 		});
 		observer.observe(carouselDOM, { attributes: true });
-		console.log('BOARDING CONTROLLER ')
 		loadTimeout = setTimeout(() => {
 			onboarding.load()
 		}, 3000)

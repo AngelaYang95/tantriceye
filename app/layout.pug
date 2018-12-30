@@ -16,6 +16,7 @@ mixin icon(iconId, tooltip)
 		link(href="./css/media.css" rel="stylesheet")
 		link(href="./css/onboarding.css" rel="stylesheet")
 		link(href="./css/nav.css" rel="stylesheet")
+		link(href="./css/audiobar.css" rel="stylesheet")
 		link(href="./css/tracklist.css" rel="stylesheet")
 		link(href="./css/carousel.css" rel="stylesheet")
 		link(href="./css/about.css" rel="stylesheet")
@@ -29,7 +30,7 @@ mixin icon(iconId, tooltip)
 	body
 		include images/svg-symbols.svg
 		include views/menu.pug
-		include views/media.pug
+		include views/audiobar.pug
 		script(type="text/javascript").
 			if(!sessionStorage.getItem('onboarded')) {
 				sessionStorage.setItem('onboarded', true)
@@ -49,6 +50,7 @@ mixin icon(iconId, tooltip)
 		script(src="./js/menu-controller.js" type="text/javascript")
 		script(src="./js/data.js" type="text/javascript")
 		script(src="./js/media-controller.js" type="text/javascript")
+		script(src="./js/audiobar-controller.js" type="text/javascript")
 		script(src="./js/tracklist-controller.js" type="text/javascript")
 		script(src="./js/nav-controller.js" type="text/javascript")
 		script(src="./js/onboarding-controller.js" type="text/javascript")

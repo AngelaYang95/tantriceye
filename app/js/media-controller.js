@@ -1,68 +1,34 @@
 var media = {
 	dom: null,
-	player: null,
-	playPromise: null,
-	timeInterval: null,
 	progressBar: null,
 	init: function() {
 		media.dom = document.getElementById("media")
-		media.player = document.getElementById('media-player')
-		media.player.addEventListener('ended', media.handleTrackFinished);
-		media.dom.querySelector('.progress').addEventListener('mousedown', media.handleTrackMouseDown);
+		media.dom.querySelector('.progress').addEventListener('mousedown', audiobar.handleTrackMouseDown);
 	},
-	clear: function() {
-		media.dom.classList.remove("active", "ended", "play", "expand")
-		media.player.pause()
-		media.player.currentTime = 0
-		media.dom.querySelector("source").src = ""
-
-		if(media.progressBar) media.progressBar.dom.style.width = "0"
-		clearInterval(media.timeInterval)
+	show: function() {
+		media.dom.classList.add("active")
 	},
-	startTime: function() {
+	hide: function() {
+		media.dom.classList.remove("active")	
+	},
+	setTime: function(currentTime, duration) {
 		let timeDom = media.dom.querySelector(".currentTime")
 		let progressDom = media.dom.querySelector('.progress .bar')
-		media.timeInterval = setInterval(() => {
-			progressDom.style.width = `${media.player.currentTime / media.player.duration * 100}%`
-			let min = Math.floor(media.player.currentTime / 60)
-			let sec = Math.floor(media.player.currentTime - min).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})
-			min.toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})
-			timeDom.innerHTML = `${min}:${sec}`
-		}, 1000)
+
+		// progressDom.style.width = `${currentTime / duration * 100}%`
+		let min = Math.floor(currentTime / 60)
+		let sec = Math.floor(currentTime - min).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})
+		min.toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})
+		timeDom.innerHTML = `${min}:${sec}`
 	},
-	stopTime: function() {
-		clearInterval(media.timeInterval)
+	pause: function() {
+		 media.dom.classList.remove('playing')
 	},
-	togglePlay: function() {
-  	if(media.player.currentTime > 0 && 
-  		!media.player.paused && 
-  		!media.player.ended) {
-  		media.dom.classList.remove("active")
-  		media.player.pause()
-  		media.stopTime()
-  	} else {
-	  	media.playPromise = media.player.play()
-		  if (media.playPromise !== undefined) {
-		    media.playPromise.then(_ => {
-  				media.startTime()
-  				media.dom.classList.add("active")
-		      media.dom.classList.add("play")
-		    })
-		    .catch(error => {
-		    	console.log("Error with audio")
-		    });
-		  }
-  	}
-	},
-	seekTo: function(seconds) {
-		media.player.currentTime = seconds
-	},
-	expandPlayer: function() {
-    // media.dom.classList.add("expand")
+	play: function() {
+		 media.dom.classList.add('playing')
 	},
 	setTrack: function(trackObj) {
-		media.dom.classList.remove("active", "ended")
-		document.querySelector('.arcs').classList.remove('animate')
+		media.dom.classList.remove("active", "ended", "playing")
 
 		if(trackObj.length) {
 			let date = new Date(null)
@@ -71,43 +37,48 @@ var media = {
 		}
 		media.dom.querySelector(".title").innerHTML = trackObj.title
 		media.dom.querySelector(".currentTime").innerHTML = "00:00"
-		media.dom.querySelector("source").src = trackObj.url
-		media.dom.querySelector("audio").src = trackObj.url
 	},
+	clearTrack: function() {
+		media.dom.classList.remove('active', 'ended', 'playing')
+		media.dom.querySelector('source').src = ''
+		media.dom.querySelector('.title').innerHTML = ''
+		media.dom.querySelector('.currentTime').innerHTML = ''
+		media.dom.querySelector('.progress .bar').style.width = '0'
+	},
+	endTrack: function() {
+		media.dom.classList.remove("active")
+		media.dom.classList.add("ended")
+	},
+
+	/** Handlers */
 	handleClose: function() {
 		app.clearTrack()
 	},
-	handleTrackFinished: function(e) {
-		media.dom.classList.remove("active", "play")
-		media.dom.classList.add("ended")
-		document.querySelector('.arcs').classList.add('animate')
+	handlePlayClick: function() {
+		app.toggleTrack()
 	},
 	handleTrackMouseDown: function(e) {
 		document.addEventListener('mousemove', media.handleTrackMouseMove);
 		document.addEventListener('mouseup', media.handleTrackMouseUp);
-		// media.dom.classList.add("active")
 		media.progressBar = media.dom.querySelector('.progress').getBoundingClientRect()
 		media.progressBar.dom = media.dom.querySelector('.progress .bar')
 		media._updateProgressBar(e.clientX)
 	},
 	handleTrackMouseMove: function(e) {
-		console.log('move movee')
-		console.log(e)
 		media._updateProgressBar(e.clientX)
 	},
 	handleTrackMouseUp: function(e) {
-		console.log('move up')
 		media._updateProgressBar(e.clientX)
-		// media.dom.classList.remove("active")
 		document.removeEventListener('mouseup', media.handleTrackMouseUp)
 		document.removeEventListener('mousemove', media.handleTrackMouseMove)
 	},
 	_updateProgressBar(mouseX) {
 		let distance = mouseX - media.progressBar.x
 		let percent = distance / media.progressBar.width
-		media.progressBar.dom.style.width = `${Math.floor(percent * 100)}%`
-		media.player.currentTime = Math.floor(media.player.duration * percent)
+		// audiobar.progressBar.dom.style.width = `${Math.floor(percent * 100)}%`
+		// audiobar.player.currentTime = Math.floor(audiobar.player.duration * percent)
+		app.seekTo(percent)
 	},
 }
 
-document.addEventListener("DOMContentLoaded", media.init);
+document.addEventListener("DOMContentLoaded", app.registerController('media', media));
