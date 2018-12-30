@@ -58,7 +58,7 @@ var app = {
 		let path = window.location.pathname
 		let params = app.getQueryParam()
 		app.initScripts()
-		// menu.setActivePath(path)
+		menu.setActivePath(path)
 
 		if(path.includes('playlist')) {
 			app.goToCategory(params.category || app.getCategory())

@@ -355,11 +355,11 @@ button:hover {
   transition: 0.2s width;
 }
 #menu .list-item:hover {
-	letter-spacing: 4px;
 }
 
-#menu .list-item:hover a:after,
-#menu .list-item a.active:after {
+#menu .list-item:hover,
+#menu .list-item.active {
+	letter-spacing: 4px;
  /*width: 100%;*/
 }
 
@@ -397,12 +397,12 @@ body[data-mode="1"] #menu .duo {
 	margin-bottom: 5px;
 	border-radius: 4px;
   box-shadow: 2px 2px 20px 0 #00000033;
-	background-color: var(--grey-dark-color);
 	transition: 0.3s transform, 0.4s background 0.5s;
 	transform-origin: center center;
+	background-color: var(--grey-dark-color);
 }
 #menu.active .burger .bar {
-	background-color: white;
+	background-color: var(--bg-dark-color);
 }
 
 

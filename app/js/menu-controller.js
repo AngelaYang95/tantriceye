@@ -8,10 +8,11 @@ var menu = {
 		})
 	}, 
 	setActivePath: function(path) {
-		let pathLink = menu.dom.querySelector(`a[href="${path}"]`)
-		if(pathLink) {
-			pathLink.classList.add('active')
-			menu.dom.querySelector('a.active').classList.remove('active')
+		document.querySelector('#menu .active').classList.remove('active')
+		if(path.includes('about')) {
+			document.querySelector('#menu .about').classList.add('active')
+		} else {
+			document.querySelector('#menu .home').classList.add('active')
 		}
 	},
 	toggleMenu: function() {
