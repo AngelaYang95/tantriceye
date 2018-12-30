@@ -51,8 +51,8 @@ var tracklist = {
 
       if(trackObj.url == "") {
       	templ.querySelector(".track").setAttribute('disabled', true)
-				templ.querySelector(".track").href = '#'
-      	templ.querySelector(".track").onclick = ""
+				templ.querySelector(".track").removeAttribute('href')
+      	templ.querySelector(".track").removeAttribute('onclick')
       }
 			fragment.appendChild(templ)
 		})

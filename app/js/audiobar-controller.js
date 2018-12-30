@@ -49,7 +49,7 @@ var audiobar = {
 		audiobar.dom.querySelector('.progress .bar').style.width = '0'
 	},
 	endTrack: function() {
-		audiobar.dom.classList.remove("active")
+		audiobar.dom.classList.remove("active", "playing")
 		audiobar.dom.classList.add("ended")
 	},
 

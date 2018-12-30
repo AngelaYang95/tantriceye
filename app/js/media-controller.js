@@ -46,7 +46,7 @@ var media = {
 		media.dom.querySelector('.progress .bar').style.width = '0'
 	},
 	endTrack: function() {
-		media.dom.classList.remove("active")
+		media.dom.classList.remove("playing")
 		media.dom.classList.add("ended")
 	},
 

@@ -4,7 +4,7 @@ block content
 	#app
 		include views/tracklist.pug
 		.screen-controls
-			a(href="/").back
+			a(href="#" onclick="app.back()").back
 				+icon('chevron-left').xsmall
-			a(href="#" disabled).forward
+			a(disabled).forward
 				+icon('chevron-right').xsmall

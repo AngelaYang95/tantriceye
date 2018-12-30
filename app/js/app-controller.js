@@ -104,7 +104,17 @@ var app = {
 			return track.url
 		})
 		let id = tracks[Math.floor(Math.random() * tracks.length)].id
-		app.playTrack(id)
+		let path = "/media?track=" + id
+		app.redirectTo(path)
+	},
+	back: function() {
+		window.history.back()
+	},
+	forward: function() {
+		window.history.forward()
+	},
+	redirectTo: function(path) {
+		window.history.pushState(null, "", path);
 	},
 	seekTo: function(percent) {
 		app.audio.currentTime = Math.floor(app.audio.duration * percent)

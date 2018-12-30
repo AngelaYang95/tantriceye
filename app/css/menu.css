@@ -32,10 +32,16 @@
   margin-right: 24px;
   font-weight: 400;
   opacity: 0.5;
+  transition: 0.2s color;
 }
 
 #menu .option:after {
   content: '•';
+  display: block;
+}
+
+#menu .option.duo:before {
+	content: '•';
   display: block;
 }
 

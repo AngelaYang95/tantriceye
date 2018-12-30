@@ -1,5 +1,5 @@
 #media.playing button .pause,
-#media:not(.playing) button .play,
+#media:not(.playing):not(.ended) button .play,
 #media.ended button .replay {
 	display: inline-block;
 }
@@ -63,7 +63,6 @@
 	min-width: 100px;
 	margin: 0 auto;
 	height: 4px;
-	/*background-color: var(--grey-medium-color);*/
 	position: relative;
 	border-radius: 4px;
 }
