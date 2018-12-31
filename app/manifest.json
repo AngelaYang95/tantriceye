@@ -5,12 +5,12 @@
     {
       "src": "/images/tantric-eye-icon.png",
       "type": "image/",
-      "sizes": "96x96",
+      "sizes": "96x96"
     },
     {
       "src": "/images/tantric-eye-icon2x.png",
       "type": "image/",
-      "sizes": "192x192",
+      "sizes": "192x192"
     },
   ],
   "start_url": "/",

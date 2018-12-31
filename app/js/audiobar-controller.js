@@ -57,7 +57,7 @@ var audiobar = {
 	},
 	clearError: function() {
 		audiobar.dom.classList.removd('error')
-	}
+	},
 
 	/** Handlers */
 	handleClose: function() {
