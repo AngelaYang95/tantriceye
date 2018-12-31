@@ -1161,6 +1161,7 @@ body[category="performance"] #tracklist .category-icon .icon.performance {
 	display: flex;
 	height: 100%;
 	flex-direction: column;
+	justify-content: center
 }
 
 #about p {
@@ -1170,5 +1171,5 @@ body[category="performance"] #tracklist .category-icon .icon.performance {
 }
 
 #about .email {
-	margin-top: auto;
+	margin-top: 56px;
 }

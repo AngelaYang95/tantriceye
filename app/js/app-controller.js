@@ -141,8 +141,8 @@ var app = {
 			app.setTrack(id)
 		}
 		audiobar.play()
-		console.log("media dom is ", media.dom)
 		media.dom && media.play()
+		onboarding.dom && audiobar.show()
 
 		app.playPromise = app.audio.play()
 	  if (app.playPromise !== undefined) {
@@ -151,7 +151,6 @@ var app = {
 					audiobar.setTime(app.audio.currentTime, app.audio.duration)
 					media.dom && media.setTime(app.audio.currentTime, app.audio.duration)
 	    	})
-    		if(onboarding.dom) audiobar.show()		
 	    })
 	    .catch(error => {
 	    	console.log("Error with audio")
