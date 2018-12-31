@@ -5,12 +5,11 @@
 }
 
 #carousel .carousel-item {
-	overflow: hidden;
+	overflow-x: hidden;
 }
 
 #carousel p {
 	white-space: pre-line;
-	padding: 0 24px;
 }
 
 #carousel .window {
@@ -41,7 +40,6 @@
 
 .carousel-item {
 	width: 100%;
-	padding: 24px 0;
 	margin: auto;
 }
 

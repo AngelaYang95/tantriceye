@@ -12,11 +12,15 @@ body[data-mode="1"] #onboarding button.duo {
 
 #onboarding p {
 	margin: 16px 0;
-	font-size: 36px;
+	font-size: 1.8em;
 	font-weight: 400;
 	padding: 0 12px;
 	height: 100%;
 	font-family: 'Nunito', 'Sans serif';
+}
+
+#onboarding svg {
+	margin-top: -48px;
 }
 
 #onboarding .icon {
