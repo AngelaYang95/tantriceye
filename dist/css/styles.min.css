@@ -49,6 +49,10 @@ h2 {
 	text-transform: uppercase;
 }
 
+h3 {
+  letter-spacing: 2px;
+}
+
 h4 {
 	color: var(--grey-light-color);
 	font-weight: 400;
@@ -311,11 +315,6 @@ button:hover {
 	transform: translateX(0px);
 }
 
-#menu .divider {
-  border-bottom: 1px solid #80808059;
-  width: 100%;
-}
-
 #menu .mode ul {
 	padding: 0;
 }
@@ -343,6 +342,8 @@ button:hover {
 	font-size: 24px;
   white-space: nowrap;
   cursor: default;
+  letter-spacing: 3px;
+  margin-bottom: 56px;
 }
 
 #menu .list-item a {
@@ -352,7 +353,7 @@ button:hover {
 
 #menu .list-item a:after {
   width: 0%;
-  height: 3px;
+  height: 12px;
   top: 2px;
   content: '';
   background: white;
@@ -360,13 +361,13 @@ button:hover {
   display: block;
   transition: 0.2s width;
 }
+
 #menu .list-item:hover {
 }
 
-#menu .list-item:hover,
-#menu .list-item.active {
-	letter-spacing: 4px;
- /*width: 100%;*/
+#menu .list-item:hover a:after,
+#menu .list-item.active a:after {
+ width: 100%;
 }
 
 body:not([data-mode="1"]) #menu .solo {
@@ -1156,13 +1157,18 @@ body[category="performance"] #tracklist .category-icon .icon.performance {
 	background-color: var(--grey-dark-color);
 }
 
-#about p {
-	margin: auto;
-	line-height: 32px;
-	padding: 0 24px;
-}
-
 #about {
 	display: flex;
 	height: 100%;
+	flex-direction: column;
+}
+
+#about p {
+	margin: 6px auto 16px;
+	line-height: 32px;
+	padding: 0 16px;
+}
+
+#about .email {
+	margin-top: auto;
 }

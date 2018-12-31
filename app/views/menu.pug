@@ -3,13 +3,14 @@
 		.bar.top
 		.bar.mid
 		.bar.bottom
-	.list-item.home
-		a(href="/").active The Tantric Eye
-	.list-item.about
-		a(href="/about" onclick='app.goToAbout()') About
-	.mode
-		ul
-			li.option.solo(onclick="menu.handleSoloClick()") 
-				a(href="/") Individual
-			li.option.duo(onclick="menu.handleDuoClick()") 
-				a(href="/") Partner
+	.container
+		.list-item.home
+			a(href="/").active Home
+		.list-item.about
+			a(href="/about" onclick='app.goToAbout()') About
+		.mode
+			ul
+				li.option.solo(onclick="menu.handleSoloClick()") 
+					a(href="/") Individual
+				li.option.duo(onclick="menu.handleDuoClick()") 
+					a(href="/") Partner

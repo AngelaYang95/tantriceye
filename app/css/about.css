@@ -1,10 +1,16 @@
-#about p {
-	margin: auto;
-	line-height: 32px;
-	padding: 0 24px;
-}
-
 #about {
 	display: flex;
 	height: 100%;
+	flex-direction: column;
+	justify-content: center
+}
+
+#about p {
+	margin: 6px auto 16px;
+	line-height: 32px;
+	padding: 0 16px;
+}
+
+#about .email {
+	margin-top: 56px;
 }

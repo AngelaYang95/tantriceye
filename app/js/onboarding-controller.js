@@ -12,7 +12,7 @@ var onboarding = {
 			}
 		});
 		observer.observe(carouselDOM, { attributes: true });
-		loadTimeout = setTimeout(() => {
+		onboarding.loadTimeout = setTimeout(() => {
 			onboarding.load()
 		}, 3000)
 	},
@@ -64,6 +64,5 @@ var onboarding = {
 		console.log('touch end')
 	},
 }
-
 document.addEventListener("DOMContentLoaded", app.registerController('onboarding', onboarding));
-// document.addEventListener("DOMContentLoaded", onboarding.init)
+

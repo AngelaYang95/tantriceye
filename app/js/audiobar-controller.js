@@ -17,8 +17,8 @@ var audiobar = {
 
 		progressDom.style.width = `${currentTime / duration * 100}%`
 		let min = Math.floor(currentTime / 60)
-		let sec = Math.floor(currentTime - min).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})
-		min.toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})
+		let sec = Math.floor(currentTime - min * 60).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})
+		min.toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping: false})
 		timeDom.innerHTML = `${min}:${sec}`
 	},
 	pause: function() {

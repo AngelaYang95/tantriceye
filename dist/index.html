@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
   <meta charset="UTF-8"/>
-  <meta name="Description" content="The Tantric Eye - A mindfulness app for the gallery space."/>
+  <meta name="Description" content="The Tantric Eye: 101 amazing audio-guided practices to discover art, yourself and others in art museums."/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <link rel="stylesheet" href="css/styles.min.css">
   <link rel="manifest" href="./manifest.json"/>
@@ -48,13 +48,15 @@
       <div class="bar mid"></div>
       <div class="bar bottom"></div>
     </div>
-    <div class="list-item home"><a class="active" href="/">The Tantric Eye</a></div>
-    <div class="list-item about"><a href="/about" onclick="app.goToAbout()">About</a></div>
-    <div class="mode">
-      <ul>
-        <li class="option solo" onclick="menu.handleSoloClick()"> <a href="/">Individual</a></li>
-        <li class="option duo" onclick="menu.handleDuoClick()"> <a href="/">Partner</a></li>
-      </ul>
+    <div class="container">
+      <div class="list-item home"><a class="active" href="/">Home</a></div>
+      <div class="list-item about"><a href="/about" onclick="app.goToAbout()">About</a></div>
+      <div class="mode">
+        <ul>
+          <li class="option solo" onclick="menu.handleSoloClick()"> <a href="/">Individual</a></li>
+          <li class="option duo" onclick="menu.handleDuoClick()"> <a href="/">Partner</a></li>
+        </ul>
+      </div>
     </div>
   </div>
   <div id="audiobar" data-controller="audiobar">

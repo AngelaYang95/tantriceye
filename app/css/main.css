@@ -49,6 +49,10 @@ h2 {
 	text-transform: uppercase;
 }
 
+h3 {
+  letter-spacing: 2px;
+}
+
 h4 {
 	color: var(--grey-light-color);
 	font-weight: 400;
