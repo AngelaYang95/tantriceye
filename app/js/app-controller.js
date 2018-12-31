@@ -154,6 +154,7 @@ var app = {
 	    })
 	    .catch(error => {
 	    	console.log("Error with audio")
+	    	audiobar.setError()
 	    });
 	  }
 	},

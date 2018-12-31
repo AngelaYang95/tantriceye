@@ -41,7 +41,7 @@ var audiobar = {
 		audiobar.dom.querySelector("audio").src = trackObj.url
 	},
 	clearTrack: function() {
-		audiobar.dom.classList.remove('active', 'ended', 'playing')
+		audiobar.dom.classList.remove('active', 'ended', 'playing', 'error')
 		audiobar.dom.querySelector('source').src = ''
 		audiobar.dom.querySelector('.title').innerHTML = ''
 		audiobar.dom.querySelector('.currentTime').innerHTML = ''
@@ -50,8 +50,14 @@ var audiobar = {
 	},
 	endTrack: function() {
 		audiobar.dom.classList.remove("active", "playing")
-		audiobar.dom.classList.add("ended")
+		audiobar.dom.classList.add('ended')
 	},
+	setError: function() {
+		audiobar.dom.classList.add('error')
+	},
+	clearError: function() {
+		audiobar.dom.classList.removd('error')
+	}
 
 	/** Handlers */
 	handleClose: function() {
