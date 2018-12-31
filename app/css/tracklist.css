@@ -62,7 +62,7 @@
 
 .track:hover, .track.active {
 	background-color: var(--bg-dark-color);
-  font-weight: 600;
+  /*font-weight: 600;*/
 }
 
 .track .text {
