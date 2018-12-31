@@ -108,10 +108,10 @@ var app = {
 		app.redirectTo(path)
 	},
 	back: function() {
-		window.history.back()
+		window.history.go(-1)
 	},
 	forward: function() {
-		window.history.forward()
+		window.history.go(1)
 	},
 	redirectTo: function(path) {
 		window.history.pushState(null, "", path);
