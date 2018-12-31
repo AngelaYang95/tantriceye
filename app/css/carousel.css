@@ -6,6 +6,7 @@
 
 #carousel .carousel-item {
 	overflow-x: hidden;
+	height: 100%;
 }
 
 #carousel p {
