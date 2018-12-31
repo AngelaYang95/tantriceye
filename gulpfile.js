@@ -9,7 +9,7 @@ var uglify = require('gulp-uglify-es').default;
 var useref = require('gulp-useref');
 
 /* Production build tasks. */
-gulp.task('build', [`useref`, `images`, `audio`], function (){
+gulp.task('build', [`useref`, `images`, `audio`, `json`], function (){
   console.log('BUILD Complete');
 });
 
@@ -20,7 +20,7 @@ gulp.task('useref', function() {
   return gulp.src('app/*.pug')
     .pipe(pug({ pretty: true }))
     .pipe(useref())
-    // .pipe(gulpIf('*.css', cssnano()))
+    .pipe(gulpIf('*.css', cssnano()))
     // .pipe(gulpIf('*.js', uglify()))
     .pipe(gulp.dest('dist'))
 });
@@ -58,6 +58,12 @@ gulp.task('compress-images', function(){
 gulp.task('audio', function(){
   return gulp.src('app/audio/**/*')
     .pipe(gulp.dest('dist/audio'))
+});
+
+/* Copy json files. */
+gulp.task('json', function(){
+  return gulp.src('app/*.json')
+    .pipe(gulp.dest('dist'))
 });
 
 /* Preprocess pug files to static html */
