@@ -3,7 +3,7 @@ var media = {
 	progressBar: null,
 	init: function() {
 		media.dom = document.getElementById("media")
-		media.dom.querySelector('.progress').addEventListener('mousedown', audiobar.handleTrackMouseDown);
+		// media.dom.querySelector('.progress').addEventListener('mousedown', audiobar.handleTrackMouseDown);
 	},
 	show: function() {
 		media.dom.classList.add("active")
