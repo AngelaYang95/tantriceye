@@ -115,6 +115,8 @@ var app = {
 	},
 	redirectTo: function(path) {
 		window.history.pushState(null, "", path);
+		// FORCE RELOAD
+		location.reload();
 	},
 	seekTo: function(percent) {
 		app.audio.currentTime = Math.floor(app.audio.duration * percent)

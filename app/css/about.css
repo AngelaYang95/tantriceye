@@ -2,15 +2,35 @@
 	display: flex;
 	height: 100%;
 	flex-direction: column;
-	justify-content: center
+	padding: 12px 0;
+	overflow-y: scroll;
 }
 
 #about p {
-	margin: 6px auto 16px;
+	margin: 6px auto 20px;
 	line-height: 32px;
 	padding: 0 16px;
+	max-width: 350px;
 }
 
-#about .email {
-	margin-top: 56px;
+#about h3 {
+	margin: 12px auto;
+}
+
+#about .rights {
+	font-size: 10px;
+}
+
+#about .survey:hover {
+	opacity: 0.9;
+}
+
+#about .survey {
+  padding: 14px 12px;
+  display: inline-block;
+  width: 150px;
+  border-radius: 8px;
+  background: var(--orange-color);
+  color: white;
+  margin: auto auto 12px;
 }
