@@ -104,11 +104,10 @@ body[data-mode="1"] #menu .duo {
 	height: 4px;
 	width: 28px;
 	margin-bottom: 5px;
-	border-radius: 4px;
   box-shadow: 2px 2px 20px 0 #00000033;
 	transition: 0.3s transform, 0.4s background 0.5s;
 	transform-origin: center center;
-	background-color: var(--grey-dark-color);
+	background-color: #8c857b;
 }
 #menu.active .burger .bar {
 	background-color: var(--bg-dark-color);

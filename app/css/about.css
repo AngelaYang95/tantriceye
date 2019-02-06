@@ -8,9 +8,9 @@
 
 #about p {
 	margin: 6px auto 20px;
-	line-height: 32px;
 	padding: 0 16px;
 	max-width: 350px;
+	font-size: 14px;
 }
 
 #about h3 {
