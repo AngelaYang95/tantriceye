@@ -22,10 +22,11 @@ var media = {
 		timeDom.innerHTML = `${min}:${sec}`
 	},
 	pause: function() {
-		 media.dom.classList.remove('playing')
+		media.dom.classList.remove('playing')
 	},
 	play: function() {
-		 media.dom.classList.add('playing')
+		media.dom.classList.add('playing')
+		media.dom.classList.remove("ended")
 	},
 	setTrack: function(trackObj) {
 		media.dom.classList.remove("active", "ended", "playing")
@@ -36,6 +37,7 @@ var media = {
 			media.dom.querySelector(".duration").innerHTML = date.toISOString().substr(14, 5)
 		}
 		media.dom.querySelector(".title").innerHTML = trackObj.title
+		media.dom.querySelector(".description").innerHTML = trackObj.description
 		media.dom.querySelector(".currentTime").innerHTML = "00:00"
 	},
 	clearTrack: function() {

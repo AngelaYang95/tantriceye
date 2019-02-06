@@ -4,9 +4,9 @@ mixin category(name, path)
 		label= name
 
 #nav(data-controller="nav")
-	.categories
-		+category('mind', '/playlist?category=mind')
-		+category('imagination', '/playlist?category=imagination')
-		+category('performance', '/playlist?category=performance')
-		+category('body', '/playlist?category=body')
-		+category('sight', '/playlist?category=sight')
+	.label Select a category
+	+category('mind', '/playlist?category=mind')
+	+category('imagination', '/playlist?category=imagination')
+	+category('performance', '/playlist?category=performance')
+	+category('body', '/playlist?category=body')
+	+category('sight', '/playlist?category=sight')

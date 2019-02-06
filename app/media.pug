@@ -3,17 +3,18 @@ extends layout.pug
 block content
 	#app
 		#media(data-controller="media").hide
-			.audio-controls
-				button(onclick="media.handlePlayClick()")
-					+icon("media-play-filled").play.xsmall
-					+icon("media-pause").pause.xsmall
-					+icon("media-replay").replay.xsmall
 			.title
+			.description
 			.progress
-				.bar
-				.time
-					.currentTime
-					.duration
+				.audio-controls
+					button(onclick="media.handlePlayClick()")
+						+icon("media-play-filled").play.xsmall
+						+icon("media-pause").pause.xsmall
+						+icon("media-replay").replay.xsmall
+				.wave
+			.time
+				.currentTime
+				.duration
 		.screen-controls
 			a(href="javascript:void(0);" onclick="app.back()").back
 				+icon('chevron-left').xsmall

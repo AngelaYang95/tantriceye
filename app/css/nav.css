@@ -3,13 +3,19 @@
 	text-align: center;
 	text-transform: capitalize;
   width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
   bottom: 0;
+  top: 0;
   position: absolute;
   animation: 0.2s NAV-ANIM forwards;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	padding: 32px 0;
+}
+
+#nav .label {
+	position: absolute;
+	top: 32px;
 }
 
 #nav.hide {
