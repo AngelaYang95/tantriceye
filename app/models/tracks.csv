@@ -1,11 +1,11 @@
 id,title,category,description,url,length,type
 0,Zoom In,Body,Savouring a slow approach,ZoomIn_Solo,73,0
 1,Zoom In,Body,Savouring a slow approach,PartnerZoomin,75,1
-2,Breathing in Light ,Body,Connecting breath and vision,BreathinginLight_Solo,99,0
-3,Breathing in Light ,Body,Connecting breath and vision,PartnerBreathinginLight,,1
+2,Breathing in Light ,Body,Connecting breath and vision,BreathingInLight_Solo,99,0
+3,Breathing in Light ,Body,Connecting breath and vision,PartnerBreathingInLight,111,1
 4,Aerobic Gaze,Body,"Pounding heart, rapid breath",AerobicGazeSolo,110,0
 5,Aerobic Gaze,Body,"Pounding heart, rapid breath",PartnerAerobicGaze,111,1
-6,Gaze Filter,Mind,Learning to love,GazeFilterSolo,,0
+6,Gaze Filter,Mind,Learning to love,GazeFilterSolo,64,0
 7,Gaze Filter,Mind,Learning to love,PartnerGazeFilter,67,1
 8,Target,Mind,Observing being observed,Target_Solo,31,0
 9,Target,Mind,Observing being observed,PartnerTarget,26,1
@@ -13,46 +13,46 @@ id,title,category,description,url,length,type
 11,Mirror Mind,Mind,Art and the inner world ,PartnerMirrorMind,56,1
 12,What Lies Beyond,Sight,Imaginary horizons,WhatLiesBeyond_Solo,83,0
 13,What Lies Beyond,Sight,Imaginary horizons,PartnerWhatLiesBeyond,89,1
-14,What Lies In Front,Sight,Focusing in front of the work,,,0
-15,What Lies In Front,Sight,Focusing in front of the work,,,1
-16,Cave Vision,Sight,Between fingers and palms,CaveVisionSolo,50,0
-17,Cave Vision,Sight,Between fingers and palms,PartnerCaveVision,51,1
-18,Flicker Vision,Sight,Rapid blinking,FlickerVisionSolo,19,0
-19,Flicker Vision,Sight,Rapid blinking,PartnerFlickerVision,19,1
-20,Sounds of Silence,Imagination,Sounds and silences,SoundsofSilenceSolo,30,0
-21,Sounds of Silence,Imagination,Sounds and silences,PartnerSoundsofSilence,34,1
-22,Confession,Mind,Answering to art,,,0
-23,Confession,Mind,Answering to art,,,1
-24,Wisdom of Art,Mind,Let art resolve life's difficult questions,,,0
-25,Wisdom of Art,Mind,Let art resolve life's difficult questions,,,1
-26,Reframe,Imagination,Finding art everywhere,ReframingSolo,55,0
-27,Reframe,Imagination,Finding art everywhere,PartnerReframing,,1
-28,Signs,Performance,Conceptual art practice,,,0
-29,Signs,Performance,Conceptual art practice,,,1
-30,Born Anew,Imagination,Fresh-eyed gazing,BornAnewSolo,20,0
-31,Born Anew,Imagination,Fresh-eyed gazing,PartnerBornAnew,24,1
-32,Be Art,Performance,Becoming an artwork,BecomingArtSolo,34,0
-33,Be Art,Performance,Becoming an artwork,PartnerBecomingArt,56,1
-34,Click Click,Performance,Being a human camera,ClickClickSolo,45,0
-35,Click Click,Performance,Being a human camera,PartnerClickClick,81,1
-36,Air Art,Performance,Making art from thin air,AirArtSolo,41,0
-37,Air Art,Performance,Making art from thin air,PartnerAirArt,52,1
-38,Art Stretch,Body,A vertical gaze arc through 180°,,,0
-39,Art Stretch,Body,A vertical gaze arc through 180°,,,1
-40,Tidal Lock,Body,A horizontal gaze arc through 180°,,,0
-41,Tidal Lock,Body,A horizontal gaze arc through 180°,,,1
-42,Slow Spin,Body,Turning through 360°,,,0
-43,Slow Spin,Body,Turning through 360°,,,1
-44,No Straight Lines,Body,Curving and zigzagging routes,,,0
-45,No Straight Lines,Body,Curving and zigzagging routes,,,1
-46,Just Sitting,Body,Art from a seated position,,,0
-47,Just Sitting,Body,Art from a seated position,,,1
-48,Memento Mori,Mind,Contemplating death,,,0
-49,Memento Mori,Mind,Contemplating death,,,1
-50,Hyperventilate,Body,"Rapid, deep breathing",,,0
-51,Hyperventilate,Body,"Rapid, deep breathing",,,1
-52,Breath-Held Views,Body,One-breath vision,,,0
-53,Breath-Held Views,Body,One-breath vision,,,1
+14,Cave Vision,Sight,Between fingers and palms,CaveVisionSolo,50,0
+15,Cave Vision,Sight,Between fingers and palms,PartnerCaveVision,51,1
+16,Flicker Vision,Sight,Rapid blinking,FlickerVisionSolo,19,0
+17,Flicker Vision,Sight,Rapid blinking,PartnerFlickerVision,19,1
+18,Sounds of Silence,Imagination,Sounds and silences,SoundsofSilenceSolo,30,0
+19,Sounds of Silence,Imagination,Sounds and silences,PartnerSoundsofSilence,34,1
+20,Reframe,Imagination,Finding art everywhere,ReframingSolo,55,0
+21,Reframe,Imagination,Finding art everywhere,PartnerReframing,60,1
+22,Born Anew,Imagination,Fresh-eyed gazing,BornAnewSolo,20,0
+23,Born Anew,Imagination,Fresh-eyed gazing,PartnerBornAnew,24,1
+24,Be Art,Action,Becoming an artwork,BecomingArtSolo,34,0
+25,Be Art,Action,Becoming an artwork,PartnerBecomingArt,56,1
+26,Click Click,Action,Being a human camera,ClickClickSolo,45,0
+27,Click Click,Action,Being a human camera,PartnerClickClick,81,1
+28,Air Art,Action,Making art from thin air,AirArtSolo,41,0
+29,Air Art,Action,Making art from thin air,PartnerAirArt,52,1
+30,Wisdom of Art,Mind,Let art resolve life's difficult questions,,,0
+31,Wisdom of Art,Mind,Let art resolve life's difficult questions,,,1
+32,Confession,Mind,Answering to art,,,0
+33,Confession,Mind,Answering to art,,,1
+34,Signs,Action,Conceptual art practice,,,0
+35,Signs,Action,Conceptual art practice,,,1
+36,Art Stretch,Body,A vertical gaze arc through 180°,,,0
+37,Art Stretch,Body,A vertical gaze arc through 180°,,,1
+38,Tidal Lock,Body,A horizontal gaze arc through 180°,,,0
+39,Tidal Lock,Body,A horizontal gaze arc through 180°,,,1
+40,Slow Spin,Body,Turning through 360°,,,0
+41,Slow Spin,Body,Turning through 360°,,,1
+42,No Straight Lines,Body,Curving and zigzagging routes,,,0
+43,No Straight Lines,Body,Curving and zigzagging routes,,,1
+44,Just Sitting,Body,Art from a seated position,,,0
+45,Just Sitting,Body,Art from a seated position,,,1
+46,Memento Mori,Mind,Contemplating death,,,0
+47,Memento Mori,Mind,Contemplating death,,,1
+48,Hyperventilate,Body,"Rapid, deep breathing",,,0
+49,Hyperventilate,Body,"Rapid, deep breathing",,,1
+50,Breath-Held Views,Body,One-breath vision,,,0
+51,Breath-Held Views,Body,One-breath vision,,,1
+52,What Lies In Front,Sight,Focusing in front of the work,,,0
+53,What Lies In Front,Sight,Focusing in front of the work,,,1
 54,Breathing Art,Body,Linking breath and vision,,,0
 55,Breathing Art,Body,Linking breath and vision,,,1
 56,Slow Dating,Mind,Spending time with art,,,0
@@ -153,28 +153,28 @@ id,title,category,description,url,length,type
 151,Autogenic Art,Imagination,Capturing fantasies,,,1
 152,Lux and Lumen,Imagination,Distinguishing between the sacred and profane,,,0
 153,Lux and Lumen,Imagination,Distinguishing between the sacred and profane,,,1
-154,Dance Partner,Performance,Dancing with art,,,0
-155,Dance Partner,Performance,Dancing with art,,,1
-156,Drawing on the Body,Performance,Making body art,,,0
-157,Drawing on the Body,Performance,Making body art,,,1
-158,Naming Parts,Performance,Conceptual art practice,,,0
-159,Naming Parts,Performance,Conceptual art practice,,,1
-160,Estimating Size,Performance,Conceptual art practice,,,0
-161,Estimating Size,Performance,Conceptual art practice,,,1
-162,Mark Making,Performance,Process-oriented art,,,0
-163,Mark Making,Performance,Process-oriented art,,,1
-164,I-Spy,Performance,Conceptual art practice,,,0
-165,I-Spy,Performance,Conceptual art practice,,,1
-166,Eye Drawing,Imagination,Imaginary mark making,,,0
-167,Eye Drawing,Imagination,Imaginary mark making,,,1
-168,Nose Drawing,Performance,Conceptual art practice,,,0
-169,Nose Drawing,Performance,Conceptual art practice,,,1
-170,Song Art,Performance,Singing in response to art,,,0
-171,Song Art,Performance,Singing in response to art,,,1
-172,Clap Art,Performance,Clapping in response to art,,,0
-173,Clap Art,Performance,Clapping in response to art,,,1
-174,Wrapped in Art,Performance,Becoming Rene Magritte,,,0
-175,Wrapped in Art,Performance,Becoming Rene Magritte,,,1
+154,Dance Partner,Action,Dancing with art,,,0
+155,Dance Partner,Action,Dancing with art,,,1
+156,Drawing on the Body,Action,Making body art,,,0
+157,Drawing on the Body,Action,Making body art,,,1
+158,Naming Parts,Action,Conceptual art practice,,,0
+159,Naming Parts,Action,Conceptual art practice,,,1
+160,Estimating Size,Action,Conceptual art practice,,,0
+161,Estimating Size,Action,Conceptual art practice,,,1
+162,Mark Making,Action,Process-oriented art,,,0
+163,Mark Making,Action,Process-oriented art,,,1
+164,I-Spy,Action,Conceptual art practice,,,0
+165,I-Spy,Action,Conceptual art practice,,,1
+166,Eye Drawing,Action,Imaginary mark making,,,0
+167,Eye Drawing,Action,Imaginary mark making,,,1
+168,Nose Drawing,Action,Conceptual art practice,,,0
+169,Nose Drawing,Action,Conceptual art practice,,,1
+170,Song Art,Action,Singing in response to art,,,0
+171,Song Art,Action,Singing in response to art,,,1
+172,Clap Art,Action,Clapping in response to art,,,0
+173,Clap Art,Action,Clapping in response to art,,,1
+174,Wrapped in Art,Action,Becoming Rene Magritte,,,0
+175,Wrapped in Art,Action,Becoming Rene Magritte,,,1
 176,Memory Art,Mind,Recalling what you've seen,,,0
 177,Memory Art,Mind,Recalling what you've seen,,,1
 178,Leaving the Art Museum,,Final practice,,,0

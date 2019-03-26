@@ -1,6 +1,9 @@
 #landing {
 	height: 100%;
 	width: 100%;
+}
+
+#landing.leave {
   animation: 4s LANDING-TRANSITION forwards;
 }
 
@@ -9,11 +12,18 @@
   position: absolute;
   left: 0;
   right: 0;
-  height: 100px;
-  width: 100px;
+  height: 200px;
   /* display: block; */
   top: 0;
   bottom: 0;
+}
+
+#landing .instruct {
+  margin-top: 48px;
+  font-style: italic;
+  margin-bottom: 24px;
+  opacity: 0;
+  animation: 2s INSTRUCT-ANIMATION forwards;
 }
 
 #landing .icon {
@@ -47,6 +57,16 @@
 
   100% {
     opacity: 0;
+  }
+}
+
+@keyframes INSTRUCT-ANIMATION {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
   }
 }
 

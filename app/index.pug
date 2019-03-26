@@ -1,5 +1,11 @@
 extends layout.pug
 
 block content
-	#app
-		include views/nav.pug
+	#landing(onclick='onboarding.load()')
+		.center
+			+icon('tantric-eye').large
+			.shadow
+			.instruct 
+				p Please put on your headphones
+				button(onclick='onboarding.load()') Continue
+	include views/onboarding.pug

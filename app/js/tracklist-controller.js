@@ -33,13 +33,14 @@ var tracklist = {
 		data.categories[category].forEach((id, index) => {
 			let trackObj = data.tracks[id]
 
-			if(app.mode != parseInt(trackObj.type)) {
+			console.log(app.mode, parseInt(trackObj.type))
+			if(app.getMode() != parseInt(trackObj.type)) {
 				console.log(trackObj)
 				return
 			}
 			let templ = document.importNode(tracklist.template, true)
 			templ.querySelector(".track").setAttribute("data-id", id)
-			templ.querySelector(".track").href = `/media?track=${id}`
+			templ.querySelector(".track").href = `/media?category=${category}&track=${id}`
 			templ.querySelector(".id").innerHTML = ++number
 			templ.querySelector(".title").innerHTML = trackObj.title
 			templ.querySelector(".description").innerHTML = trackObj.description
@@ -57,8 +58,20 @@ var tracklist = {
 			fragment.appendChild(templ)
 		})
 		tracklist.dom.querySelector('.category').innerHTML = category
+		tracklist.dom.querySelector('.category-blurb').innerHTML = tracklist.getCategoryBlurb(category)
 		tracklist.dom.querySelector('.tracks').innerHTML = ""
 		tracklist.dom.querySelector('.tracks').appendChild(fragment)
+	},
+	/* TODO: remove this and use proper category data. */
+	getCategoryBlurb: function(category) {
+		const blurbMap = {
+			sight: "Play with your visuals habits",
+			body: "Experience art through your body",
+			mind: "Explore your thoughts and feelings",
+			imagination: "Delve into the realm of fantasy",
+			action: "Be bold and perform art",
+		}
+		return blurbMap[category]
 	},
 }
 

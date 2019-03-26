@@ -49,9 +49,7 @@ h2 {
 	text-transform: uppercase;
 }
 
-h3 {
-  letter-spacing: 2px;
-}
+h3 {}
 
 h4 {
 	color: var(--grey-light-color);
@@ -147,23 +145,28 @@ li {
   width: 1px !important;
 }
 
-body[category="sight"] .arc {
+body[category="sight"] .arc,
+body[category="sight"] #global-back:after {
   background-color: var(--blue-color);
 }
 
-body[category="performance"] .arc {
+body[category="action"] .arc,
+body[category="action"] #global-back:after {
   background-color: var(--teal-color);
 }
 
-body[category="body"] .arc {
+body[category="body"] .arc,
+body[category="body"] #global-back:after {
   background-color: var(--indigo-color);
 }
 
-body[category="mind"] .arc {
+body[category="mind"] .arc,
+body[category="mind"] #global-back:after {
   background-color: var(--yellow-color);
 }
 
-body[category="imagination"] .arc {
+body[category="imagination"] .arc,
+body[category="imagination"] #global-back:after {
   background-color: var(--orange-color);
 }
 
@@ -181,7 +184,6 @@ body[category="imagination"] .arc {
   bottom: 0;
   background-color: var(--bg-dark-color);
   transition: 0.2s background ease;
-  opacity: 0.9;
 }
 
 .arc.top {
@@ -206,7 +208,7 @@ body[category="imagination"] .arc {
 button {
 	outline: none;
   padding: 12px;
-  font-size: 0;
+  font-size: 14px;
   border-radius: 24px;
   background-color: var(--bg-dark-color);
   border: none;
@@ -236,6 +238,7 @@ button:hover {
 
 #app {
   height: 100%;
+  min-height: 250px;
 }
 
 #content.hidden {  
@@ -246,42 +249,61 @@ button:hover {
 	display: none;
 }
 
-.screen-controls {
-  display: flex;
-  flex-direction: column;
-}
-
-#app .back,
-#app .forward {
-  margin-left: 24px;
-  margin-bottom: 6px;
-  z-index: 1;
-}
-
-#app .forward {
+#global-back {
+  position: fixed;
+  bottom: 36px;
+  left: 0;
   right: 0;
-}
-
-#app .forward[disabled],
-#app .back[disabled] {
-  opacity: 0.5;
-}
-
-#app .back svg,
-#app .forward svg {
-  box-shadow: 2px 2px 4px #00000030;
-  position: relative;
-  top: -24px;
-  padding: 6px;
-  border-radius: 50%;
-  transition: 0.2s background-color ease;
-  background: var(--grey-dark-color);
-  fill: var(--grey-light-color);
+  text-align: center;
+  z-index: 2;
   transform: scale(1.1);
-  display: block;
   opacity: 0;
   animation: 0.2s BACK-BUTTON-ANIM 0.2s ease forwards;
   transform: translateY(8px);
+}
+
+#global-back:after {
+  content: '';
+  z-index: -2;
+  width: 80px;
+  margin: auto;
+  background: var(--bg-dark-color);
+  height: 80px;
+  border-radius: 90% 0 200% 0;
+  transform: rotateZ(45deg);
+  display: block;
+  position: absolute;
+  top: -50%;
+  right: 0;
+  left: 0;
+  transition: 0.2s border-radius;
+}
+
+#global-back.close:after {
+  border-radius: 200% 0 200% 0;
+}
+
+body[category=""] #global-back svg,
+body[category="random"] #global-back svg {
+  fill: var(--grey-dark-color);
+}
+
+#global-back:hover:after {
+  border-radius: 70% 0 200% 0;
+} 
+
+#global-back:hover svg {
+  transform: translateY(-2px);
+}
+
+#global-back svg {
+  fill: var(--grey-light-color);
+  position: relative;
+  border-radius: 50%;
+  display: inline-block;
+  margin: auto;
+  transform: translateY(0px);
+  transition: 0.2s transform;
 }
 
 @keyframes BACK-BUTTON-ANIM {

@@ -7,14 +7,17 @@ var onboarding = {
 		var observer = new MutationObserver(function(mutationsList, observer) {
     	for(var mutation of mutationsList) {
 				if(mutation.type == 'attributes') {
-					onboarding._runOnboardingItem(parseInt(carouselDOM.getAttribute(mutation.attributeName)))
+					onboarding._runOnboardingItem()
 				}
 			}
 		});
 		observer.observe(carouselDOM, { attributes: true });
-		onboarding.loadTimeout = setTimeout(() => {
-			onboarding.load()
-		}, 3000)
+		// onboarding.loadTimeout = setTimeout(() => {
+		// 	onboarding.load()
+		// }, 3000)
+	},
+	_runOnboardingItem() {
+		app.clearTrack()
 	},
 	load: function() {
 		if(onboarding.loadTimeout) clearTimeout(onboarding.loadTimeout)
@@ -23,7 +26,6 @@ var onboarding = {
 		document.querySelector('#onboarding').classList.remove("hide")
     document.addEventListener('touchstart', onboarding.handleTouchStart, false);        
 		document.addEventListener('touchmove', onboarding.handleTouchMove, false);
-		onboarding._runOnboardingItem(0)
 	},
 	finish: function() {
     document.removeEventListener('touchstart', onboarding.handleTouchStart, false);        
@@ -31,18 +33,27 @@ var onboarding = {
 		app.clearTrack()
 		app.showApp()
 	},
-	_runOnboardingItem(index) {
-		console.log('running onbaording for ', index)
-		app.clearTrack()
-		if(index == 0) {
-			app.playIntroTrack()
-		} else if(index == 1) {
-			// Nothing to be done.
-		} else {
-			app.playArrivalTrack()
-		}
+	handlePlayIntro: function() {
+		let button = document.querySelector('#onboarding .intro')
+		button.classList.add('active')
+
+		let audio = document.getElementById('intro-audio')
+		return audio.paused ? audio.play() : audio.pause()
+		// app.playIntroTrack()
+	},
+	handlePlayArrival: function() {
+		let button = document.querySelector('#onboarding .arrival')
+		button.classList.add('active')
+
+		let audio = document.getElementById('arrival-audio')
+		return audio.paused ? audio.play() : audio.pause()
+		// app.playArrivalTrack()
 	},
 	handleNextClick: function() {
+		let button = document.querySelector('#onboarding .buttons .active')
+		if(button) button.classList.remove('active')
+
+		app.clearTrack()
 		let index = parseInt(onboarding.dom.firstElementChild.getAttribute('data-index'))
 		onboarding.dom.firstElementChild.setAttribute('data-index', ++index)
 	},
@@ -58,10 +69,10 @@ var onboarding = {
 		onboarding.finish()
 	},
 	handleTouchStart: function() {
-		console.log('touch start')
+		// console.log('touch start')
 	},
 	handleTouchEnd: function() {
-		console.log('touch end')
+		// console.log('touch end')
 	},
 }
 document.addEventListener("DOMContentLoaded", app.registerController('onboarding', onboarding));

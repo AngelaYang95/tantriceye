@@ -1,12 +1,18 @@
 mixin category(name, path)
-	a.category(href=`${path}` onclick=`nav.handleClick("${name}", this)` data-category=name)
-		+icon(name).medium
-		label= name
+	if(name == 'random')
+		.category(onclick=`nav.handleClick("${name}", this)` data-category=name).random
+			+icon(name).medium
+			label= name
+	else
+		a.category(href=`${path}` onclick=`nav.handleClick("${name}", this)` data-category=name)
+			+icon(name).medium
+			label= name
 
 #nav(data-controller="nav")
 	.label Select a category
 	+category('mind', '/playlist?category=mind')
 	+category('imagination', '/playlist?category=imagination')
-	+category('performance', '/playlist?category=performance')
+	+category('action', '/playlist?category=action')
 	+category('body', '/playlist?category=body')
 	+category('sight', '/playlist?category=sight')
+	+category('random', '/playlist?category=random')

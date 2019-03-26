@@ -20,7 +20,7 @@ html(lang="en")
 		meta(charset="UTF-8")
 		meta(name="Description" content="101 amazing audio-guided practices to discover art, yourself and others in art museums.")
 		meta(name="viewport" content="width=device-width, initial-scale=1")
-		title The Tantric Eye: audio-guided practices
+		title The Mindful Eye: audio-guided practices
 
 		<!-- build:css css/styles.min.css-->
 		link(href="./css/main.css" rel="stylesheet")
@@ -44,11 +44,7 @@ html(lang="en")
 		include images/svg-symbols.svg
 		include views/menu.pug
 		include views/audiobar.pug
-		script(type="text/javascript").
-			if(!sessionStorage.getItem('onboarded')) {
-				sessionStorage.setItem('onboarded', true)
-				window.location.pathname = '/onboarding'
-			}
+		
 		#wrapper
 			.arcs
 			#barba-wrapper
@@ -56,6 +52,9 @@ html(lang="en")
 					.arc.bottom
 					.arc.top
 					block content
+		#global-back
+			a(href="javascript:void(0);" onclick="app.back()").back
+				+icon('chevron-left').xsmall
 
 	block scripts
 		<!-- build:js js/main.min.js -->

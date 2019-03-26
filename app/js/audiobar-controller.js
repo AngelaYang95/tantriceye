@@ -49,6 +49,7 @@ var audiobar = {
 		audiobar.dom.querySelector('.progress .bar').style.width = '0'
 	},
 	endTrack: function() {
+		audiobar.dom.querySelector(".currentTime").innerHTML = audiobar.dom.querySelector(".duration").innerHTML
 		audiobar.dom.classList.remove("active", "playing")
 		audiobar.dom.classList.add('ended')
 	},

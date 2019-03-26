@@ -1,14 +1,25 @@
 include carousel.pug
 
+		//- +carousel-item("", "Welcome to \n The Mindful Eye")
+		//- 	.instruct Please put on your headphones
+		//- 	.buttons
+		//- 		button(onclick='onboarding.handleNextClick()') Continue
 #onboarding(data-controller="onboarding").hide
 	+carousel(3)
-		+carousel-item("", "Welcome to \n The Tantric Eye")
+		+carousel-item("", "Welcome to \n The Mindful Eye")
+			.instruct
+			audio(id="intro-audio")
+				source(src="../audio/Welcome.mp3" type="audio/mp3")
 			.buttons
-				button(onclick='onboarding.handleNextClick()') Skip Intro
+				button(onclick='onboarding.handlePlayIntro()').intro Play Introduction
+				button(onclick='onboarding.handleNextClick()') Skip Introduction
 		+carousel-item("", "How will you be practising?")
 			.buttons
-				button(onclick='onboarding.handleSoloClick()').solo I'm by myself
-				button(onclick='onboarding.handleDuoClick()').duo I'm with a partner
+				button(onclick='onboarding.handleSoloClick()').solo By myself
+				button(onclick='onboarding.handleDuoClick()').duo With a partner
 		+carousel-item("tantric-eye-duo", "Let's take a minute \n to arrive.")
+			audio(id="arrival-audio")
+				source(src="../audio/solo/ArrivingSolo.mp3" type="audio/mp3")
 			.buttons
-				button(onclick='onboarding.handleFinishClick()') Finish
+				button(onclick='onboarding.handlePlayArrival()').arrival Play Arrival Warmup
+				button(onclick='onboarding.handleFinishClick()') Go To Practices

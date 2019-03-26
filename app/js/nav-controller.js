@@ -5,7 +5,7 @@ var nav = {
 		nav.dom = document.getElementById("nav");
 	},
 	handleClick: function(category, catDom) {
-		if(category == "random") {
+		if(category == "random" && app.getMode() == CONSTANTS.MODES.SOLO) {
 			app.playRandom()
 		}
 	},

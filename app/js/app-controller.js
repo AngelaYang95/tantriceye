@@ -52,7 +52,7 @@ var app = {
 		document.body.setAttribute('data-mode', mode)
 	},
 	getMode: function() {
-		return window.localStorage.getItem('mode')
+		return parseInt(window.localStorage.getItem('mode'))
 	},
 	handleViewChange: function() {
 		let path = window.location.pathname
@@ -60,16 +60,22 @@ var app = {
 		app.initScripts()
 		menu.setActivePath(path)
 
+		if(path == '/' || path.includes('about')) {
+			app.hideBackButton()
+		} else {
+			app.showBackButton()
+		}
+
 		if(path.includes('playlist')) {
 			app.goToCategory(params.category || app.getCategory())
 		} 
 		if(path.includes('media')) {
-			app.goToMedia(params.track || app.getTrack())
+			app.goToMedia(params.category, params.track || app.getTrack())
 		} 
 		if(path.includes('about')) {
 			app.goToAbout()
 		}
-		if(path == '/') {
+		if(path.includes('home')) {
 			app.goToHome()
 		}
 	},
@@ -80,6 +86,7 @@ var app = {
 			params[entry[0]] = entry[1]
 		})
 		if(params.track) params.track = parseInt(params.track)
+
 		return params
 	},
 	//-------------------------------------------------------------
@@ -104,14 +111,8 @@ var app = {
 			return track.url
 		})
 		let id = tracks[Math.floor(Math.random() * tracks.length)].id
-		let path = "/media?track=" + id
-		app.redirectTo(path)
-	},
-	back: function() {
-		window.history.go(-1)
-	},
-	forward: function() {
-		window.history.go(1)
+		window.location = "/media?track=" + id
+		// app.redirectTo(path)
 	},
 	redirectTo: function(path) {
 		window.history.pushState(null, "", path);
@@ -175,8 +176,32 @@ var app = {
 	//-------------------------------------------------------------
 	//                     Nav Functions
 	//-------------------------------------------------------------
+	back: function() {
+		// Make manuel back and forth.
+		let path = window.location.pathname
+		let newPath = '/'
+		if(path == '/playlist') {
+			window.location = '/home'
+		} else if(path == '/media') {
+			let category = app.getQueryParam()['category']
+			if(category && category != 'random') {
+				window.location = '/playlist?category=' + category
+			} else {
+				window.location = '/home'
+			}
+		} else if(path == '/home') {	
+			window.location = '/'
+		}
+	},
+	hideBackButton: function() {
+		let dom = document.getElementById('global-back')
+		if(!dom.classList.contains('hide')) dom.classList.add('hide')
+	},
+	showBackButton: function() {
+		document.getElementById('global-back').classList.remove('hide')
+	},
 	showApp: function() {
-		window.location.replace('/');
+		window.location = '/home';
 	},
 	getTrack: function() {
 		return app.track
@@ -217,7 +242,8 @@ var app = {
 		app.setCategory(category)
 		tracklist.render(category)
 	},
-	goToMedia: function(trackId) {
+	goToMedia: function(category, trackId) {
+		app.setCategory(category || 'random')
 		app.playTrack(trackId)
 	},
 	hideContent: function() {

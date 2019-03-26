@@ -1,7 +1,7 @@
 {
   "name": "tantric-eye",
   "version": "1.0.0",
-  "description": "Tantric Eye web application",
+  "description": "Mindful Eye web application",
   "main": "gulp.js",
   "dependencies": {
     "express": "^4.16.4"

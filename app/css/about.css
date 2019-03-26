@@ -19,18 +19,5 @@
 
 #about .rights {
 	font-size: 10px;
-}
-
-#about .survey:hover {
-	opacity: 0.9;
-}
-
-#about .survey {
-  padding: 14px 12px;
-  display: inline-block;
-  width: 150px;
-  border-radius: 8px;
-  background: var(--orange-color);
-  color: white;
-  margin: auto auto 12px;
+	margin-top: auto;
 }

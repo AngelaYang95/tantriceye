@@ -1,9 +1,17 @@
+body[data-mode="1"] #nav .category.random {
+	display: none;
+}
+
+body[data-mode="0"] #nav .category.random {
+	display: block;
+}
+
 #nav {
   align-items: center;
 	text-align: center;
 	text-transform: capitalize;
   width: 100%;
-  bottom: 0;
+  bottom: 56px;
   top: 0;
   position: absolute;
   animation: 0.2s NAV-ANIM forwards;
@@ -71,7 +79,7 @@
 #nav .category label {	
 	transition: 0.2s opacity 0.2s;
 	font-family: 'Nunito', 'Helvetica', 'Sans Serif';
-	font-size: 16px;
+	font-size: 14px;
 }
 
 #nav.close .category label {
@@ -117,7 +125,7 @@
 	fill: var(--indigo-color);
 }
 
-.category[data-category="performance"] {
+.category[data-category="action"] {
 	fill: var(--teal-color);
 }
 
