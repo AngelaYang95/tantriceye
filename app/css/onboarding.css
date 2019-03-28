@@ -50,13 +50,9 @@ body[data-mode="1"] #onboarding button.duo {
 	font-family: 'Nunito', 'Sans serif';
 }
 
-#onboarding .instruct {
-  font-style: italic;
-  margin: 36px 12px 56px;
-}
-
 #onboarding button {
 	font-size: 14px;
+	min-width: 100px;
 }
 
 #onboarding button.intro,

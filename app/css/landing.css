@@ -18,12 +18,20 @@
   bottom: 0;
 }
 
-#landing .instruct {
+#landing .sub-section {
   margin-top: 48px;
-  font-style: italic;
   margin-bottom: 24px;
   opacity: 0;
   animation: 2s INSTRUCT-ANIMATION forwards;
+}
+
+#landing .title {
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+#landing .instruct {
+  font-size: 14px;
+  font-style: italic;
 }
 
 #landing .icon {

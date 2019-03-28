@@ -15,6 +15,13 @@ var onboarding = {
 			}
 		});
 		observer.observe(carouselDOM, { attributes: true });
+		
+		let introAudio = document.getElementById('intro-audio')
+		let arrivalSoloAudio = document.getElementById('arrival-audio-solo')
+		let arrivalPartnerAudio = document.getElementById('arrival-audio-partner')
+		introAudio.addEventListener('ended', onboarding.handleNextClick);
+		arrivalSoloAudio.addEventListener('ended', onboarding.onTrackFinished);
+		arrivalPartnerAudio.addEventListener('ended', onboarding.onTrackFinishe);
 	},
 	load: function() {
 		if(onboarding.loadTimeout) clearTimeout(onboarding.loadTimeout)

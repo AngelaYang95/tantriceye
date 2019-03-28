@@ -251,7 +251,7 @@ button:hover {
 
 #global-back {
   position: fixed;
-  bottom: 36px;
+  bottom: 20px;
   left: 0;
   right: 0;
   text-align: center;
@@ -267,11 +267,11 @@ button:hover {
 #global-back:after {
   content: '';
   z-index: -2;
-  width: 80px;
+  width: 50px;
   margin: auto;
   background: var(--bg-dark-color);
-  height: 80px;
-  border-radius: 90% 0 200% 0;
+  height: 50px;
+  border-radius: 100% 10% 200% 10%;
   transform: rotateZ(45deg);
   display: block;
   position: absolute;
@@ -315,7 +315,7 @@ body[category="random"] #global-back svg {
 #mode {
   position: fixed;
   bottom: 0;
-  right: 0;
+  left: 0;
   margin: 12px;
   display: block;
   text-transform: capitalize;
@@ -329,7 +329,7 @@ body[data-mode="1"] #mode .partner {
 
 #mode .partner,
 #mode .solo {
-  margin-bottom: 12px;
+  margin-bottom: 4px;
   opacity: 0.4;
   cursor: default;
   transition: 0.2s transform;

@@ -54,16 +54,16 @@ var app = {
 	getMode: function() {
 		return parseInt(window.localStorage.getItem('mode'))
 	},
-	// handleSoloClick: function() {
-	// 	app.setMode(CONSTANTS.MODES.SOLO)
-	// 	if(window.location.pathname != "")
-	// 		window.location = '/home'
-	// },
-	// handlePartnerClick() {
-	// 	app.setMode(CONSTANTS.MODES.PARTNER)
-	// 	if(window.location.pathname != "")
-	// 		window.location = '/home'
-	// },
+	handleSoloClick: function() {
+		app.setMode(CONSTANTS.MODES.SOLO)
+		if(window.location.pathname != "")
+			window.location = '/home'
+	},
+	handleDuoClick() {
+		app.setMode(CONSTANTS.MODES.DUO)
+		if(window.location.pathname != "")
+			window.location = '/home'
+	},
 	handleViewChange: function() {
 		let path = window.location.pathname
 		let params = app.getQueryParam()

@@ -16,7 +16,7 @@ include carousel.pug
 					+icon("media-pause").xsmall.icon.pause
 					.bar
 						.intro-progress
-				button(onclick='onboarding.handleNextClick()') Skip Introduction
+				button(onclick='onboarding.handleNextClick()') Skip
 		+carousel-item("", "How will you be practising?")
 			.buttons
 				button(onclick='onboarding.handleSoloClick()').solo By myself
@@ -27,9 +27,9 @@ include carousel.pug
 			audio(id="arrival-audio-partner")
 				source(src="../audio/duo/PartnerArriving.mp3" type="audio/mp3")
 			.buttons
-				button(onclick='onboarding.handleToggleArrival()').arrival Play Arrival Warmup
+				button(onclick='onboarding.handleToggleArrival()').arrival Play Arriving Practice
 					+icon("media-play-filled").xsmall.icon.play
 					+icon("media-pause").xsmall.icon.pause
 					.bar
 						.arrival-progress
-				button(onclick='onboarding.handleFinishClick()') Go To Practices
+				button(onclick='onboarding.handleFinishClick()') Skip

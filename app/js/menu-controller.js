@@ -33,7 +33,7 @@ var menu = {
 	},
 	handleDuoClick: function() {
 		app.setMode(CONSTANTS.MODES.DUO)
-	}
+	},
 }
 
 document.addEventListener("DOMContentLoaded", app.registerController('menu', menu));

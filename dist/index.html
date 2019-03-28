@@ -110,10 +110,11 @@
                 <use xlink:href="#icon-tantric-eye"></use>
               </svg>
               <div class="shadow"></div>
-              <div class="instruct"> 
-                <p>Please put on your headphones</p>
-                <button onclick="onboarding.load()">Continue</button>
+              <div class="sub-section">
+                <div class="title">The Tantric Eye</div>
+                <div class="instruct">Please put on your headphones</div>
               </div>
+              <button onclick="onboarding.load()">Continue</button>
             </div>
           </div>
           <div class="hide" id="onboarding" data-controller="onboarding">
@@ -139,7 +140,7 @@
                                               <div class="intro-progress"></div>
                                             </div>
                                           </button>
-                                          <button onclick="onboarding.handleNextClick()">Skip Introduction</button>
+                                          <button onclick="onboarding.handleNextClick()">Skip</button>
                                         </div>
                                       </div>
                                       <div class="carousel-item">
@@ -162,7 +163,7 @@
                                           <source src="../audio/duo/PartnerArriving.mp3" type="audio/mp3"/>
                                         </audio>
                                         <div class="buttons">
-                                          <button class="arrival" onclick="onboarding.handleToggleArrival()">Play Arrival Warmup
+                                          <button class="arrival" onclick="onboarding.handleToggleArrival()">Play Arriving Practice
                                             <svg class="icon xsmall icon play" role="img">
                                               <use xlink:href="#icon-media-play-filled"></use>
                                             </svg>
@@ -173,7 +174,7 @@
                                               <div class="arrival-progress"></div>
                                             </div>
                                           </button>
-                                          <button onclick="onboarding.handleFinishClick()">Go To Practices</button>
+                                          <button onclick="onboarding.handleFinishClick()">Skip</button>
                                         </div>
                                       </div>
                           </div>
@@ -193,8 +194,8 @@
           <use xlink:href="#icon-chevron-left"></use>
         </svg></a></div>
     <div id="mode">
-      <div class="solo" onclick="menu.handleSoloClick()"> solo</div>
-      <div class="partner" onclick="menu.handleDuoClick()"> partner</div>
+      <div class="solo" onclick="app.handleSoloClick()"> solo</div>
+      <div class="partner" onclick="app.handleDuoClick()"> partner</div>
     </div>
   <script src="js/main.min.js"></script>
 </html>

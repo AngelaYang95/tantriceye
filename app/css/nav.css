@@ -21,11 +21,6 @@ body[data-mode="0"] #nav .category.random {
 	padding: 32px 0;
 }
 
-#nav .label {
-	position: absolute;
-	top: 32px;
-}
-
 #nav.hide {
 	animation: 1s CLOSE-NAV-ANIMATION forwards;
 	display: none;
