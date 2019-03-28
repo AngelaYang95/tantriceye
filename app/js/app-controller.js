@@ -54,6 +54,16 @@ var app = {
 	getMode: function() {
 		return parseInt(window.localStorage.getItem('mode'))
 	},
+	// handleSoloClick: function() {
+	// 	app.setMode(CONSTANTS.MODES.SOLO)
+	// 	if(window.location.pathname != "")
+	// 		window.location = '/home'
+	// },
+	// handlePartnerClick() {
+	// 	app.setMode(CONSTANTS.MODES.PARTNER)
+	// 	if(window.location.pathname != "")
+	// 		window.location = '/home'
+	// },
 	handleViewChange: function() {
 		let path = window.location.pathname
 		let params = app.getQueryParam()
@@ -70,7 +80,7 @@ var app = {
 			app.goToCategory(params.category || app.getCategory())
 		} 
 		if(path.includes('media')) {
-			app.goToMedia(params.category, params.track || app.getTrack())
+			app.goToMedia(params.category, params.track)
 		} 
 		if(path.includes('about')) {
 			app.goToAbout()
@@ -140,7 +150,7 @@ var app = {
 		clearInterval(app.audioInterval)
 	},
 	playTrack: function(id) {
-		if(id && app.getTrack() != id) {
+		if(!app.getTrack() || app.getTrack() != id) {
 			app.setTrack(id)
 		}
 		audiobar.play()
@@ -207,7 +217,10 @@ var app = {
 		return app.track
 	},
 	setTrack: function(id) {
-		if(!id) return
+		if(!id && id != 0) {
+			console.log('trakc not set id is ', id)
+			return
+		}
 
 		app.track = id
 		if(tracklist.dom) {

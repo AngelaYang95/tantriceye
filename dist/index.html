@@ -128,7 +128,17 @@
                                           <source src="../audio/Welcome.mp3" type="audio/mp3"/>
                                         </audio>
                                         <div class="buttons">
-                                          <button class="intro" onclick="onboarding.handlePlayIntro()">Play Introduction</button>
+                                          <button class="intro" onclick="onboarding.handleToggleIntro()">Play Introduction
+                                            <svg class="icon xsmall icon play" role="img">
+                                              <use xlink:href="#icon-media-play-filled"></use>
+                                            </svg>
+                                            <svg class="icon xsmall icon pause" role="img">
+                                              <use xlink:href="#icon-media-pause"></use>
+                                            </svg>
+                                            <div class="bar">
+                                              <div class="intro-progress"></div>
+                                            </div>
+                                          </button>
                                           <button onclick="onboarding.handleNextClick()">Skip Introduction</button>
                                         </div>
                                       </div>
@@ -140,16 +150,29 @@
                                         </div>
                                       </div>
                                       <div class="carousel-item">
-                                        <svg class="icon large" role="img">
+                                        <svg class="icon xxlarge carousel-image" role="img">
                                           <use xlink:href="#icon-tantric-eye-duo"></use>
                                         </svg>
                                         <p>Let's take a minute 
  to arrive.</p>
-                                        <audio id="arrival-audio">
+                                        <audio id="arrival-audio-solo">
                                           <source src="../audio/solo/ArrivingSolo.mp3" type="audio/mp3"/>
                                         </audio>
+                                        <audio id="arrival-audio-partner">
+                                          <source src="../audio/duo/PartnerArriving.mp3" type="audio/mp3"/>
+                                        </audio>
                                         <div class="buttons">
-                                          <button class="arrival" onclick="onboarding.handlePlayArrival()">Play Arrival Warmup</button>
+                                          <button class="arrival" onclick="onboarding.handleToggleArrival()">Play Arrival Warmup
+                                            <svg class="icon xsmall icon play" role="img">
+                                              <use xlink:href="#icon-media-play-filled"></use>
+                                            </svg>
+                                            <svg class="icon xsmall icon pause" role="img">
+                                              <use xlink:href="#icon-media-pause"></use>
+                                            </svg>
+                                            <div class="bar">
+                                              <div class="arrival-progress"></div>
+                                            </div>
+                                          </button>
                                           <button onclick="onboarding.handleFinishClick()">Go To Practices</button>
                                         </div>
                                       </div>
@@ -169,5 +192,9 @@
         <svg class="icon xsmall" role="img">
           <use xlink:href="#icon-chevron-left"></use>
         </svg></a></div>
+    <div id="mode">
+      <div class="solo" onclick="menu.handleSoloClick()"> solo</div>
+      <div class="partner" onclick="menu.handleDuoClick()"> partner</div>
+    </div>
   <script src="js/main.min.js"></script>
 </html>

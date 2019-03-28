@@ -32,10 +32,7 @@ var tracklist = {
 		var number = 0;
 		data.categories[category].forEach((id, index) => {
 			let trackObj = data.tracks[id]
-
-			console.log(app.mode, parseInt(trackObj.type))
 			if(app.getMode() != parseInt(trackObj.type)) {
-				console.log(trackObj)
 				return
 			}
 			let templ = document.importNode(tracklist.template, true)

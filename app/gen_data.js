@@ -25,11 +25,10 @@ res.data.forEach((track)=> {
 
   if(track.category) {
     track.category = track.category.toLowerCase()
-    if(data.categories[track.category]) {
-      data.categories[track.category].push(track.id)
-    } else {
+    if(!data.categories[track.category]) {
       data.categories[track.category] = []
     }
+    data.categories[track.category].push(track.id)
   }
   
   if(track.length) track.length = parseInt(track.length)

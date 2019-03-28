@@ -55,6 +55,9 @@ html(lang="en")
 		#global-back
 			a(href="javascript:void(0);" onclick="app.back()").back
 				+icon('chevron-left').xsmall
+		#mode
+			.solo(onclick="menu.handleSoloClick()")  solo
+			.partner(onclick="menu.handleDuoClick()")  partner
 
 	block scripts
 		<!-- build:js js/main.min.js -->

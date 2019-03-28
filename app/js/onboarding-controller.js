@@ -1,23 +1,20 @@
 var onboarding = {
 	dom: null,
 	loadTimeout: null,
+	introTimer: null,
+	arrivalTimer: null,
 	init: function() {
 		onboarding.dom = document.getElementById('onboarding')
 		let carouselDOM = onboarding.dom.firstElementChild
 		var observer = new MutationObserver(function(mutationsList, observer) {
     	for(var mutation of mutationsList) {
 				if(mutation.type == 'attributes') {
-					onboarding._runOnboardingItem()
+					onboarding._pauseAudio()
+					//app.clearTrack()
 				}
 			}
 		});
 		observer.observe(carouselDOM, { attributes: true });
-		// onboarding.loadTimeout = setTimeout(() => {
-		// 	onboarding.load()
-		// }, 3000)
-	},
-	_runOnboardingItem() {
-		app.clearTrack()
 	},
 	load: function() {
 		if(onboarding.loadTimeout) clearTimeout(onboarding.loadTimeout)
@@ -33,29 +30,61 @@ var onboarding = {
 		app.clearTrack()
 		app.showApp()
 	},
-	handlePlayIntro: function() {
+	handleToggleIntro: function() {
 		let button = document.querySelector('#onboarding .intro')
-		button.classList.add('active')
+		button.classList.toggle('active')
 
+		if(onboarding.introTimer) {
+			clearInterval(onboarding.introTimer)
+		}
+		onboarding.introTimer = setInterval(() => {
+			let audio = document.getElementById('intro-audio')
+			let progressDom = document.querySelector('#onboarding .intro-progress')
+			// progressDom.style.width = `calc(${audio.currentTime / audio.duration * 100}% -24px)`
+			progressDom.style.width = `${audio.currentTime / audio.duration * 100}%`
+		}, 1000)
 		let audio = document.getElementById('intro-audio')
 		return audio.paused ? audio.play() : audio.pause()
 		// app.playIntroTrack()
 	},
-	handlePlayArrival: function() {
+	handleToggleArrival: function() {
 		let button = document.querySelector('#onboarding .arrival')
-		button.classList.add('active')
+		button.classList.toggle('active')
 
-		let audio = document.getElementById('arrival-audio')
+		if(onboarding.arrivalTimer) {
+			clearInterval(onboarding.arrivalTimer)
+		}
+		onboarding.arrivalTimer = setInterval(() => {
+			let audio = onboarding._getArrivalAudio()
+			let progressDom = document.querySelector('#onboarding .arrival-progress')
+			// progressDom.style.width = `calc(${audio.currentTime / audio.duration * 100}% -24px)`
+			progressDom.style.width = `${audio.currentTime / audio.duration * 100}%`
+		}, 1000)
+
+		let audio = onboarding._getArrivalAudio()
 		return audio.paused ? audio.play() : audio.pause()
 		// app.playArrivalTrack()
+	},
+	_getArrivalAudio: function() {
+		return app.getMode() == CONSTANTS.MODES.SOLO 
+				? document.getElementById('arrival-audio-solo') 
+				: document.getElementById('arrival-audio-partner');
 	},
 	handleNextClick: function() {
 		let button = document.querySelector('#onboarding .buttons .active')
 		if(button) button.classList.remove('active')
 
-		app.clearTrack()
+		// app.clearTrack()
+		onboarding._pauseAudio()
+
 		let index = parseInt(onboarding.dom.firstElementChild.getAttribute('data-index'))
 		onboarding.dom.firstElementChild.setAttribute('data-index', ++index)
+	},
+	_pauseAudio: function() {
+		let introAudio = document.getElementById('intro-audio')
+		let arrivalAudio = onboarding._getArrivalAudio()
+		if(!introAudio.paused) onboarding.handleToggleIntro()
+		if(!arrivalAudio.paused) onboarding.handleToggleArrival()
 	},
 	handleSoloClick: function() {
 		app.setMode(CONSTANTS.MODES.SOLO)

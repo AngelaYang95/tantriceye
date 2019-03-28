@@ -260,6 +260,8 @@ button:hover {
   opacity: 0;
   animation: 0.2s BACK-BUTTON-ANIM 0.2s ease forwards;
   transform: translateY(8px);
+  width: 100px;
+  margin: auto;
 }
 
 #global-back:after {
@@ -283,6 +285,10 @@ button:hover {
   border-radius: 200% 0 200% 0;
 }
 
+body[category=""] #global-back a {
+  padding: 24px;
+}
+
 body[category=""] #global-back svg,
 body[category="random"] #global-back svg {
   fill: var(--grey-dark-color);
@@ -304,6 +310,34 @@ body[category="random"] #global-back svg {
   margin: auto;
   transform: translateY(0px);
   transition: 0.2s transform;
+}
+
+#mode {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin: 12px;
+  display: block;
+  text-transform: capitalize;
+}
+
+body[data-mode="0"] #mode .solo,
+body:not([data-mode]) #mode .solo,
+body[data-mode="1"] #mode .partner {
+  opacity: 0.8;
+}
+
+#mode .partner,
+#mode .solo {
+  margin-bottom: 12px;
+  opacity: 0.4;
+  cursor: default;
+  transition: 0.2s transform;
+}
+
+#mode .partner:hover,
+#mode .solo:hover {
+  transform: scale(1.05);
 }
 
 @keyframes BACK-BUTTON-ANIM {

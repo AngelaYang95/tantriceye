@@ -10,8 +10,32 @@ body[data-mode="1"] #onboarding button.duo {
 	border: 2px solid var(--orange-color);
 }
 
-#onboarding button{
+#onboarding button {
+	position: relative;
 	border: 2px solid var(--bg-color);
+}
+
+#onboarding .bar {
+	position: absolute;
+	padding: 0 24px;
+	background-color: var(--grey-medium-color);
+	height: 3px;
+	border-radius: 24px;
+	top: 100%;
+	left: 12px;
+	right: 12px;
+	margin: 12px;
+}
+
+#onboarding .intro-progress,
+#onboarding .arrival-progress {
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 3px;
+	width: 0%;
+	border-radius: 24px;
+	background: var(--orange-color);
 }
 
 #onboarding {
@@ -31,12 +55,37 @@ body[data-mode="1"] #onboarding button.duo {
   margin: 36px 12px 56px;
 }
 
-#onboarding .icon {
-	width: 50%;
-  margin-bottom: -16px;
-  fill: var(--grey-dark-color);
-}
-
 #onboarding button {
 	font-size: 14px;
 }
+
+#onboarding button.intro,
+#onboarding button.arrival {	
+	padding-left: 48px;
+}
+
+#onboarding button .icon {	
+  fill: var(--grey-dark-color);
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 8px 16px;
+}
+
+#onboarding button .icon {	
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 8px 16px;
+}
+
+#onboarding button.active .pause,
+#onboarding :not(.active) .play {
+	display: block;
+}
+
+#onboarding :not(.active) .pause,
+#onboarding button.active .play {
+	display: none;
+}
+
