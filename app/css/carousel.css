@@ -16,6 +16,7 @@
 #carousel .window {
 	position: relative;
 	height: 100%;
+	min-height: 300px;
 	width: 100%;
   overflow: hidden;
 }

@@ -106,7 +106,8 @@ body[data-mode="1"] #menu .duo {
   box-shadow: 2px 2px 20px 0 #00000033;
 	transition: 0.3s transform, 0.4s background 0.5s;
 	transform-origin: center center;
-	background-color: #8c857b;
+	background-color: var(--grey-dark-color);
+	border-radius: 4px;
 }
 #menu.active .burger .bar {
 	background-color: var(--bg-dark-color);

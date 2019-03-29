@@ -43,7 +43,7 @@ body[data-mode="1"] #onboarding button.duo {
 }
 
 #onboarding p {
-	margin: 16px 0;
+	margin: 24px 0;
 	font-size: 24px;
 	font-weight: 400;
 	padding: 0 12px;
@@ -53,6 +53,7 @@ body[data-mode="1"] #onboarding button.duo {
 #onboarding button {
 	font-size: 14px;
 	min-width: 100px;
+  margin: 24px 12px;
 }
 
 #onboarding button.intro,
@@ -61,11 +62,13 @@ body[data-mode="1"] #onboarding button.duo {
 }
 
 #onboarding button .icon {	
-  fill: var(--grey-dark-color);
 	position: absolute;
 	top: 0;
 	left: 0;
 	padding: 8px 16px;
+}
+#onboarding .icon {	
+  fill: var(--grey-dark-color);
 }
 
 #onboarding button .icon {	
